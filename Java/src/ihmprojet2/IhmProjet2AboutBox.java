@@ -6,6 +6,10 @@ package ihmprojet2;
 
 import org.jdesktop.application.Action;
 
+import java.awt.Frame; 
+import javax.swing.JButton; 
+import javax.swing.JDialog;
+
 public class IhmProjet2AboutBox extends javax.swing.JDialog {
 
     public IhmProjet2AboutBox(java.awt.Frame parent) {

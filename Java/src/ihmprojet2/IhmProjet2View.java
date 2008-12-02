@@ -7,7 +7,9 @@ package ihmprojet2;
 import org.jdesktop.application.Action;
 import org.jdesktop.application.SingleFrameApplication;
 import org.jdesktop.application.FrameView;
-import javax.swing.JDialog;
+import javax.swing.JDialog; 
+import javax.swing.JMenuBar; 
+import javax.swing.JPanel;
 import javax.swing.JFrame;
 
 /**
