@@ -1,6 +1,9 @@
 
 package ihmprojet2.Environnement;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+
 
 // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
 // #[regen=yes,id=DCE.8916055B-BDE0-3194-413B-22E44F3060B0]
@@ -10,7 +13,48 @@ public class Eau {
     // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
     // #[regen=yes,id=DCE.DFF7950F-EE98-7C29-8F3C-CE238467204E]
     // </editor-fold> 
-    private int quantite;
+    private int quantite = 0;
+    public static final String PROP_QUANTITE = "quantite";
+
+    /**
+     * Get the value of quantite
+     *
+     * @return the value of quantite
+     */
+    public int getQuantite() {
+        return quantite;
+    }
+
+    /**
+     * Set the value of quantite
+     *
+     * @param quantite new value of quantite
+     */
+    public void setQuantite(int quantite) {
+        int oldQuantite = this.quantite;
+        this.quantite = quantite;
+        propertyChangeSupport.firePropertyChange(PROP_QUANTITE, oldQuantite, quantite);
+    }
+    private PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
+
+    /**
+     * Add PropertyChangeListener.
+     *
+     * @param listener
+     */
+    public void addPropertyChangeListener(PropertyChangeListener listener) {
+        propertyChangeSupport.addPropertyChangeListener(listener);
+    }
+
+    /**
+     * Remove PropertyChangeListener.
+     *
+     * @param listener
+     */
+    public void removePropertyChangeListener(PropertyChangeListener listener) {
+        propertyChangeSupport.removePropertyChangeListener(listener);
+    }
+
 
     // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
     // #[regen=yes,id=DCE.8B746D6A-4643-35FB-45F2-248FB519F88D]
@@ -36,20 +80,5 @@ public class Eau {
     public void setDurete (int val) {
         this.durete = val;
     }
-
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,regenBody=yes,id=DCE.2A05E0ED-B4BE-9DED-E83E-CADCF5E91CB3]
-    // </editor-fold> 
-    public int getQuantite () {
-        return quantite;
-    }
-
-    // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
-    // #[regen=yes,regenBody=yes,id=DCE.5514CF8E-B151-11EB-641D-425F8CFF665A]
-    // </editor-fold> 
-    public void setQuantite (int val) {
-        this.quantite = val;
-    }
-
 }
 
