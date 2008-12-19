@@ -15,7 +15,7 @@ public class Environnement {
     public static final String PROP_QUALITECROISSANCE = "qualiteCroissance";
 
     public Environnement() {
-        this.terre = new Terre(this);
+       
     }
 
     public Climat getClimat() {
@@ -39,29 +39,30 @@ public class Environnement {
     }
 
     public Terre getTerre() {
-        return terre;
+        return this.terre;
     }
 
     public void updateTauxArrosage() {
         tauxArrosage = (eau.getQuantite() * eau.getNbjourArrosage()) / terre.getQuantite();
-        updateQualiteArrosage();
     }
 
     public void updateQualiteArrosage() {
         if (terre.hasEngrais()) {
-            qualiteArrosage = tauxArrosage / eau.getDurete();
+            qualiteArrosage = tauxArrosage / eau.getDurete().value();
         } else {
-            qualiteArrosage = tauxArrosage * 0.9 / eau.getDurete();
+            qualiteArrosage = tauxArrosage * 0.9 / eau.getDurete().value();
         }
-        updateQualiteCroissance();
+        
     }
 
     public void updateQualiteEnvironnement() {
-        qualiteEnvironnement = climat.getTemperature() * climat.getLumiere();
-        updateQualiteCroissance();
+        qualiteEnvironnement = climat.getTemperature() * climat.getLumiere().value();
     }
 
     public void updateQualiteCroissance() {
+        updateTauxArrosage();
+        updateQualiteCroissance();
+        updateQualiteEnvironnement();
         setQualiteCroissance(qualiteArrosage * qualiteEnvironnement);
     }
 
@@ -106,24 +107,26 @@ public class Environnement {
 
     public class Terre {
 
-        private Boolean engrais;
-        private int quantite = 0;
-        private Environnement environement;
+        private Boolean engrais=false;
+        private int quantite = 150;
+
 
         public int getQuantite() {
             return quantite;
         }
 
-        public void setQuantite(int quantite) {
+        public void setQuantite(int quantite) throws Exception{
+            if((quantite< 100) || (quantite>500)){
+            throw new Exception("La quantité de terre doit etre comprise entre 0 " +
+                    "et 500 grammes.");
+            }
             this.quantite = quantite;
         }
 
         public Terre() {
         }
 
-        public Terre(Environnement e) {
-            this.environement = e;
-        }
+        
 
         public Boolean hasEngrais() {
             return engrais;
@@ -132,50 +135,59 @@ public class Environnement {
         public void setEngrais(Boolean val) {
         }
 
-        public void setEnvironnement(Environnement evt) {
-            this.environement = evt;
-        }
-
-        public Environnement getEnvironnement() {
-            return environement;
-        }
     }
 
     public class Climat {
 
-        private Environnement environnement;
-        private int temperature;
-        private int lumiere;
+        private int temperature=15;
+        private DegresLumiere lumiere=DegresLumiere.DIRECTE;
 
         public Climat() {
         }
 
-        public Climat(Environnement evt) {
-            environnement = evt;
+       
+
+        public DegresLumiere getLumiere() {
+            return lumiere;
         }
 
-        public int getLumiere() {
-            return 0;
-        }
+        public void setLumiere(DegresLumiere val) throws Exception {
+            switch(val){
 
-        public void setLumiere(int val) {
+                case OBSCURITE:
+                case INDIRECTE :
+                case DIRECTE:
+                    lumiere=val;
+                    updateQualiteCroissance();
+                default:
+                    throw new Exception("La valeur "+val+" n'est pas un degres " +
+                            "de lumière valide.");
+            }
+            
+            
         }
 
         public int getTemperature() {
-            return 0;
+            return temperature;
         }
 
-        public void setTemperature(int val) {
-            environnement.updateQualiteEnvironnement();
+        public void setTemperature(int val) throws Exception{
+            if((val<0) || (val>30))
+            {
+                throw new Exception("La valeur la temperature doit etre comprise" +
+                        " entre 0 et 30 degres Celcius");
+            }else{
+            temperature=val;
+            updateQualiteCroissance();
+            }
         }
     }
 
     public class Eau {
 
-        private int nbjourArrosage;
-        private int quantite;
-        private int durete;
-        private Environnement environnement;
+        private int nbjourArrosage=3;
+        private int quantite=0;
+        private Durete durete=Durete.DOUCE;
 
         /**
          * Get the value of quantite
@@ -191,31 +203,38 @@ public class Environnement {
          *
          * @param quantite new value of quantite
          */
-        public void setQuantite(int quantite) {
-            int oldQuantite = this.quantite;
-
+        public void setQuantite(int quantite) throws Exception{
+            if((quantite<0)|| (quantite>500))
+            {
+            throw new Exception("La quantité d'eau doit etre comprise entre 0 " +
+                    "et 500 ml");
+            }
+            this.quantite=quantite;
         }
 
         public Eau() {
         }
 
-        public int getDurete() {
-            return 0;
+        public Durete getDurete() {
+            return durete;
         }
 
-        public void setDurete(int val) {
+        public void setDurete(Durete d) throws Exception {
+            switch(d){
+                case TRES_DOUCE:
+                case DOUCE:
+                case MOY_DURE:
+                case DURE:
+                case TRES_DURE:
+                    durete=d;
+                default:
+                    throw new Exception("La dureté doit etre unee dureté valide");
+            }
+            
         }
 
-        public Environnement getEnvironnement() {
-            return environnement;
-        }
+        
 
-        public void setEnvironnement(Environnement val) {
-            this.environnement = val;
-        }
-
-        public Eau(Environnement environement) {
-        }
 
         public int getNbjourArrosage() {
             return nbjourArrosage;

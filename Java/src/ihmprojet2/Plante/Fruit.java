@@ -3,6 +3,7 @@ package ihmprojet2.Plante;
 
 public class Fruit {
 
+  
    private Gout gout;
 
     public Fruit () {
