@@ -73,15 +73,15 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="plante1label" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="plante1" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="12" pref="12" max="12" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="p1TomatitoRB" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="p1tomatitoRB" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="p1cacaiRB" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Component id="plante2label" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="plante2" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="12" pref="12" max="12" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -98,13 +98,13 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="plante1label" min="-2" max="-2" attributes="0"/>
+                          <Component id="plante1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="p1cacaiRB" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="p1TomatitoRB" min="-2" max="-2" attributes="0"/>
+                          <Component id="p1tomatitoRB" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="plante2label" min="-2" max="-2" attributes="0"/>
+                          <Component id="plante2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="p2cacaiRB" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -122,25 +122,23 @@
                     </Property>
                     <Property name="selected" type="boolean" value="true"/>
                     <Property name="text" type="java.lang.String" value="Caca&#xef;"/>
-                    <Property name="enabled" type="boolean" value="false"/>
                     <Property name="name" type="java.lang.String" value="p1cacaiRB" noResource="true"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="p1cacaiRBActionPerformed"/>
-                  </Events>
+                  <BindingProperties>
+                    <BindingProperty name="enabled" source="plante1" sourcePath="${selected}" target="p1cacaiRB" targetPath="enabled" updateStrategy="0" immediately="false"/>
+                  </BindingProperties>
                 </Component>
-                <Component class="javax.swing.JRadioButton" name="p1TomatitoRB">
+                <Component class="javax.swing.JRadioButton" name="p1tomatitoRB">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="plante1group"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Tomatito"/>
-                    <Property name="enabled" type="boolean" value="false"/>
-                    <Property name="name" type="java.lang.String" value="p1TomatitoRB" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="p1tomatitoRB" noResource="true"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="p1TomatitoRBActionPerformed"/>
-                  </Events>
+                  <BindingProperties>
+                    <BindingProperty name="enabled" source="plante1" sourcePath="${selected}" target="p1tomatitoRB" targetPath="enabled" updateStrategy="0" immediately="false"/>
+                  </BindingProperties>
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="p2cacaiRB">
                   <Properties>
@@ -149,12 +147,11 @@
                     </Property>
                     <Property name="selected" type="boolean" value="true"/>
                     <Property name="text" type="java.lang.String" value="Caca&#xef;"/>
-                    <Property name="enabled" type="boolean" value="false"/>
                     <Property name="name" type="java.lang.String" value="p2cacaiRB" noResource="true"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="p2cacaiRBActionPerformed"/>
-                  </Events>
+                  <BindingProperties>
+                    <BindingProperty name="enabled" source="plante2" sourcePath="${selected}" target="p2cacaiRB" targetPath="enabled" updateStrategy="0" immediately="false"/>
+                  </BindingProperties>
                 </Component>
                 <Component class="javax.swing.JRadioButton" name="p2tomatitoRB">
                   <Properties>
@@ -162,36 +159,32 @@
                       <ComponentRef name="plante2group"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Tomatito"/>
-                    <Property name="enabled" type="boolean" value="false"/>
                     <Property name="name" type="java.lang.String" value="p2tomatitoRB" noResource="true"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="p2tomatitoRBActionPerformed"/>
-                  </Events>
+                  <BindingProperties>
+                    <BindingProperty name="enabled" source="plante2" sourcePath="${selected}" target="p2tomatitoRB" targetPath="enabled" updateStrategy="0" immediately="false"/>
+                  </BindingProperties>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="plante1label">
+                <Component class="javax.swing.JCheckBox" name="plante1">
                   <Properties>
                     <Property name="font" type="java.awt.Font" noResource="true" editor="org.netbeans.modules.form.editors2.FontEditor">
                       <FontInfo relative="true">
-                        <Font bold="true" component="plante1label" property="font" relativeSize="true" size="0"/>
+                        <Font bold="true" component="plante1" property="font" relativeSize="true" size="0"/>
                       </FontInfo>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Plante 1"/>
-                    <Property name="name" type="java.lang.String" value="plante1label" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="plante1" noResource="true"/>
                   </Properties>
-                  <Events>
-                    <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="plante1labelStateChanged"/>
-                  </Events>
                 </Component>
-                <Component class="javax.swing.JCheckBox" name="plante2label">
+                <Component class="javax.swing.JCheckBox" name="plante2">
                   <Properties>
                     <Property name="font" type="java.awt.Font" noResource="true" editor="org.netbeans.modules.form.editors2.FontEditor">
                       <FontInfo relative="true">
-                        <Font bold="true" component="plante2label" property="font" relativeSize="true" size="0"/>
+                        <Font bold="true" component="plante2" property="font" relativeSize="true" size="0"/>
                       </FontInfo>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Plante 2"/>
-                    <Property name="name" type="java.lang.String" value="plante2label" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="plante2" noResource="true"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -522,7 +515,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="339" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="337" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -549,7 +542,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="114" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="112" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>

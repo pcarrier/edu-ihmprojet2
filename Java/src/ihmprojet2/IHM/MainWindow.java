@@ -30,6 +30,7 @@ public class MainWindow extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         climatRBgroup = new javax.swing.ButtonGroup();
         plante1group = new javax.swing.ButtonGroup();
@@ -38,11 +39,11 @@ public class MainWindow extends javax.swing.JFrame {
         prefsPanels = new javax.swing.JTabbedPane();
         plantesPanel = new javax.swing.JPanel();
         p1cacaiRB = new javax.swing.JRadioButton();
-        p1TomatitoRB = new javax.swing.JRadioButton();
+        p1tomatitoRB = new javax.swing.JRadioButton();
         p2cacaiRB = new javax.swing.JRadioButton();
         p2tomatitoRB = new javax.swing.JRadioButton();
-        plante1label = new javax.swing.JCheckBox();
-        plante2label = new javax.swing.JCheckBox();
+        plante1 = new javax.swing.JCheckBox();
+        plante2 = new javax.swing.JCheckBox();
         climatPanel = new javax.swing.JPanel();
         obscuriteRB = new javax.swing.JRadioButton();
         indirectRB = new javax.swing.JRadioButton();
@@ -76,57 +77,40 @@ public class MainWindow extends javax.swing.JFrame {
         plante1group.add(p1cacaiRB);
         p1cacaiRB.setSelected(true);
         p1cacaiRB.setText("Cacaï");
-        p1cacaiRB.setEnabled(false);
         p1cacaiRB.setName("p1cacaiRB"); // NOI18N
-        p1cacaiRB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                p1cacaiRBActionPerformed(evt);
-            }
-        });
 
-        plante1group.add(p1TomatitoRB);
-        p1TomatitoRB.setText("Tomatito");
-        p1TomatitoRB.setEnabled(false);
-        p1TomatitoRB.setName("p1TomatitoRB"); // NOI18N
-        p1TomatitoRB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                p1TomatitoRBActionPerformed(evt);
-            }
-        });
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, plante1, org.jdesktop.beansbinding.ELProperty.create("${selected}"), p1cacaiRB, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
+
+        plante1group.add(p1tomatitoRB);
+        p1tomatitoRB.setText("Tomatito");
+        p1tomatitoRB.setName("p1tomatitoRB"); // NOI18N
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, plante1, org.jdesktop.beansbinding.ELProperty.create("${selected}"), p1tomatitoRB, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
 
         plante2group.add(p2cacaiRB);
         p2cacaiRB.setSelected(true);
         p2cacaiRB.setText("Cacaï");
-        p2cacaiRB.setEnabled(false);
         p2cacaiRB.setName("p2cacaiRB"); // NOI18N
-        p2cacaiRB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                p2cacaiRBActionPerformed(evt);
-            }
-        });
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, plante2, org.jdesktop.beansbinding.ELProperty.create("${selected}"), p2cacaiRB, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
 
         plante2group.add(p2tomatitoRB);
         p2tomatitoRB.setText("Tomatito");
-        p2tomatitoRB.setEnabled(false);
         p2tomatitoRB.setName("p2tomatitoRB"); // NOI18N
-        p2tomatitoRB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                p2tomatitoRBActionPerformed(evt);
-            }
-        });
 
-        plante1label.setFont(plante1label.getFont().deriveFont(plante1label.getFont().getStyle() | java.awt.Font.BOLD));
-        plante1label.setText("Plante 1");
-        plante1label.setName("plante1label"); // NOI18N
-        plante1label.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                plante1labelStateChanged(evt);
-            }
-        });
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, plante2, org.jdesktop.beansbinding.ELProperty.create("${selected}"), p2tomatitoRB, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
 
-        plante2label.setFont(plante2label.getFont().deriveFont(plante2label.getFont().getStyle() | java.awt.Font.BOLD));
-        plante2label.setText("Plante 2");
-        plante2label.setName("plante2label"); // NOI18N
+        plante1.setFont(plante1.getFont().deriveFont(plante1.getFont().getStyle() | java.awt.Font.BOLD));
+        plante1.setText("Plante 1");
+        plante1.setName("plante1"); // NOI18N
+
+        plante2.setFont(plante2.getFont().deriveFont(plante2.getFont().getStyle() | java.awt.Font.BOLD));
+        plante2.setText("Plante 2");
+        plante2.setName("plante2"); // NOI18N
 
         javax.swing.GroupLayout plantesPanelLayout = new javax.swing.GroupLayout(plantesPanel);
         plantesPanel.setLayout(plantesPanelLayout);
@@ -135,13 +119,13 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(plantesPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(plantesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(plante1label)
+                    .addComponent(plante1)
                     .addGroup(plantesPanelLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(plantesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(p1TomatitoRB)
+                            .addComponent(p1tomatitoRB)
                             .addComponent(p1cacaiRB)))
-                    .addComponent(plante2label)
+                    .addComponent(plante2)
                     .addGroup(plantesPanelLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(plantesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,13 +137,13 @@ public class MainWindow extends javax.swing.JFrame {
             plantesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(plantesPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(plante1label)
+                .addComponent(plante1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(p1cacaiRB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(p1TomatitoRB)
+                .addComponent(p1tomatitoRB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(plante2label)
+                .addComponent(plante2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(p2cacaiRB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -360,7 +344,7 @@ public class MainWindow extends javax.swing.JFrame {
         );
         finalPanelLayout.setVerticalGroup(
             finalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 339, Short.MAX_VALUE)
+            .addGap(0, 337, Short.MAX_VALUE)
         );
 
         vuePanel.add(finalPanel);
@@ -376,7 +360,7 @@ public class MainWindow extends javax.swing.JFrame {
         );
         semainePanelLayout.setVerticalGroup(
             semainePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 114, Short.MAX_VALUE)
+            .addGap(0, 112, Short.MAX_VALUE)
         );
 
         vuePanel.add(semainePanel);
@@ -385,28 +369,10 @@ public class MainWindow extends javax.swing.JFrame {
 
         getContentPane().add(splitter, java.awt.BorderLayout.CENTER);
 
+        bindingGroup.bind();
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void p1cacaiRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1cacaiRBActionPerformed
-        // TODO add your handling code here:
-}//GEN-LAST:event_p1cacaiRBActionPerformed
-
-    private void p1TomatitoRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p1TomatitoRBActionPerformed
-        // TODO add your handling code here:
-}//GEN-LAST:event_p1TomatitoRBActionPerformed
-
-    private void p2cacaiRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2cacaiRBActionPerformed
-        // TODO add your handling code here:
-}//GEN-LAST:event_p2cacaiRBActionPerformed
-
-    private void p2tomatitoRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_p2tomatitoRBActionPerformed
-        // TODO add your handling code here:
-}//GEN-LAST:event_p2tomatitoRBActionPerformed
-
-    private void plante1labelStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_plante1labelStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_plante1labelStateChanged
 
     /**
     * @param args the command line arguments
@@ -434,14 +400,14 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel joursArrosageLabel;
     private javax.swing.JSlider joursArrosageSlider;
     private javax.swing.JRadioButton obscuriteRB;
-    private javax.swing.JRadioButton p1TomatitoRB;
     private javax.swing.JRadioButton p1cacaiRB;
+    private javax.swing.JRadioButton p1tomatitoRB;
     private javax.swing.JRadioButton p2cacaiRB;
     private javax.swing.JRadioButton p2tomatitoRB;
+    private javax.swing.JCheckBox plante1;
     private javax.swing.ButtonGroup plante1group;
-    private javax.swing.JCheckBox plante1label;
+    private javax.swing.JCheckBox plante2;
     private javax.swing.ButtonGroup plante2group;
-    private javax.swing.JCheckBox plante2label;
     private javax.swing.JPanel plantesPanel;
     private javax.swing.JTabbedPane prefsPanels;
     private javax.swing.JLabel quantiteEauLabel;
@@ -452,6 +418,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JSlider temperatureSlider;
     private javax.swing.JPanel terrePanel;
     private javax.swing.JPanel vuePanel;
+    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 
 }
