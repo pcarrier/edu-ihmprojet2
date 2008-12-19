@@ -6,6 +6,7 @@ public class Plante {
     private Boolean germee = false;
 
     private Boolean vivante = true;
+    
 
     private int taille = 0;
 
@@ -31,6 +32,10 @@ public class Plante {
     }
 
     public void setVivante (Boolean val) {
+    }
+
+    public Fruit getFruit() throws Exception{
+        throw new Exception("No implemented method.");
     }
 
 }
