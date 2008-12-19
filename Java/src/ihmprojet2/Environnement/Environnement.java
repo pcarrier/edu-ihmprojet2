@@ -15,7 +15,9 @@ public class Environnement {
     public static final String PROP_QUALITECROISSANCE = "qualiteCroissance";
 
     public Environnement() {
-       
+       terre = new Terre();
+       climat=new Climat();
+       eau = new Eau();
     }
 
     public Climat getClimat() {
@@ -61,7 +63,6 @@ public class Environnement {
 
     public void updateQualiteCroissance() {
         updateTauxArrosage();
-        updateQualiteCroissance();
         updateQualiteEnvironnement();
         setQualiteCroissance(qualiteArrosage * qualiteEnvironnement);
     }
@@ -133,6 +134,7 @@ public class Environnement {
         }
 
         public void setEngrais(Boolean val) {
+            engrais=val;
         }
 
     }
@@ -159,6 +161,7 @@ public class Environnement {
                 case DIRECTE:
                     lumiere=val;
                     updateQualiteCroissance();
+                    break;
                 default:
                     throw new Exception("La valeur "+val+" n'est pas un degres " +
                             "de lumière valide.");
@@ -178,7 +181,6 @@ public class Environnement {
                         " entre 0 et 30 degres Celcius");
             }else{
             temperature=val;
-            updateQualiteCroissance();
             }
         }
     }
@@ -227,6 +229,7 @@ public class Environnement {
                 case DURE:
                 case TRES_DURE:
                     durete=d;
+                    break;
                 default:
                     throw new Exception("La dureté doit etre unee dureté valide");
             }
@@ -240,7 +243,11 @@ public class Environnement {
             return nbjourArrosage;
         }
 
-        public void setNbjourArrosage(int val) {
+        public void setNbjourArrosage(int val) throws Exception{
+            if((val <0)|| val >7){
+            throw new Exception("Le jour de la semaine doit etre compris entre " +
+                    "1 et 7");
+            }
             this.nbjourArrosage = val;
         }
     }
