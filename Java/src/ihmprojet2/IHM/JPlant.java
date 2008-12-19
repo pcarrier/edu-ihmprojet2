@@ -30,21 +30,90 @@ public class JPlant extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        etatPlante = new javax.swing.JLabel();
+        etatFruit = new javax.swing.JLabel();
+        fluitLabel = new javax.swing.JLabel();
+        planteLabel = new javax.swing.JLabel();
+        images = new javax.swing.JPanel();
+        imagePlante = new java.awt.Label();
+        jLabel1 = new javax.swing.JLabel();
+
+        setLayout(new java.awt.GridBagLayout());
+
+        etatPlante.setFont(etatPlante.getFont().deriveFont(etatPlante.getFont().getStyle() | java.awt.Font.BOLD, etatPlante.getFont().getSize()+20));
+        etatPlante.setText("20cm");
+        etatPlante.setName("etatPlante"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        add(etatPlante, gridBagConstraints);
+
+        etatFruit.setFont(etatFruit.getFont().deriveFont(etatFruit.getFont().getStyle() | java.awt.Font.BOLD, etatFruit.getFont().getSize()+20));
+        etatFruit.setText("acidulé");
+        etatFruit.setName("etatFruit"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        add(etatFruit, gridBagConstraints);
+
+        fluitLabel.setFont(fluitLabel.getFont().deriveFont(fluitLabel.getFont().getSize()+10f));
+        fluitLabel.setText("Fruit");
+        fluitLabel.setName("fluitLabel"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        add(fluitLabel, gridBagConstraints);
+
+        planteLabel.setFont(planteLabel.getFont().deriveFont(planteLabel.getFont().getSize()+10f));
+        planteLabel.setText("Plante");
+        planteLabel.setName("planteLabel"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        add(planteLabel, gridBagConstraints);
+
+        images.setName("images"); // NOI18N
+        images.setLayout(new java.awt.GridBagLayout());
+
+        imagePlante.setName("imagePlante"); // NOI18N
+        imagePlante.setText("tmpPlante");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 2;
+        images.add(imagePlante, gridBagConstraints);
+
+        jLabel1.setText("jLabel1");
+        jLabel1.setName("jLabel1"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
+        images.add(jLabel1, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        add(images, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel etatFruit;
+    private javax.swing.JLabel etatPlante;
+    private javax.swing.JLabel fluitLabel;
+    private java.awt.Label imagePlante;
+    private javax.swing.JPanel images;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel planteLabel;
     // End of variables declaration//GEN-END:variables
 
 }
