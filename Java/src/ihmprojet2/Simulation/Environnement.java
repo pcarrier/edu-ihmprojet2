@@ -1,4 +1,4 @@
-package ihmprojet2.Environnement;
+package ihmprojet2.Simulation;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;

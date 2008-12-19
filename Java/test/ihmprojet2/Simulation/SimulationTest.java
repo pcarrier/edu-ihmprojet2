@@ -3,11 +3,13 @@
  * and open the template in the editor.
  */
 
-package ihmprojet2.Environnement;
+package ihmprojet2.Simulation;
 
-import ihmprojet2.Environnement.Environnement.Climat;
-import ihmprojet2.Environnement.Environnement.Eau;
-import ihmprojet2.Environnement.Environnement.Terre;
+import ihmprojet2.Simulation.DegresLumiere;
+import ihmprojet2.Simulation.Durete;
+import ihmprojet2.Simulation.Environnement.Climat;
+import ihmprojet2.Simulation.Environnement.Eau;
+import ihmprojet2.Simulation.Environnement.Terre;
 import java.beans.PropertyChangeListener;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -18,13 +20,13 @@ import static org.junit.Assert.*;
  *
  * @author jc
  */
-public class EnvironnementTest {
+public class SimulationTest {
 
-    public EnvironnementTest() {
+    public SimulationTest() {
     }
 
       public static void main(String args[]) {
-      org.junit.runner.JUnitCore.main("test.EnvironnementTest");
+      org.junit.runner.JUnitCore.main("test.SimulationTest");
     }
 
 

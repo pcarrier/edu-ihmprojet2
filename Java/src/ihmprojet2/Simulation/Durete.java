@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package ihmprojet2.Environnement;
+package ihmprojet2.Simulation;
 
 /**
  *

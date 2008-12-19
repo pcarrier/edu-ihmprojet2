@@ -1,4 +1,4 @@
-package ihmprojet2.Environnement;
+package ihmprojet2.Simulation;
 
 
 // <editor-fold defaultstate="collapsed" desc=" UML Marker "> 
