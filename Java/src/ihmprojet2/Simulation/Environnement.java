@@ -1,4 +1,4 @@
-package ihmprojet2.Environnement;
+package ihmprojet2.Simulation;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -8,9 +8,9 @@ public class Environnement {
     private Eau eau;
     private Terre terre;
     private Climat climat;
-    private double tauxArrosage;
-    private double qualiteArrosage;
-    private double qualiteEnvironnement;
+    private double tauxArrosage =0;
+    private double qualiteArrosage=0;
+    private double qualiteEnvironnement=0;
     private double qualiteCroissance = 0;
     public static final String PROP_QUALITECROISSANCE = "qualiteCroissance";
 
@@ -52,17 +52,18 @@ public class Environnement {
         if (terre.hasEngrais()) {
             qualiteArrosage = tauxArrosage / eau.getDurete().value();
         } else {
-            qualiteArrosage = tauxArrosage * 0.9 / eau.getDurete().value();
+            qualiteArrosage = tauxArrosage / 0.9 * eau.getDurete().value();
         }
         
     }
 
     public void updateQualiteEnvironnement() {
-        qualiteEnvironnement = climat.getTemperature() * climat.getLumiere().value();
+        qualiteEnvironnement = climat.getTemperature()/ climat.getLumiere().value();
     }
 
     public void updateQualiteCroissance() {
         updateTauxArrosage();
+        updateQualiteArrosage();
         updateQualiteEnvironnement();
         setQualiteCroissance(qualiteArrosage * qualiteEnvironnement);
     }
@@ -122,6 +123,7 @@ public class Environnement {
                     "et 500 grammes.");
             }
             this.quantite = quantite;
+            updateTauxArrosage();
         }
 
         public Terre() {
@@ -135,6 +137,7 @@ public class Environnement {
 
         public void setEngrais(Boolean val) {
             engrais=val;
+            updateTauxArrosage();
         }
 
     }
@@ -154,19 +157,8 @@ public class Environnement {
         }
 
         public void setLumiere(DegresLumiere val) throws Exception {
-            switch(val){
-
-                case OBSCURITE:
-                case INDIRECTE :
-                case DIRECTE:
                     lumiere=val;
-                    updateQualiteCroissance();
-                    break;
-                default:
-                    throw new Exception("La valeur "+val+" n'est pas un degres " +
-                            "de lumière valide.");
-            }
-            
+                    updateQualiteCroissance();   
             
         }
 
@@ -181,6 +173,7 @@ public class Environnement {
                         " entre 0 et 30 degres Celcius");
             }else{
             temperature=val;
+            updateQualiteEnvironnement();
             }
         }
     }
@@ -218,21 +211,14 @@ public class Environnement {
         }
 
         public Durete getDurete() {
+
             return durete;
+            
         }
 
         public void setDurete(Durete d) throws Exception {
-            switch(d){
-                case TRES_DOUCE:
-                case DOUCE:
-                case MOY_DURE:
-                case DURE:
-                case TRES_DURE:
                     durete=d;
-                    break;
-                default:
-                    throw new Exception("La dureté doit etre unee dureté valide");
-            }
+                    updateQualiteArrosage();
             
         }
 
@@ -249,6 +235,7 @@ public class Environnement {
                     "1 et 7");
             }
             this.nbjourArrosage = val;
+            updateTauxArrosage();
         }
     }
 }
