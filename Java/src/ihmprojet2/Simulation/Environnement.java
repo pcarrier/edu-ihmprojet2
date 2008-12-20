@@ -15,13 +15,13 @@ public class Environnement {
     private double qualiteCroissance = 0;
     public static final String PROP_QUALITECROISSANCE = "qualiteCroissance";
     private TypePlante otherPlante;
-    private PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
+    PropertyChangeSupport propertyChangeSupport;
 
     public Environnement() {
         terre = new Terre();
         climat = new Climat();
         eau = new Eau();
-
+        propertyChangeSupport = new PropertyChangeSupport(this);
     }
 
     public void setAutreplante(TypePlante p) {
@@ -105,7 +105,7 @@ public class Environnement {
      *
      * @param listener
      */
-    public void addPropertyChangeListener(PropertyChangeListener listener) {
+    public synchronized void addPropertyChangeListener(PropertyChangeListener listener) {
         propertyChangeSupport.addPropertyChangeListener(listener);
     }
 
@@ -114,7 +114,7 @@ public class Environnement {
      *
      * @param listener
      */
-    public void removePropertyChangeListener(PropertyChangeListener listener) {
+    public synchronized void removePropertyChangeListener(PropertyChangeListener listener) {
         propertyChangeSupport.removePropertyChangeListener(listener);
     }
 

@@ -17,6 +17,11 @@ public class Simulation implements PropertyChangeListener, Serializable {
     private Plante[] etatsPlante2;
     public static final String PROP_ETATSPLANTE2 = "etatsPlante2";
 
+    public Simulation() {
+        environnement = new Environnement();
+        environnement.addPropertyChangeListener(this);
+    }
+
     public TypePlante getPlante1() {
         return plante1;
     }
@@ -53,7 +58,7 @@ public class Simulation implements PropertyChangeListener, Serializable {
      * @return the value of etatsPlante1
      */
     public Plante[] getEtatsPlante1() {
-        return etatsPlante1;   
+        return etatsPlante1;
     }
 
     /**
@@ -73,7 +78,7 @@ public class Simulation implements PropertyChangeListener, Serializable {
      *
      * @param listener
      */
-    public void addPropertyChangeListener(PropertyChangeListener listener) {
+    public synchronized void addPropertyChangeListener(PropertyChangeListener listener) {
         propertyChangeSupport.addPropertyChangeListener(listener);
     }
 
@@ -82,15 +87,10 @@ public class Simulation implements PropertyChangeListener, Serializable {
      *
      * @param listener
      */
-    public void removePropertyChangeListener(PropertyChangeListener listener) {
+    public synchronized void removePropertyChangeListener(PropertyChangeListener listener) {
         propertyChangeSupport.removePropertyChangeListener(listener);
     }
     private Environnement environnement;
-
-    public Simulation() {
-        environnement = new Environnement();
-        environnement.addPropertyChangeListener(this);
-    }
 
     public void setPlante1(TypePlante plante) {
         plante1 = plante;
@@ -157,7 +157,7 @@ public class Simulation implements PropertyChangeListener, Serializable {
         setEtatsPlante2(retour);
     }
 
-    public void propertyChange(PropertyChangeEvent evt) {
+    public synchronized void propertyChange(PropertyChangeEvent evt) {
         System.out.println("SIMULATION PROPERTYCHANGE");
         updateEtatsPlante1();
         updateEtatsPlante2();
