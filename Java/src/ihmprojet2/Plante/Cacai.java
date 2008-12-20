@@ -10,31 +10,35 @@ public class Cacai extends Plante implements PropertyChangeListener {
     private Fruit fruit=null;
     
     public static void updateEtats() throws Exception{
-         DegresLumiere vraieLumiere=Environnement.getInstance().getClimat().getLumiere();
+         DegresLumiere vraieLumiere=Tomatito.environnement.getClimat().getLumiere();
          //Si on a tomatito comme voisin
-        if(Environnement.getInstance().containsTomatito()){
-            Environnement.getInstance().getClimat().reduitLumiere();
-            Environnement.getInstance().updateQualiteCroissance();
+        if(Cacai.environnement.containsTomatito()){
+            Cacai.environnement.getClimat().reduitLumiere();
+            Cacai.environnement.updateQualiteCroissance();
         }
 
-        etats.add(jour1());
-        etats.add(jour2());
-        etats.add(jour3());
-        etats.add(jour4());
-        etats.add(jour5());
-        etats.add(jour6());
-        etats.add(jour7());
+        etats[0]=jour1();
+        etats[1]=jour2();
+        etats[2]=jour3();
+        etats[3]=jour4();
+        etats[4]=jour5();
+        etats[5]=jour6();
+        etats[6]=jour7();
 
 
-         if(Environnement.getInstance().containsTomatito()){
-             Environnement.getInstance().getClimat().setVraieLumiere(vraieLumiere);
+         if(Tomatito.environnement.containsTomatito()){
+             Tomatito.environnement.getClimat().setVraieLumiere(vraieLumiere);
          }
     }
 
+    public static Plante[] getEtats() throws Exception{
+        Cacai.updateEtats();
+        return etats;
+    }
     private static Cacai jour1()
    {
         Cacai p = new Cacai();
-        double qtCroiss = Environnement.getInstance().getQualiteCroissance();
+        double qtCroiss = Tomatito.environnement.getQualiteCroissance();
         if(qtCroiss>35){
             p.setGermee(true);
         }
@@ -45,7 +49,7 @@ public class Cacai extends Plante implements PropertyChangeListener {
     private static Cacai jour2()
    {
         Cacai p = new Cacai();
-        double qtCroiss = Environnement.getInstance().getQualiteCroissance();
+        double qtCroiss = Tomatito.environnement.getQualiteCroissance();
         if(qtCroiss>20){
             p.setGermee(true);
         }
@@ -58,7 +62,7 @@ public class Cacai extends Plante implements PropertyChangeListener {
     private static Cacai jour3()
    {
         Cacai p = new Cacai();
-        double qtCroiss = Environnement.getInstance().getQualiteCroissance();
+        double qtCroiss = Tomatito.environnement.getQualiteCroissance();
         if(qtCroiss>20){
             p.setGermee(true);
         }
@@ -71,7 +75,7 @@ public class Cacai extends Plante implements PropertyChangeListener {
      private static Cacai jour4() throws Exception
    {
         Cacai p = new Cacai();
-        double qtCroiss =Environnement.getInstance().getQualiteCroissance();
+        double qtCroiss =Tomatito.environnement.getQualiteCroissance();
         if(qtCroiss>20){
             p.setGermee(true);
             p.setTaille(0.5);
@@ -89,7 +93,7 @@ public class Cacai extends Plante implements PropertyChangeListener {
        private static Cacai jour5() throws Exception
    {
         Cacai p = new Cacai();
-        double qtCroiss = Environnement.getInstance().getQualiteCroissance();
+        double qtCroiss = Tomatito.environnement.getQualiteCroissance();
         if((qtCroiss>20)&&(qtCroiss>35)){
             p.setGermee(true);
             p.setTaille(1);
@@ -109,7 +113,7 @@ public class Cacai extends Plante implements PropertyChangeListener {
         private static Cacai jour6() throws Exception
    {
         Cacai p = new Cacai();
-        double qtCroiss = Environnement.getInstance().getQualiteCroissance();
+        double qtCroiss = Tomatito.environnement.getQualiteCroissance();
         if((qtCroiss>20)&&(qtCroiss>35)){
             p.setGermee(true);
             p.setTaille(2);
@@ -134,7 +138,7 @@ public class Cacai extends Plante implements PropertyChangeListener {
   private static Cacai jour7() throws Exception
    {
         Cacai p = new Cacai();
-        double qtCroiss = Environnement.getInstance().getQualiteCroissance();
+        double qtCroiss = Tomatito.environnement.getQualiteCroissance();
         if((qtCroiss>20)&&(qtCroiss>35)){
             p.setGermee(true);
             p.setTaille(2.5);
@@ -154,6 +158,7 @@ public class Cacai extends Plante implements PropertyChangeListener {
         return p;
     }
 
+  
     @Override
     public void propertyChange(java.beans.PropertyChangeEvent evt){
         try{
@@ -205,15 +210,22 @@ public class Cacai extends Plante implements PropertyChangeListener {
 
         }
 
+         public String getDescription() {
+            String retour;
+
+            retour=""+Gout.getGoutName(gout)+"\n"+diametre+"mm";
+            return retour;
+        }
+
+         /*
          @Override
          public java.util.Hashtable getInfos(){
                 java.util.Hashtable retour = new java.util.Hashtable();
                 retour.put("GOUT", this.gout);
                 retour.put("DIAM", ""+this.diametre);
-                //retour.put("couleur", ""+null);
 
              return retour;
-        }
+        }*/
     }
 
   
