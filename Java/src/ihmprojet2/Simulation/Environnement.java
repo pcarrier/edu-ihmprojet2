@@ -134,7 +134,7 @@ public class Environnement {
                         "et 500 grammes.");
             }
             this.quantite = quantite;
-            updateTauxArrosage();
+            updateQualiteArrosage();
         }
 
         public Terre() {
@@ -146,7 +146,7 @@ public class Environnement {
 
         public void setEngrais(Boolean val) {
             engrais = val;
-            updateTauxArrosage();
+            updateQualiteCroissance();
         }
     }
 
@@ -185,7 +185,7 @@ public class Environnement {
                         " entre 0 et 30 degres Celcius");
             } else {
                 temperature = val;
-                updateQualiteEnvironnement();
+                updateQualiteCroissance();
             }
         }
 
@@ -222,7 +222,6 @@ public class Environnement {
             }
             this.quantite = quantite;
             updateQualiteCroissance();
-             throw new Exception("Geoffroy :)");
         }
 
         public Durete getDurete() {
@@ -233,7 +232,7 @@ public class Environnement {
 
         public void setDurete(Durete d) throws Exception {
             durete = d;
-            updateQualiteArrosage();
+            updateQualiteCroissance();
 
         }
 
@@ -247,7 +246,7 @@ public class Environnement {
                         "1 et 7");
             }
             this.nbjourArrosage = val;
-            updateTauxArrosage();
+            updateQualiteArrosage();
         }
     }
 }
