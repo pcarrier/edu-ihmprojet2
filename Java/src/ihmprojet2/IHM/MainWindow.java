@@ -588,7 +588,7 @@ public class MainWindow extends javax.swing.JFrame {
         } else {
             Plante[] plantes = simulation1.getEtatsPlante1();
             for (int i = 0; i < plantes.length; i++) {
-                System.out.println(plantes[i].getDescription());
+                System.out.println(((Tomatito)plantes[i]).getDescription());
 //                jplants1[i].setPlanteText(plantes[i].getDescription());
 //                try {
 //                    System.out.println(plantes[i].getFruit().getDescription());
@@ -659,40 +659,43 @@ public class MainWindow extends javax.swing.JFrame {
             try {
                 simulation1.getEnvironnment().getClimat().setLumiere(DegresLumiere.OBSCURITE);
             } catch (Exception ex) {
-                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "hamster", ex);
             }
         } else if (directRB.isSelected()) {
             try {
                 simulation1.getEnvironnment().getClimat().setLumiere(DegresLumiere.DIRECTE);
             } catch (Exception ex) {
-                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "vache", ex);
             }
         } else {
             try {
                 simulation1.getEnvironnment().getClimat().setLumiere(DegresLumiere.INDIRECTE);
             } catch (Exception ex) {
-                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "mouton", ex);
             }
         }
     }//GEN-LAST:event_lumiereChanged
 
     private void temperatureChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_temperatureChanged
+        System.out.println("Temperature changee interface");
         try {
             simulation1.getEnvironnment().getClimat().setTemperature(temperatureSlider.getValue());
         } catch (Exception ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "burp", ex);
         }
     }//GEN-LAST:event_temperatureChanged
 
     private void engraisChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_engraisChanged
+        System.out.println(engraisCB.isSelected());
         simulation1.getEnvironnment().getTerre().setEngrais(engraisCB.isSelected());
     }//GEN-LAST:event_engraisChanged
 
     private void quantiteTerreChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_quantiteTerreChanged
         try {
+            System.out.println(quantiteTerreSlider.getValue());
             simulation1.getEnvironnment().getTerre().setQuantite(quantiteTerreSlider.getValue());
         } catch (Exception ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "ha", ex);
         }
     }//GEN-LAST:event_quantiteTerreChanged
 
@@ -700,15 +703,16 @@ public class MainWindow extends javax.swing.JFrame {
         try {
             simulation1.getEnvironnment().getEau().setNbjourArrosage(joursArrosageSlider.getValue());
         } catch (Exception ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "ho", ex);
         }
     }//GEN-LAST:event_joursArrosageChanged
 
     private void quantiteEauChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_quantiteEauChanged
         try {
+            System.out.println(quantiteEauSlider.getValue());
             simulation1.getEnvironnment().getEau().setQuantite(quantiteEauSlider.getValue());
         } catch (Exception ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "hi", ex);
         }
     }//GEN-LAST:event_quantiteEauChanged
 
@@ -719,35 +723,35 @@ public class MainWindow extends javax.swing.JFrame {
                 try {
                     simulation1.getEnvironnment().getEau().setDurete(Durete.TRES_DOUCE);
                 } catch (Exception ex) {
-                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "he", ex);
                 }
                 break;
             case 2:
                 try {
                     simulation1.getEnvironnment().getEau().setDurete(Durete.DOUCE);
                 } catch (Exception ex) {
-                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "hu", ex);
                 }
                 break;
             case 3:
                 try {
                     simulation1.getEnvironnment().getEau().setDurete(Durete.MOY_DURE);
                 } catch (Exception ex) {
-                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "tsss", ex);
                 }
                 break;
             case 4:
                 try {
                     simulation1.getEnvironnment().getEau().setDurete(Durete.DURE);
                 } catch (Exception ex) {
-                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "grrr", ex);
                 }
                 break;
             case 5:
                 try {
                     simulation1.getEnvironnment().getEau().setDurete(Durete.TRES_DURE);
                 } catch (Exception ex) {
-                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "argl", ex);
                 }
                 break;
         }

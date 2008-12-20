@@ -77,7 +77,6 @@ public class Environnement {
         updateQualiteArrosage();
         updateQualiteEnvironnement();
         setQualiteCroissance(qualiteArrosage * qualiteEnvironnement);
-        System.out.println("environnement : qualite croissance mise a jour");
     }
 
     /**
