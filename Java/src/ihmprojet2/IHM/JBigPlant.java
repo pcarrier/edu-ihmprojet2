@@ -13,72 +13,97 @@ public class JBigPlant extends javax.swing.JPanel implements JPlant {
 
         imagePlante = new javax.swing.JLabel();
         imageFruit = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
         planteLabel = new javax.swing.JLabel();
-        fluitLabel = new javax.swing.JLabel();
+        fruitLabel = new javax.swing.JLabel();
         etatFruit = new javax.swing.JLabel();
         etatPlante = new javax.swing.JLabel();
+        lumiereLabel = new javax.swing.JLabel();
+        etatLumiere = new javax.swing.JLabel();
 
-        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.X_AXIS));
+        setLayout(new java.awt.GridBagLayout());
 
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance().getContext().getResourceMap(JBigPlant.class);
         imagePlante.setIcon(resourceMap.getIcon("ICON_TOMATITO_MORTE")); // NOI18N
         imagePlante.setName("imagePlante"); // NOI18N
-        add(imagePlante);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 7;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 20);
+        add(imagePlante, gridBagConstraints);
 
         imageFruit.setIcon(resourceMap.getIcon("ICON_SANS_FRUIT")); // NOI18N
         imageFruit.setName("imageFruit"); // NOI18N
-        add(imageFruit);
-
-        jPanel1.setName("jPanel1"); // NOI18N
-        jPanel1.setLayout(new java.awt.GridBagLayout());
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 7;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 20);
+        add(imageFruit, gridBagConstraints);
 
         planteLabel.setFont(planteLabel.getFont().deriveFont(planteLabel.getFont().getSize()+10f));
         planteLabel.setText("Plante");
         planteLabel.setName("planteLabel"); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        jPanel1.add(planteLabel, gridBagConstraints);
+        add(planteLabel, gridBagConstraints);
 
-        fluitLabel.setFont(fluitLabel.getFont().deriveFont(fluitLabel.getFont().getSize()+10f));
-        fluitLabel.setText("Fruit");
-        fluitLabel.setName("fluitLabel"); // NOI18N
+        fruitLabel.setFont(fruitLabel.getFont().deriveFont(fruitLabel.getFont().getSize()+10f));
+        fruitLabel.setText("Fruit");
+        fruitLabel.setName("fruitLabel"); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        jPanel1.add(fluitLabel, gridBagConstraints);
+        add(fruitLabel, gridBagConstraints);
 
         etatFruit.setFont(etatFruit.getFont().deriveFont(etatFruit.getFont().getStyle() | java.awt.Font.BOLD, etatFruit.getFont().getSize()+15));
-        etatFruit.setText("texte fruit");
+        etatFruit.setText("fruit");
         etatFruit.setName("etatFruit"); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        jPanel1.add(etatFruit, gridBagConstraints);
+        add(etatFruit, gridBagConstraints);
 
         etatPlante.setFont(etatPlante.getFont().deriveFont(etatPlante.getFont().getStyle() | java.awt.Font.BOLD, etatPlante.getFont().getSize()+15));
-        etatPlante.setText("texte plante");
+        etatPlante.setText("plante");
         etatPlante.setName("etatPlante"); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        jPanel1.add(etatPlante, gridBagConstraints);
+        add(etatPlante, gridBagConstraints);
 
-        add(jPanel1);
+        lumiereLabel.setFont(lumiereLabel.getFont().deriveFont(lumiereLabel.getFont().getSize()+10f));
+        lumiereLabel.setText("Lumière");
+        lumiereLabel.setName("lumiereLabel"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        add(lumiereLabel, gridBagConstraints);
+
+        etatLumiere.setFont(etatLumiere.getFont().deriveFont(etatLumiere.getFont().getStyle() | java.awt.Font.BOLD, etatLumiere.getFont().getSize()+15));
+        etatLumiere.setText("lumière");
+        etatLumiere.setName("etatLumiere"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        add(etatLumiere, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel etatFruit;
+    private javax.swing.JLabel etatLumiere;
     private javax.swing.JLabel etatPlante;
-    private javax.swing.JLabel fluitLabel;
+    private javax.swing.JLabel fruitLabel;
     private javax.swing.JLabel imageFruit;
     private javax.swing.JLabel imagePlante;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lumiereLabel;
     private javax.swing.JLabel planteLabel;
     // End of variables declaration//GEN-END:variables
 
@@ -96,6 +121,14 @@ public class JBigPlant extends javax.swing.JPanel implements JPlant {
 
     public void setFruitText(String PlanteText) {
         etatFruit.setText(PlanteText);
+    }
+
+    public String getLumiereText() {
+        return etatLumiere.getText();
+    }
+
+    public void setLumiereText(String LumiereText) {
+        etatLumiere.setText(LumiereText);
     }
 
     public void setFruitIcon(Icon icon) {
@@ -125,6 +158,9 @@ public class JBigPlant extends javax.swing.JPanel implements JPlant {
     public void setPlanteIcon(Icon icon) {
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance().getContext().getResourceMap(JBigPlant.class);
         switch (icon) {
+            case SANS_PLANTE:
+                imageFruit.setIcon(resourceMap.getIcon("ICON_SANS_PLANTE"));
+                break;
             case GRAINE:
                 imageFruit.setIcon(resourceMap.getIcon("ICON_GRAINE"));
                 break;

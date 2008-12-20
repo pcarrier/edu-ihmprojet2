@@ -17,6 +17,7 @@ public interface JPlant {
     public void setFruitIcon(Icon icon);
     public void setPlanteIcon(Icon icon);
     public enum Icon {
+        SANS_PLANTE,
         GRAINE,
         CACAI_MORTE,
         CACAI_VIVANTE,
