@@ -62,8 +62,24 @@ public class MainWindow extends javax.swing.JFrame {
         quantiteEauSlider = new javax.swing.JSlider();
         dureteSlider = new javax.swing.JSlider();
         vuePanel = new javax.swing.JPanel();
-        finalPanel = new javax.swing.JPanel();
-        semainePanel = new javax.swing.JPanel();
+        jourPanel = new javax.swing.JPanel();
+        semainePanels = new javax.swing.JTabbedPane();
+        plante1panel = new javax.swing.JPanel();
+        jPlant1 = new ihmprojet2.IHM.JPlant();
+        jPlant2 = new ihmprojet2.IHM.JPlant();
+        jPlant3 = new ihmprojet2.IHM.JPlant();
+        jPlant4 = new ihmprojet2.IHM.JPlant();
+        jPlant5 = new ihmprojet2.IHM.JPlant();
+        jPlant6 = new ihmprojet2.IHM.JPlant();
+        jPlant7 = new ihmprojet2.IHM.JPlant();
+        plante2panel = new javax.swing.JPanel();
+        jPlant8 = new ihmprojet2.IHM.JPlant();
+        jPlant9 = new ihmprojet2.IHM.JPlant();
+        jPlant10 = new ihmprojet2.IHM.JPlant();
+        jPlant11 = new ihmprojet2.IHM.JPlant();
+        jPlant12 = new ihmprojet2.IHM.JPlant();
+        jPlant13 = new ihmprojet2.IHM.JPlant();
+        jPlant14 = new ihmprojet2.IHM.JPlant();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -131,7 +147,7 @@ public class MainWindow extends javax.swing.JFrame {
                         .addGroup(plantesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(p2tomatitoRB)
                             .addComponent(p2cacaiRB))))
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         plantesPanelLayout.setVerticalGroup(
             plantesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,7 +164,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(p2cacaiRB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(p2tomatitoRB)
-                .addContainerGap(309, Short.MAX_VALUE))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Plantes", plantesPanel);
@@ -191,7 +207,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(indirectRB)
                     .addComponent(directRB)
                     .addComponent(temperatureLabel)
-                    .addComponent(temperatureSlider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
+                    .addComponent(temperatureSlider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE))
                 .addContainerGap())
         );
         climatPanelLayout.setVerticalGroup(
@@ -206,7 +222,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(temperatureLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(temperatureSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(317, Short.MAX_VALUE))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Climat", climatPanel);
@@ -236,7 +252,7 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(terrePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(terrePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSlider3, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                    .addComponent(jSlider3, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
                     .addComponent(jCheckBox1)
                     .addComponent(jLabel2))
                 .addContainerGap())
@@ -249,7 +265,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSlider3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(369, Short.MAX_VALUE))
+                .addContainerGap(233, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Terre", terrePanel);
@@ -300,12 +316,12 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(eauPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(eauPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(joursArrosageSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                    .addComponent(joursArrosageSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
                     .addComponent(joursArrosageLabel)
                     .addComponent(quantiteEauLabel)
                     .addComponent(dureteLabel)
-                    .addComponent(dureteSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                    .addComponent(quantiteEauSlider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
+                    .addComponent(dureteSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
+                    .addComponent(quantiteEauSlider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE))
                 .addContainerGap())
         );
         eauPanelLayout.setVerticalGroup(
@@ -323,7 +339,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(dureteLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dureteSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(219, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Eau", eauPanel);
@@ -333,37 +349,74 @@ public class MainWindow extends javax.swing.JFrame {
         vuePanel.setName("vuePanel"); // NOI18N
         vuePanel.setLayout(new javax.swing.BoxLayout(vuePanel, javax.swing.BoxLayout.Y_AXIS));
 
-        finalPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Après une semaine"));
-        finalPanel.setName("finalPanel"); // NOI18N
+        jourPanel.setName("jourPanel"); // NOI18N
 
-        javax.swing.GroupLayout finalPanelLayout = new javax.swing.GroupLayout(finalPanel);
-        finalPanel.setLayout(finalPanelLayout);
-        finalPanelLayout.setHorizontalGroup(
-            finalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 487, Short.MAX_VALUE)
+        javax.swing.GroupLayout jourPanelLayout = new javax.swing.GroupLayout(jourPanel);
+        jourPanel.setLayout(jourPanelLayout);
+        jourPanelLayout.setHorizontalGroup(
+            jourPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 492, Short.MAX_VALUE)
         );
-        finalPanelLayout.setVerticalGroup(
-            finalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 337, Short.MAX_VALUE)
-        );
-
-        vuePanel.add(finalPanel);
-
-        semainePanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Jour par jour"));
-        semainePanel.setName("semainePanel"); // NOI18N
-
-        javax.swing.GroupLayout semainePanelLayout = new javax.swing.GroupLayout(semainePanel);
-        semainePanel.setLayout(semainePanelLayout);
-        semainePanelLayout.setHorizontalGroup(
-            semainePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 487, Short.MAX_VALUE)
-        );
-        semainePanelLayout.setVerticalGroup(
-            semainePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 112, Short.MAX_VALUE)
+        jourPanelLayout.setVerticalGroup(
+            jourPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 162, Short.MAX_VALUE)
         );
 
-        vuePanel.add(semainePanel);
+        vuePanel.add(jourPanel);
+
+        semainePanels.setName("semainePanels"); // NOI18N
+
+        plante1panel.setName("plante1panel"); // NOI18N
+
+        jPlant1.setName("jPlant1"); // NOI18N
+        plante1panel.add(jPlant1);
+
+        jPlant2.setName("jPlant2"); // NOI18N
+        plante1panel.add(jPlant2);
+
+        jPlant3.setName("jPlant3"); // NOI18N
+        plante1panel.add(jPlant3);
+
+        jPlant4.setName("jPlant4"); // NOI18N
+        plante1panel.add(jPlant4);
+
+        jPlant5.setName("jPlant5"); // NOI18N
+        plante1panel.add(jPlant5);
+
+        jPlant6.setName("jPlant6"); // NOI18N
+        plante1panel.add(jPlant6);
+
+        jPlant7.setName("jPlant7"); // NOI18N
+        plante1panel.add(jPlant7);
+
+        semainePanels.addTab("Plante 1", plante1panel);
+
+        plante2panel.setName("plante2panel"); // NOI18N
+
+        jPlant8.setName("jPlant8"); // NOI18N
+        plante2panel.add(jPlant8);
+
+        jPlant9.setName("jPlant9"); // NOI18N
+        plante2panel.add(jPlant9);
+
+        jPlant10.setName("jPlant10"); // NOI18N
+        plante2panel.add(jPlant10);
+
+        jPlant11.setName("jPlant11"); // NOI18N
+        plante2panel.add(jPlant11);
+
+        jPlant12.setName("jPlant12"); // NOI18N
+        plante2panel.add(jPlant12);
+
+        jPlant13.setName("jPlant13"); // NOI18N
+        plante2panel.add(jPlant13);
+
+        jPlant14.setName("jPlant14"); // NOI18N
+        plante2panel.add(jPlant14);
+
+        semainePanels.addTab("Plante 2", plante2panel);
+
+        vuePanel.add(semainePanels);
 
         splitter.setRightComponent(vuePanel);
 
@@ -392,11 +445,25 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel dureteLabel;
     private javax.swing.JSlider dureteSlider;
     private javax.swing.JPanel eauPanel;
-    private javax.swing.JPanel finalPanel;
     private javax.swing.JRadioButton indirectRB;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel2;
+    private ihmprojet2.IHM.JPlant jPlant1;
+    private ihmprojet2.IHM.JPlant jPlant10;
+    private ihmprojet2.IHM.JPlant jPlant11;
+    private ihmprojet2.IHM.JPlant jPlant12;
+    private ihmprojet2.IHM.JPlant jPlant13;
+    private ihmprojet2.IHM.JPlant jPlant14;
+    private ihmprojet2.IHM.JPlant jPlant2;
+    private ihmprojet2.IHM.JPlant jPlant3;
+    private ihmprojet2.IHM.JPlant jPlant4;
+    private ihmprojet2.IHM.JPlant jPlant5;
+    private ihmprojet2.IHM.JPlant jPlant6;
+    private ihmprojet2.IHM.JPlant jPlant7;
+    private ihmprojet2.IHM.JPlant jPlant8;
+    private ihmprojet2.IHM.JPlant jPlant9;
     private javax.swing.JSlider jSlider3;
+    private javax.swing.JPanel jourPanel;
     private javax.swing.JLabel joursArrosageLabel;
     private javax.swing.JSlider joursArrosageSlider;
     private javax.swing.JRadioButton obscuriteRB;
@@ -406,13 +473,15 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JRadioButton p2tomatitoRB;
     private javax.swing.JCheckBox plante1;
     private javax.swing.ButtonGroup plante1group;
+    private javax.swing.JPanel plante1panel;
     private javax.swing.JCheckBox plante2;
     private javax.swing.ButtonGroup plante2group;
+    private javax.swing.JPanel plante2panel;
     private javax.swing.JPanel plantesPanel;
     private javax.swing.JTabbedPane prefsPanels;
     private javax.swing.JLabel quantiteEauLabel;
     private javax.swing.JSlider quantiteEauSlider;
-    private javax.swing.JPanel semainePanel;
+    private javax.swing.JTabbedPane semainePanels;
     private javax.swing.JSplitPane splitter;
     private javax.swing.JLabel temperatureLabel;
     private javax.swing.JSlider temperatureSlider;
