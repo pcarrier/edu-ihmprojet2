@@ -169,10 +169,11 @@ public class Tomatito extends Plante{
         }
 
         public Couleur getCouleur() {
-            return null;
+            return couleur;
         }
 
         public void setCouleur(Couleur val) {
+            couleur=val;
         }
 
         @Override
