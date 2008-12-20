@@ -16,6 +16,12 @@ public class Simulation implements PropertyChangeListener, Serializable {
     private Plante[] etatsPlante1;
     private Plante[] etatsPlante2;
     public static final String PROP_ETATSPLANTE2 = "etatsPlante2";
+    public Environnement environnement;
+
+    public Simulation() {
+        environnement = new Environnement();
+        environnement.addPropertyChangeListener(this);
+    }
 
     public TypePlante getPlante1() {
         return plante1;
@@ -53,7 +59,7 @@ public class Simulation implements PropertyChangeListener, Serializable {
      * @return the value of etatsPlante1
      */
     public Plante[] getEtatsPlante1() {
-        return etatsPlante1;   
+        return etatsPlante1;
     }
 
     /**
@@ -84,12 +90,6 @@ public class Simulation implements PropertyChangeListener, Serializable {
      */
     public void removePropertyChangeListener(PropertyChangeListener listener) {
         propertyChangeSupport.removePropertyChangeListener(listener);
-    }
-    private Environnement environnement;
-
-    public Simulation() {
-        environnement = new Environnement();
-        environnement.addPropertyChangeListener(this);
     }
 
     public void setPlante1(TypePlante plante) {
