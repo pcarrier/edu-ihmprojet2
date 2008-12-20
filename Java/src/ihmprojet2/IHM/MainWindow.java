@@ -1,5 +1,6 @@
 package ihmprojet2.IHM;
 
+import ihmprojet2.IHM.JPlant.SimulIcon;
 import ihmprojet2.Simulation.DegresLumiere;
 import ihmprojet2.Simulation.Durete;
 import ihmprojet2.Simulation.Plante.Plante;
@@ -568,9 +569,8 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_aboutButtonActionPerformed
 
     private void simulation1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_simulation1PropertyChange
-        System.out.println("CHANGEMENT");
-        Plante[] plantes1 = simulation1.getEtatsPlante1();
-        Plante[] plantes2 = simulation1.getEtatsPlante2();
+        System.out.println("Changement recu de la simulation !");
+
         JPlant[] jplants1 = {
             jSmallPlant1,
             jSmallPlant2,
@@ -580,30 +580,49 @@ public class MainWindow extends javax.swing.JFrame {
             jSmallPlant6,
             jSmallPlant7
         };
-        JPlant[] jplants2 = {
-            jSmallPlant8,
-            jSmallPlant9,
-            jSmallPlant10,
-            jSmallPlant11,
-            jSmallPlant12,
-            jSmallPlant13,
-            jSmallPlant14
-        };
-        for (int i = 0; i < plantes1.length; i++) {
-            jplants1[i].setPlanteText(plantes1[i].getDescription());
-            try {
-                System.out.println(plantes1[i].getFruit().getDescription());
-                //jplants1[i].setFruitText(plantes1[i].getFruit().getDescription());
-            } catch (Exception ex) {
-                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if (simulation1.getPlante1() == TypePlante.SANS) {
+            for (int i = 0; i < jplants1.length; i++) {
+                //jplants1[i].setPlanteIcon(SimulIcon.SANS_PLANTE);
+                //jplants1[i].setFruitIcon(SimulIcon.SANS_FRUIT);
             }
-            jplants2[i].setPlanteText(plantes2[i].getDescription());
-            try {
-                //jplants1[i].setFruitText(plantes2[i].getFruit().getDescription());
-            } catch (Exception ex) {
-                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        } else {
+            Plante[] plantes = simulation1.getEtatsPlante1();
+            for (int i = 0; i < plantes.length; i++) {
+                System.out.println(plantes[i].getDescription());
+//                jplants1[i].setPlanteText(plantes[i].getDescription());
+//                try {
+//                    System.out.println(plantes[i].getFruit().getDescription());
+//                    jplants1[i].setFruitText(plantes[i].getFruit().getDescription());
+//                } catch (Exception ex) {
+//                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+//                }
             }
         }
+//        Plante[] plantes2 = simulation1.getEtatsPlante2();
+//        JPlant[] jplants2 = {
+//            jSmallPlant8,
+//            jSmallPlant9,
+//            jSmallPlant10,
+//            jSmallPlant11,
+//            jSmallPlant12,
+//            jSmallPlant13,
+//            jSmallPlant14
+//        };
+//        for (int i = 0; i < plantes1.length; i++) {
+//            jplants1[i].setPlanteText(plantes1[i].getDescription());
+//            try {
+//                System.out.println(plantes1[i].getFruit().getDescription());
+//                jplants1[i].setFruitText(plantes1[i].getFruit().getDescription());
+//            } catch (Exception ex) {
+//                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//            jplants2[i].setPlanteText(plantes2[i].getDescription());
+//            try {
+//                jplants1[i].setFruitText(plantes2[i].getFruit().getDescription());
+//            } catch (Exception ex) {
+//                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }
     }//GEN-LAST:event_simulation1PropertyChange
 
     private void plante1Changed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plante1Changed
@@ -617,6 +636,7 @@ public class MainWindow extends javax.swing.JFrame {
         } else {
             p = TypePlante.SANS;
         }
+        System.out.println("Changement de plante demande");
         simulation1.setPlante1(p);
 }//GEN-LAST:event_plante1Changed
 
@@ -694,41 +714,41 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void dureteChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_dureteChanged
         int val = dureteSlider.getValue();
-        switch(val) {
+        switch (val) {
             case 1:
-        try {
-            simulation1.getEnvironnment().getEau().setDurete(Durete.TRES_DOUCE);
-        } catch (Exception ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        }
+                try {
+                    simulation1.getEnvironnment().getEau().setDurete(Durete.TRES_DOUCE);
+                } catch (Exception ex) {
+                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 break;
             case 2:
-        try {
-            simulation1.getEnvironnment().getEau().setDurete(Durete.DOUCE);
-        } catch (Exception ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        }
+                try {
+                    simulation1.getEnvironnment().getEau().setDurete(Durete.DOUCE);
+                } catch (Exception ex) {
+                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 break;
             case 3:
-        try {
-            simulation1.getEnvironnment().getEau().setDurete(Durete.MOY_DURE);
-        } catch (Exception ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        }
+                try {
+                    simulation1.getEnvironnment().getEau().setDurete(Durete.MOY_DURE);
+                } catch (Exception ex) {
+                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 break;
             case 4:
-        try {
-            simulation1.getEnvironnment().getEau().setDurete(Durete.DURE);
-        } catch (Exception ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        }
+                try {
+                    simulation1.getEnvironnment().getEau().setDurete(Durete.DURE);
+                } catch (Exception ex) {
+                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 break;
             case 5:
-        try {
-            simulation1.getEnvironnment().getEau().setDurete(Durete.TRES_DURE);
-        } catch (Exception ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        }
+                try {
+                    simulation1.getEnvironnment().getEau().setDurete(Durete.TRES_DURE);
+                } catch (Exception ex) {
+                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 break;
         }
     }//GEN-LAST:event_dureteChanged
