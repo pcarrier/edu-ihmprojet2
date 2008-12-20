@@ -57,6 +57,7 @@ public class MainWindow extends javax.swing.JFrame {
         plante2panel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("ihmProjet2"); // NOI18N
 
         splitter.setDividerLocation(200);
         splitter.setName("splitter"); // NOI18N
@@ -66,6 +67,11 @@ public class MainWindow extends javax.swing.JFrame {
 
         aboutButton.setText("À propos");
         aboutButton.setName("aboutButton"); // NOI18N
+        aboutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aboutButtonActionPerformed(evt);
+            }
+        });
         gauche.add(aboutButton, java.awt.BorderLayout.SOUTH);
 
         prefsPanels.setName("prefsPanels"); // NOI18N
@@ -129,7 +135,7 @@ public class MainWindow extends javax.swing.JFrame {
                         .addGroup(plantesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(p2tomatitoRB)
                             .addComponent(p2cacaiRB))))
-                .addContainerGap(295, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
         plantesPanelLayout.setVerticalGroup(
             plantesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,7 +152,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(p2cacaiRB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(p2tomatitoRB)
-                .addContainerGap(282, Short.MAX_VALUE))
+                .addContainerGap(289, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Plantes", plantesPanel);
@@ -189,7 +195,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(indirectRB)
                     .addComponent(directRB)
                     .addComponent(temperatureLabel)
-                    .addComponent(temperatureSlider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE))
+                    .addComponent(temperatureSlider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
                 .addContainerGap())
         );
         climatPanelLayout.setVerticalGroup(
@@ -204,7 +210,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(temperatureLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(temperatureSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(290, Short.MAX_VALUE))
+                .addContainerGap(297, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Climat", climatPanel);
@@ -234,7 +240,7 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(terrePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(terrePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSlider3, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+                    .addComponent(jSlider3, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
                     .addComponent(jCheckBox1)
                     .addComponent(jLabel2))
                 .addContainerGap())
@@ -247,7 +253,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSlider3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(342, Short.MAX_VALUE))
+                .addContainerGap(349, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Terre", terrePanel);
@@ -298,12 +304,12 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(eauPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(eauPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(joursArrosageSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+                    .addComponent(joursArrosageSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
                     .addComponent(joursArrosageLabel)
                     .addComponent(quantiteEauLabel)
                     .addComponent(dureteLabel)
-                    .addComponent(dureteSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
-                    .addComponent(quantiteEauSlider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE))
+                    .addComponent(dureteSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                    .addComponent(quantiteEauSlider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
                 .addContainerGap())
         );
         eauPanelLayout.setVerticalGroup(
@@ -321,7 +327,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(dureteLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dureteSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(192, Short.MAX_VALUE))
+                .addContainerGap(199, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Eau", eauPanel);
@@ -403,6 +409,10 @@ public class MainWindow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void aboutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutButtonActionPerformed
+        CreditsDialog.launch(this, false);
+    }//GEN-LAST:event_aboutButtonActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {

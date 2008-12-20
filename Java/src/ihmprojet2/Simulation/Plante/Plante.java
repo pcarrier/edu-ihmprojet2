@@ -1,5 +1,6 @@
 package ihmprojet2.Simulation.Plante;
 
+import ihmprojet2.Simulation.Environnement;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
@@ -8,15 +9,30 @@ public class Plante extends Object implements PropertyChangeListener {
 
     private Boolean germee = false;
     private Boolean vivante = true;
-    public static ArrayList etats = new ArrayList(7);
-    //protected static Environnement environnement = new Environnement();
+    public static Plante etats[] = new Plante[7];
+    protected static Environnement environnement = new Environnement();
     private double taille = 0;
 
-    public static ArrayList getEtats() throws Exception {
+    public static Plante[] getEtats() throws Exception {
         throw new Exception("Not implemented.");
     }
 
     public Plante() {
+    }
+
+    public String getDescription() {
+        String  retour;
+
+        if( !this.vivante){
+            retour ="Morte";
+        }else{
+         if(taille==0){
+         retour="Germée";
+         }else{
+            retour=taille+"mm";
+         }
+        }
+        return retour;
     }
 
     public Boolean isGermee() {
@@ -43,8 +59,17 @@ public class Plante extends Object implements PropertyChangeListener {
         vivante = val;
     }
 
+
     public Fruit getFruit() throws Exception {
         throw new UnsupportedOperationException("No implemented method.");
+    }
+
+    public static void setEnvironnement(Environnement evt) {
+        environnement = evt;
+    }
+
+    public Environnement  getEnvironnement() {
+        return environnement ;
     }
 
     public void propertyChange(PropertyChangeEvent evt) {
@@ -60,24 +85,5 @@ public class Plante extends Object implements PropertyChangeListener {
 
 
     }
-
-    interface Factory<E> {
-
-        E create();
-    }
-
-    class planteFactory<E> {
-
-        private final Factory<E> factory;
-
-        planteFactory(Factory<E> factory) {
-            this.factory = factory;
-        }
-
-        E createContents() {
-            return factory.create();
-        }
-    }
 }
-
 

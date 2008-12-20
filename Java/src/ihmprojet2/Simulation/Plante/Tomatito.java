@@ -1,129 +1,117 @@
 package ihmprojet2.Simulation.Plante;
 
-import ihmprojet2.Simulation.Environnement;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.util.ArrayList;
+
+import ihmprojet2.Simulation.Plante.Plante;
+public class Tomatito extends Plante{
 
 
-public class Tomatito extends Plante {
     private Fruit fruit;
-   
 
-    public static void updateEtats() throws Exception{
-      
-        
-        etats.add(jour1());
-        etats.add(jour2());
-        etats.add(jour3());
-        etats.add(jour4());
-        etats.add(jour5());
-        etats.add(jour6());
-        etats.add(jour7());
-  
+    public static void updateEtats() throws Exception {
+
+        etats[0] = jour1();
+        etats[1] = jour2();
+        etats[2] = jour3();
+        etats[3] = jour4();
+        etats[4] = jour5();
+        etats[5] = jour6();
+        etats[6] = jour7();
+
     }
 
+    public static Plante[] getEtats() throws Exception {
+        Tomatito.updateEtats();
+        return etats;
 
-   private static Tomatito jour1()
-   {
+    }
+
+    private static Tomatito jour1() {
         Tomatito p = new Tomatito();
-        double qtCroiss = Environnement.getInstance().getQualiteCroissance();
-        if(qtCroiss>30){
+        double qtCroiss = Tomatito.environnement.getQualiteCroissance();
+        if (qtCroiss > 30) {
             p.setGermee(true);
         }
         return p;
     }
 
-
-
-   private static Tomatito jour2()
-   {
+    private static Tomatito jour2() {
         Tomatito p = new Tomatito();
-        double qtCroiss = Environnement.getInstance().getQualiteCroissance();
-        if((qtCroiss>15)&&(qtCroiss<=50)){
+        double qtCroiss = Tomatito.environnement.getQualiteCroissance();
+        if ((qtCroiss > 15) && (qtCroiss <= 50)) {
             p.setGermee(true);
         }
-        if(qtCroiss>50){
+        if (qtCroiss > 50) {
             p.setTaille(1.0);
         }
         return p;
     }
 
-   private static Tomatito jour3()
-   {
+    private static Tomatito jour3() {
         Tomatito p = new Tomatito();
-        double qtCroiss = Environnement.getInstance().getQualiteCroissance();
-        if((qtCroiss>15)&&(qtCroiss<=30)){
+        double qtCroiss = Tomatito.environnement.getQualiteCroissance();
+        if ((qtCroiss > 15) && (qtCroiss <= 30)) {
             p.setGermee(true);
         }
-        if((qtCroiss>30)&&(qtCroiss<=50)){
+        if ((qtCroiss > 30) && (qtCroiss <= 50)) {
             p.setTaille(1);
         }
-        if(qtCroiss>50){
+        if (qtCroiss > 50) {
             p.setTaille(2);
         }
         return p;
     }
 
-
-    private static Tomatito jour4()
-   {
+    private static Tomatito jour4() {
         Tomatito p = new Tomatito();
-        double qtCroiss = Environnement.getInstance().getQualiteCroissance();
-        if((qtCroiss>15)&&(qtCroiss<=30)){
+        double qtCroiss = Tomatito.environnement.getQualiteCroissance();
+        if ((qtCroiss > 15) && (qtCroiss <= 30)) {
             p.setGermee(true);
             p.setTaille(1);
         }
-        if((qtCroiss>30)&&(qtCroiss<=50)){
-           p.setTaille(2);
+        if ((qtCroiss > 30) && (qtCroiss <= 50)) {
+            p.setTaille(2);
         }
-        if(qtCroiss>50){
+        if (qtCroiss > 50) {
             p.setTaille(4);
         }
         return p;
     }
 
-
-
-    private static Tomatito jour5() throws Exception
-   {
+    private static Tomatito jour5() throws Exception {
         Tomatito p = new Tomatito();
-        double qtCroiss = Environnement.getInstance().getQualiteCroissance();
-        if((qtCroiss>15)&&(qtCroiss<=30)){
+        double qtCroiss = Tomatito.environnement.getQualiteCroissance();
+        if ((qtCroiss > 15) && (qtCroiss <= 30)) {
             p.setGermee(true);
             p.setTaille(2);
         }
-        if((qtCroiss>30)&&(qtCroiss<=50)){
-           p.setTaille(3);
-           p.getFruit().setCouleur(Couleur.VERT);
-           p.getFruit().setGout(Gout.ACIDULE);
+        if ((qtCroiss > 30) && (qtCroiss <= 50)) {
+            p.setTaille(3);
+            p.getFruit().setCouleur(Couleur.VERT);
+            p.getFruit().setGout(Gout.ACIDULE);
         }
-        if(qtCroiss>50){
+        if (qtCroiss > 50) {
             p.setTaille(6);
             p.getFruit().setCouleur(Couleur.MARRON);
-           p.getFruit().setGout(Gout.FADE);
+            p.getFruit().setGout(Gout.FADE);
         }
         return p;
     }
 
-
-
-    private static Tomatito jour6() throws Exception
-   {
+    private static Tomatito jour6() throws Exception {
         Tomatito p = new Tomatito();
-        double qtCroiss = Environnement.getInstance().getQualiteCroissance();
-        if((qtCroiss>15)&&(qtCroiss<=30)){
+        double qtCroiss = Tomatito.environnement.getQualiteCroissance();
+        if ((qtCroiss > 15) && (qtCroiss <= 30)) {
             p.setGermee(true);
             p.setTaille(3);
             p.getFruit().setCouleur(Couleur.VERT);
             p.getFruit().setGout(Gout.ACIDULE);
         }
-        if((qtCroiss>30)&&(qtCroiss<=50)){
-           p.setTaille(4);
-           p.getFruit().setCouleur(Couleur.ROUGE);
-           p.getFruit().setGout(Gout.ACIDULE);
+        if ((qtCroiss > 30) && (qtCroiss <= 50)) {
+            p.setTaille(4);
+            p.getFruit().setCouleur(Couleur.ROUGE);
+            p.getFruit().setGout(Gout.ACIDULE);
         }
-        if(qtCroiss>50){
+        if (qtCroiss > 50) {
             p.setVivante(false);
             p.getFruit().setCouleur(Couleur.AUCUNE);
             p.getFruit().setGout(Gout.AUCUN);
@@ -131,22 +119,21 @@ public class Tomatito extends Plante {
         return p;
     }
 
-    private static Tomatito jour7() throws Exception
-   {
+    private static Tomatito jour7() throws Exception {
         Tomatito p = new Tomatito();
-        double qtCroiss = Environnement.getInstance().getQualiteCroissance();
-        if((qtCroiss>15)&&(qtCroiss<=30)){
+        double qtCroiss = Tomatito.environnement.getQualiteCroissance();
+        if ((qtCroiss > 15) && (qtCroiss <= 30)) {
             p.setGermee(true);
             p.setTaille(4);
-           p.getFruit().setCouleur(Couleur.ROUGE);
-           p.getFruit().setGout(Gout.ACIDULE);
+            p.getFruit().setCouleur(Couleur.ROUGE);
+            p.getFruit().setGout(Gout.ACIDULE);
         }
-        if((qtCroiss>30)&&(qtCroiss<=50)){
-           p.setTaille(5);
-           p.getFruit().setCouleur(Couleur.MARRON);
-           p.getFruit().setGout(Gout.FADE);
+        if ((qtCroiss > 30) && (qtCroiss <= 50)) {
+            p.setTaille(5);
+            p.getFruit().setCouleur(Couleur.MARRON);
+            p.getFruit().setGout(Gout.FADE);
         }
-        if(qtCroiss>50){
+        if (qtCroiss > 50) {
             p.setVivante(false);
             p.getFruit().setCouleur(Couleur.AUCUNE);
             p.getFruit().setGout(Gout.AUCUN);
@@ -155,7 +142,7 @@ public class Tomatito extends Plante {
     }
 
     @Override
-    public void propertyChange(java.beans.PropertyChangeEvent evt){
+    public void propertyChange(java.beans.PropertyChangeEvent evt) {
         try {
             Tomatito.updateEtats();
         } catch (Exception e) {
@@ -163,26 +150,29 @@ public class Tomatito extends Plante {
         }
     }
 
-    public Tomatito () {
-        fruit= new Fruit();
+    public Tomatito() {
+        fruit = new Fruit();
     }
+
+
+
     @Override
-    public Fruit getFruit(){
+    public Fruit getFruit() {
         return fruit;
     }
 
     public class Fruit extends ihmprojet2.Simulation.Plante.Fruit {
 
-        private Couleur couleur=Couleur.AUCUNE;
+        private Couleur couleur = Couleur.AUCUNE;
 
-        public Fruit () {
+        public Fruit() {
         }
 
-        public Couleur getCouleur () {
+        public Couleur getCouleur() {
             return null;
         }
 
-        public void setCouleur (Couleur val) {
+        public void setCouleur(Couleur val) {
         }
 
         @Override
@@ -190,7 +180,7 @@ public class Tomatito extends Plante {
             switch (val) {
                 case SUCRE:
                 case AMER:
-                    this.gout=val;
+                    this.gout = val;
                     break;
                 default:
                     throw new Exception("Le gout " + Gout.getGoutName(val) + "n'est " +
@@ -199,15 +189,22 @@ public class Tomatito extends Plante {
 
         }
 
-       @Override
-       public java.util.Hashtable getInfos()
-        {
+        public String getDescription() {
+            String retour;
+
+            retour=""+Couleur.getCouleurName(couleur)+"\n"+Gout.getGoutName(gout);
+            return retour;
+        }
+
+        /*
+        @Override
+        public java.util.Hashtable getInfos() {
             java.util.Hashtable retour = new java.util.Hashtable();
             retour.put("GOUT", this.gout);
             retour.put("COUL", this.couleur);
             return retour;
         }
+         * */
     }
-
 }
 

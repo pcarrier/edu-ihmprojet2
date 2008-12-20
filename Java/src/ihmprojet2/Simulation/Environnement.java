@@ -1,79 +1,38 @@
 package ihmprojet2.Simulation;
 
 
-import ihmprojet2.Simulation.Plante.Plante;
-import ihmprojet2.Simulation.Plante.Tomatito;
+
+import ihmprojet2.Simulation.Simulation.TypePlante;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
-import java.util.ArrayList;
 
 public class Environnement {
 
     private Eau eau;
     private Terre terre;
     private Climat climat;
-    private double tauxArrosage =0;
-    private double qualiteArrosage=0;
-    private double qualiteEnvironnement=0;
+    private double tauxArrosage = 0;
+    private double qualiteArrosage = 0;
+    private double qualiteEnvironnement = 0;
     private double qualiteCroissance = 0;
     public static final String PROP_QUALITECROISSANCE = "qualiteCroissance";
+    private TypePlante otherPlante;
 
-    private ArrayList<Plante> plantes;
-
-    /** L'instance statique */
-    private static Environnement instance;
-
-    public static Environnement getInstance() {
-        if (null == instance) { // Premier appel
-            instance = new Environnement();
-        }
-        return instance;
-    }
-
-    private Environnement() {
-       terre = new Terre();
-       climat=new Climat();
-       eau = new Eau();
-       plantes = new ArrayList();
-    }
-
-    public Boolean containsTomatito()
-    {
-        int i;
-        for(i=0;i<plantes.size();i++ ){
-            if(Tomatito.class.isInstance(plantes.get(i))){
-                return true;
-            }
-        }
-       
-        return false;
+    public Environnement() {
+        terre = new Terre();
+        climat = new Climat();
+        eau = new Eau();
 
     }
 
-    public void addPlante(Plante plante) throws Exception{
-        if(plantes.size()<2){
-            plantes.add(plante);
-        }else{
-            throw new Exception("Seulement deux plantes autorisées");
-        }
-
+    public void setAutreplante(TypePlante p) {
+        otherPlante = p;
     }
 
-    public Plante getPlante(int i){
-        return plantes.get(i);
-    }
-    public void removePlante(int index) throws Exception{
-        System.out.println(plantes.size());
-        plantes.remove(index);
-        System.out.println(plantes.size());
+    public Boolean containsTomatito() {
+        return (otherPlante == TypePlante.TOMATITO);
     }
 
-    public void viderPlantes(){
-        System.out.println(plantes.size());
-        plantes.clear();
-        System.out.println(plantes.size());
-    }
-    
     public Climat getClimat() {
         return climat;
     }
@@ -108,11 +67,11 @@ public class Environnement {
         } else {
             qualiteArrosage = tauxArrosage / 0.9 * eau.getDurete().value();
         }
-        
+
     }
 
     public void updateQualiteEnvironnement() {
-        qualiteEnvironnement = climat.getTemperature()/ climat.getLumiere().value();
+        qualiteEnvironnement = climat.getTemperature() / climat.getLumiere().value();
     }
 
     public void updateQualiteCroissance() {
@@ -163,18 +122,17 @@ public class Environnement {
 
     public class Terre {
 
-        private Boolean engrais=false;
+        private Boolean engrais = false;
         private int quantite = 150;
-
 
         public int getQuantite() {
             return quantite;
         }
 
-        public void setQuantite(int quantite) throws Exception{
-            if((quantite< 100) || (quantite>500)){
-            throw new Exception("La quantité de terre doit etre comprise entre 0 " +
-                    "et 500 grammes.");
+        public void setQuantite(int quantite) throws Exception {
+            if ((quantite < 100) || (quantite > 500)) {
+                throw new Exception("La quantité de terre doit etre comprise entre 0 " +
+                        "et 500 grammes.");
             }
             this.quantite = quantite;
             updateTauxArrosage();
@@ -183,40 +141,36 @@ public class Environnement {
         public Terre() {
         }
 
-        
-
         public Boolean hasEngrais() {
             return engrais;
         }
 
         public void setEngrais(Boolean val) {
-            engrais=val;
+            engrais = val;
             updateTauxArrosage();
         }
-
     }
 
     public class Climat {
 
-        private int temperature=15;
-        private DegresLumiere lumiere=DegresLumiere.DIRECTE;
+        private int temperature = 15;
+        private DegresLumiere lumiere = DegresLumiere.DIRECTE;
 
         public Climat() {
         }
-
-       
 
         public DegresLumiere getLumiere() {
             return lumiere;
         }
 
         public void setLumiere(DegresLumiere val) throws Exception {
-                    lumiere=val;
-                    updateQualiteCroissance();   
-            
+            lumiere = val;
+            updateQualiteCroissance();
+
         }
-        public void reduitLumiere() throws Exception{
-            switch(this.lumiere){
+
+        public void reduitLumiere() throws Exception {
+            switch (this.lumiere) {
                 case DIRECTE:
                     this.setLumiere(DegresLumiere.DIRECTE);
                     break;
@@ -231,28 +185,27 @@ public class Environnement {
             return temperature;
         }
 
-        public void setTemperature(int val) throws Exception{
-            if((val<0) || (val>30))
-            {
+        public void setTemperature(int val) throws Exception {
+            if ((val < 0) || (val > 30)) {
                 throw new Exception("La valeur la temperature doit etre comprise" +
                         " entre 0 et 30 degres Celcius");
-            }else{
-            temperature=val;
-            updateQualiteEnvironnement();
+            } else {
+                temperature = val;
+                updateQualiteEnvironnement();
             }
         }
 
         public void setVraieLumiere(DegresLumiere vraieLumiere) {
-            this.lumiere=vraieLumiere;
-            /*Pas d'update ici*/
+            this.lumiere = vraieLumiere;
+        /*Pas d'update ici*/
         }
     }
 
     public class Eau {
 
-        private int nbjourArrosage=3;
-        private int quantite=0;
-        private Durete durete=Durete.DOUCE;
+        private int nbjourArrosage = 3;
+        private int quantite = 0;
+        private Durete durete = Durete.DOUCE;
 
         /**
          * Get the value of quantite
@@ -268,13 +221,12 @@ public class Environnement {
          *
          * @param quantite new value of quantite
          */
-        public void setQuantite(int quantite) throws Exception{
-            if((quantite<0)|| (quantite>500))
-            {
-            throw new Exception("La quantité d'eau doit etre comprise entre 0 " +
-                    "et 500 ml");
+        public void setQuantite(int quantite) throws Exception {
+            if ((quantite < 0) || (quantite > 500)) {
+                throw new Exception("La quantité d'eau doit etre comprise entre 0 " +
+                        "et 500 ml");
             }
-            this.quantite=quantite;
+            this.quantite = quantite;
         }
 
         public Eau() {
@@ -283,26 +235,23 @@ public class Environnement {
         public Durete getDurete() {
 
             return durete;
-            
+
         }
 
         public void setDurete(Durete d) throws Exception {
-                    durete=d;
-                    updateQualiteArrosage();
-            
+            durete = d;
+            updateQualiteArrosage();
+
         }
-
-        
-
 
         public int getNbjourArrosage() {
             return nbjourArrosage;
         }
 
-        public void setNbjourArrosage(int val) throws Exception{
-            if((val <0)|| val >7){
-            throw new Exception("Le jour de la semaine doit etre compris entre " +
-                    "1 et 7");
+        public void setNbjourArrosage(int val) throws Exception {
+            if ((val < 0) || val > 7) {
+                throw new Exception("Le jour de la semaine doit etre compris entre " +
+                        "1 et 7");
             }
             this.nbjourArrosage = val;
             updateTauxArrosage();
