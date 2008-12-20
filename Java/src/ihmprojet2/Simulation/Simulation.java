@@ -16,6 +16,15 @@ public class Simulation implements PropertyChangeListener, Serializable {
     private Plante[] etatsPlante2;
     public static final String PROP_ETATSPLANTE2 = "etatsPlante2";
 
+
+    public TypePlante getPlannte1(){
+        return plante1;
+    }
+
+    public TypePlante getPlannte2(){
+        return plante2;
+    }
+
     /**
      * Get the value of etatsPlante2
      *
