@@ -1,11 +1,10 @@
 package ihmprojet2.Simulation;
 
-import ihmprojet2.Plante.Plante;
-import ihmprojet2.Plante.Tomatito;
+
+
 import ihmprojet2.Simulation.Simulation.TypePlante;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
-import java.util.ArrayList;
 
 public class Environnement {
 

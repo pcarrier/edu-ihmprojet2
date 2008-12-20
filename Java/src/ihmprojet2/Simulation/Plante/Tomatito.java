@@ -1,11 +1,9 @@
-package ihmprojet2.Plante;
+package ihmprojet2.Simulation.Plante;
 
-import ihmprojet2.Simulation.Environnement;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.util.ArrayList;
 
-public class Tomatito extends Plante {
+import ihmprojet2.Simulation.Plante.Plante;
+public class Tomatito extends Plante{
+
 
     private Fruit fruit;
 
@@ -156,12 +154,14 @@ public class Tomatito extends Plante {
         fruit = new Fruit();
     }
 
+
+
     @Override
     public Fruit getFruit() {
         return fruit;
     }
 
-    public class Fruit extends ihmprojet2.Plante.Fruit {
+    public class Fruit extends ihmprojet2.Simulation.Plante.Fruit {
 
         private Couleur couleur = Couleur.AUCUNE;
 

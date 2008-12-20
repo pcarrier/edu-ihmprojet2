@@ -4,12 +4,14 @@
  */
 package ihmprojet2.Simulation;
 
-import ihmprojet2.Plante.Cacai;
-import ihmprojet2.Plante.Plante;
-import ihmprojet2.Plante.Tomatito;
+
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import ihmprojet2.Simulation.Plante.Cacai;
+import ihmprojet2.Simulation.Plante.Plante;
+import ihmprojet2.Simulation.Plante.Tomatito;
+
 
 /**
  *
@@ -119,7 +121,7 @@ public class Simulation implements PropertyChangeListener {
                 environnment.setAutreplante(plante2);
                 Cacai.setEnvironnement(environnment);
 
-                try {
+               try {
                     retour = Cacai.getEtats();
                 } catch (Exception e) {
                 }

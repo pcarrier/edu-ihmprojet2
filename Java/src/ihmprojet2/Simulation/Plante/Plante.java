@@ -1,6 +1,7 @@
-package ihmprojet2.Plante;
+package ihmprojet2.Simulation.Plante;
 
 import ihmprojet2.Simulation.Environnement;
+import ihmprojet2.Simulation.Plante.Fruit;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
@@ -59,12 +60,17 @@ public class Plante extends Object implements PropertyChangeListener {
         vivante = val;
     }
 
+
     public Fruit getFruit() throws Exception {
         throw new UnsupportedOperationException("No implemented method.");
     }
 
     public static void setEnvironnement(Environnement evt) {
         environnement = evt;
+    }
+
+    public Environnement  getEnvironnement() {
+        return environnement ;
     }
 
     public void propertyChange(PropertyChangeEvent evt) {
