@@ -420,6 +420,7 @@
                         <Property name="paintLabels" type="boolean" value="true"/>
                         <Property name="paintTicks" type="boolean" value="true"/>
                         <Property name="snapToTicks" type="boolean" value="true"/>
+                        <Property name="value" type="int" value="500"/>
                         <Property name="name" type="java.lang.String" value="quantiteTerreSlider" noResource="true"/>
                       </Properties>
                       <Events>
@@ -482,7 +483,6 @@
                       <Properties>
                         <Property name="majorTickSpacing" type="int" value="1"/>
                         <Property name="maximum" type="int" value="7"/>
-                        <Property name="minimum" type="int" value="1"/>
                         <Property name="paintLabels" type="boolean" value="true"/>
                         <Property name="paintTicks" type="boolean" value="true"/>
                         <Property name="snapToTicks" type="boolean" value="true"/>

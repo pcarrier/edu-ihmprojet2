@@ -10,8 +10,8 @@ import java.io.Serializable;
 
 public class Simulation implements PropertyChangeListener, Serializable {
 
-    private TypePlante plante1;
-    private TypePlante plante2;
+    private TypePlante plante1 = TypePlante.SANS;
+    private TypePlante plante2 = TypePlante.SANS;
     private Plante[] etatsPlante1;
     private Plante[] etatsPlante2;
     public static final String PROP_ETATSPLANTE2 = "etatsPlante2";

@@ -1,7 +1,5 @@
 package ihmprojet2.Simulation;
 
-
-
 import ihmprojet2.Simulation.Simulation.TypePlante;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -153,11 +151,8 @@ public class Environnement {
 
     public class Climat {
 
-        private int temperature = 15;
-        private DegresLumiere lumiere = DegresLumiere.DIRECTE;
-
-        public Climat() {
-        }
+        private int temperature = 30;
+        private DegresLumiere lumiere = DegresLumiere.OBSCURITE;
 
         public DegresLumiere getLumiere() {
             return lumiere;
@@ -166,7 +161,6 @@ public class Environnement {
         public void setLumiere(DegresLumiere val) throws Exception {
             lumiere = val;
             updateQualiteCroissance();
-
         }
 
         public void reduitLumiere() throws Exception {
@@ -178,7 +172,6 @@ public class Environnement {
                     this.setLumiere(DegresLumiere.OBSCURITE);
                     break;
             }
-
         }
 
         public int getTemperature() {
@@ -227,9 +220,7 @@ public class Environnement {
                         "et 500 ml");
             }
             this.quantite = quantite;
-        }
-
-        public Eau() {
+            updateQualiteCroissance();
         }
 
         public Durete getDurete() {
@@ -258,4 +249,3 @@ public class Environnement {
         }
     }
 }
-

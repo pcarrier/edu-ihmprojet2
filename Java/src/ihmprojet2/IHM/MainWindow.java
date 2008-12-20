@@ -314,6 +314,7 @@ public class MainWindow extends javax.swing.JFrame {
         quantiteTerreSlider.setPaintLabels(true);
         quantiteTerreSlider.setPaintTicks(true);
         quantiteTerreSlider.setSnapToTicks(true);
+        quantiteTerreSlider.setValue(500);
         quantiteTerreSlider.setName("quantiteTerreSlider"); // NOI18N
         quantiteTerreSlider.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -351,7 +352,6 @@ public class MainWindow extends javax.swing.JFrame {
 
         joursArrosageSlider.setMajorTickSpacing(1);
         joursArrosageSlider.setMaximum(7);
-        joursArrosageSlider.setMinimum(1);
         joursArrosageSlider.setPaintLabels(true);
         joursArrosageSlider.setPaintTicks(true);
         joursArrosageSlider.setSnapToTicks(true);
@@ -592,13 +592,14 @@ public class MainWindow extends javax.swing.JFrame {
         for (int i = 0; i < plantes1.length; i++) {
             jplants1[i].setPlanteText(plantes1[i].getDescription());
             try {
-                jplants1[i].setFruitText(plantes1[i].getFruit().getDescription());
+                System.out.println(plantes1[i].getFruit().getDescription());
+                //jplants1[i].setFruitText(plantes1[i].getFruit().getDescription());
             } catch (Exception ex) {
                 Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
             }
             jplants2[i].setPlanteText(plantes2[i].getDescription());
             try {
-                jplants1[i].setFruitText(plantes2[i].getFruit().getDescription());
+                //jplants1[i].setFruitText(plantes2[i].getFruit().getDescription());
             } catch (Exception ex) {
                 Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
             }
