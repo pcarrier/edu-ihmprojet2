@@ -53,7 +53,7 @@ public class Simulation implements PropertyChangeListener, Serializable {
      * @return the value of etatsPlante1
      */
     public Plante[] getEtatsPlante1() {
-        return etatsPlante1;
+        return etatsPlante1;   
     }
 
     /**
