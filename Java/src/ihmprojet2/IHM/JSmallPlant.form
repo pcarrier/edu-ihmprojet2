@@ -18,12 +18,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="etatPlante">
       <Properties>
-        <Property name="font" type="java.awt.Font" noResource="true" editor="org.netbeans.modules.form.editors2.FontEditor">
-          <FontInfo relative="true">
-            <Font bold="true" component="etatPlante" property="font" relativeSize="true" size="5"/>
-          </FontInfo>
-        </Property>
-        <Property name="text" type="java.lang.String" value="texte plante"/>
+        <Property name="text" type="java.lang.String" value="plante"/>
         <Property name="name" type="java.lang.String" value="etatPlante" noResource="true"/>
       </Properties>
       <Constraints>
@@ -34,12 +29,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="etatFruit">
       <Properties>
-        <Property name="font" type="java.awt.Font" noResource="true" editor="org.netbeans.modules.form.editors2.FontEditor">
-          <FontInfo relative="true">
-            <Font bold="true" component="etatFruit" property="font" relativeSize="true" size="5"/>
-          </FontInfo>
-        </Property>
-        <Property name="text" type="java.lang.String" value="texte fruit"/>
+        <Property name="text" type="java.lang.String" value="fruit"/>
         <Property name="name" type="java.lang.String" value="etatFruit" noResource="true"/>
       </Properties>
       <Constraints>

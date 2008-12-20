@@ -17,9 +17,6 @@ public class Plante extends Object implements PropertyChangeListener {
         throw new Exception("Not implemented.");
     }
 
-    public Plante() {
-    }
-
     public String getDescription() {
         String retour;
 
@@ -81,8 +78,5 @@ public class Plante extends Object implements PropertyChangeListener {
 
     public static void updateEtats() throws Exception {
         throw new UnsupportedOperationException("Not supported yet.");
-
-
     }
 }
-

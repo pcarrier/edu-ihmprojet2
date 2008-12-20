@@ -3,9 +3,15 @@ package ihmprojet2.Simulation.Plante;
 public class Fruit {
 
     protected Gout gout = Gout.AUCUN;
-    protected String goutName;
+    protected double diametre = 0;
+    protected Couleur couleur = Couleur.AUCUNE;
 
-    public Fruit() {
+    public double getDiametre() {
+        return diametre;
+    }
+
+    public void setDiametre(double val) {
+        diametre = val;
     }
 
     public Gout getGout() {
@@ -13,27 +19,20 @@ public class Fruit {
     }
 
     public void setGout(Gout val) throws Exception {
-        Gout newGout = val;
-
-        if (val == null) {
-            newGout = Gout.AUCUN;
-        }
-        gout = newGout;
-
+        gout = val;
     }
 
-    public Couleur getCouleur() throws Exception {
+    public Couleur getCouleur() {
+        return couleur;
+    }
+
+    public void setCouleur(Couleur val) {
+        couleur = val;
+    }
+
+    public String getDescription() throws Exception {
         throw new Exception("Non implemented method.");
     }
-
-    public void setCouleur(Couleur couleur) throws Exception {
-        throw new Exception("Non implemented method.");
-    }
-
-        public String getDescription() throws Exception {
-        throw new Exception("Non implemented method.");
-    }
-
 
     public java.util.Hashtable getInfos() throws Exception {
         throw new Exception("Non implemented method.");

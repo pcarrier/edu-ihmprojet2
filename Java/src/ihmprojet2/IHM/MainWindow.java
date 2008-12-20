@@ -26,7 +26,6 @@ public class MainWindow extends javax.swing.JFrame {
         simulation1 = new ihmprojet2.Simulation.Simulation();
         splitter = new javax.swing.JSplitPane();
         gauche = new javax.swing.JPanel();
-        aboutButton = new javax.swing.JButton();
         prefsPanels = new javax.swing.JTabbedPane();
         plantesPanel = new javax.swing.JPanel();
         p1cacaiRB = new javax.swing.JRadioButton();
@@ -52,10 +51,15 @@ public class MainWindow extends javax.swing.JFrame {
         quantiteEauLabel = new javax.swing.JLabel();
         quantiteEauSlider = new javax.swing.JSlider();
         dureteSlider = new javax.swing.JSlider();
+        bottom = new javax.swing.JPanel();
+        qcroisslabel = new javax.swing.JLabel();
+        qcroissval = new javax.swing.JLabel();
+        aboutButton = new javax.swing.JButton();
         vuePanels = new javax.swing.JTabbedPane();
         plante1scroller = new javax.swing.JScrollPane();
         plante1panel = new javax.swing.JPanel();
         jBigPlant1 = new ihmprojet2.IHM.JBigPlant();
+        plante1semaine = new javax.swing.JPanel();
         jSmallPlant1 = new ihmprojet2.IHM.JSmallPlant();
         jSmallPlant2 = new ihmprojet2.IHM.JSmallPlant();
         jSmallPlant3 = new ihmprojet2.IHM.JSmallPlant();
@@ -88,15 +92,6 @@ public class MainWindow extends javax.swing.JFrame {
 
         gauche.setName("gauche"); // NOI18N
         gauche.setLayout(new java.awt.BorderLayout());
-
-        aboutButton.setText("À propos");
-        aboutButton.setName("aboutButton"); // NOI18N
-        aboutButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aboutButtonActionPerformed(evt);
-            }
-        });
-        gauche.add(aboutButton, java.awt.BorderLayout.SOUTH);
 
         prefsPanels.setName("prefsPanels"); // NOI18N
 
@@ -210,7 +205,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(p2cacaiRB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(p2tomatitoRB)
-                .addContainerGap(310, Short.MAX_VALUE))
+                .addContainerGap(285, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Plantes", plantesPanel);
@@ -289,7 +284,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(temperatureLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(temperatureSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(306, Short.MAX_VALUE))
+                .addContainerGap(281, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Climat", climatPanel);
@@ -344,7 +339,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(quantiteTerreSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(358, Short.MAX_VALUE))
+                .addContainerGap(333, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Terre", terrePanel);
@@ -432,12 +427,56 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(dureteLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dureteSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(220, Short.MAX_VALUE))
+                .addContainerGap(195, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Eau", eauPanel);
 
         gauche.add(prefsPanels, java.awt.BorderLayout.CENTER);
+
+        bottom.setName("bottom"); // NOI18N
+
+        qcroisslabel.setText("Qualité de croissance :");
+        qcroisslabel.setName("qcroisslabel"); // NOI18N
+
+        qcroissval.setText("0");
+        qcroissval.setName("qcroissval"); // NOI18N
+
+        aboutButton.setText("À propos");
+        aboutButton.setName("aboutButton"); // NOI18N
+        aboutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                aboutButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout bottomLayout = new javax.swing.GroupLayout(bottom);
+        bottom.setLayout(bottomLayout);
+        bottomLayout.setHorizontalGroup(
+            bottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bottomLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(bottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(aboutButton, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
+                    .addGroup(bottomLayout.createSequentialGroup()
+                        .addComponent(qcroisslabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                        .addComponent(qcroissval)))
+                .addContainerGap())
+        );
+        bottomLayout.setVerticalGroup(
+            bottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bottomLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(bottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(qcroissval, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(qcroisslabel, javax.swing.GroupLayout.Alignment.LEADING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(aboutButton)
+                .addContainerGap())
+        );
+
+        gauche.add(bottom, java.awt.BorderLayout.SOUTH);
 
         splitter.setLeftComponent(gauche);
 
@@ -446,54 +485,36 @@ public class MainWindow extends javax.swing.JFrame {
         plante1scroller.setName("plante1scroller"); // NOI18N
 
         plante1panel.setName("plante1panel"); // NOI18N
-        plante1panel.setLayout(new java.awt.GridBagLayout());
+        plante1panel.setLayout(new java.awt.BorderLayout(0, 8));
 
         jBigPlant1.setName("jBigPlant1"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridwidth = 7;
-        plante1panel.add(jBigPlant1, gridBagConstraints);
+        plante1panel.add(jBigPlant1, java.awt.BorderLayout.CENTER);
+
+        plante1semaine.setName("plante1semaine"); // NOI18N
+        plante1semaine.setLayout(new java.awt.GridLayout(1, 0, 8, 0));
 
         jSmallPlant1.setName("jSmallPlant1"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        plante1panel.add(jSmallPlant1, gridBagConstraints);
+        plante1semaine.add(jSmallPlant1);
 
         jSmallPlant2.setName("jSmallPlant2"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        plante1panel.add(jSmallPlant2, gridBagConstraints);
+        plante1semaine.add(jSmallPlant2);
 
         jSmallPlant3.setName("jSmallPlant3"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 1;
-        plante1panel.add(jSmallPlant3, gridBagConstraints);
+        plante1semaine.add(jSmallPlant3);
 
         jSmallPlant4.setName("jSmallPlant4"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 1;
-        plante1panel.add(jSmallPlant4, gridBagConstraints);
+        plante1semaine.add(jSmallPlant4);
 
         jSmallPlant5.setName("jSmallPlant5"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 1;
-        plante1panel.add(jSmallPlant5, gridBagConstraints);
+        plante1semaine.add(jSmallPlant5);
 
         jSmallPlant6.setName("jSmallPlant6"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
-        gridBagConstraints.gridy = 1;
-        plante1panel.add(jSmallPlant6, gridBagConstraints);
+        plante1semaine.add(jSmallPlant6);
 
         jSmallPlant7.setName("jSmallPlant7"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 1;
-        plante1panel.add(jSmallPlant7, gridBagConstraints);
+        plante1semaine.add(jSmallPlant7);
+
+        plante1panel.add(plante1semaine, java.awt.BorderLayout.SOUTH);
 
         plante1scroller.setViewportView(plante1panel);
 
@@ -588,14 +609,13 @@ public class MainWindow extends javax.swing.JFrame {
         } else {
             Plante[] plantes = simulation1.getEtatsPlante1();
             for (int i = 0; i < plantes.length; i++) {
-                System.out.println(((Tomatito)plantes[i]).getDescription());
-//                jplants1[i].setPlanteText(plantes[i].getDescription());
-//                try {
-//                    System.out.println(plantes[i].getFruit().getDescription());
-//                    jplants1[i].setFruitText(plantes[i].getFruit().getDescription());
-//                } catch (Exception ex) {
-//                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-//                }
+                jplants1[i].setPlanteText(plantes[i].getDescription());
+                try {
+                    System.out.println(plantes[i].getFruit().getDescription());
+                    jplants1[i].setFruitText(plantes[i].getFruit().getDescription());
+                } catch (Exception ex) {
+                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         }
 //        Plante[] plantes2 = simulation1.getEtatsPlante2();
@@ -636,8 +656,11 @@ public class MainWindow extends javax.swing.JFrame {
         } else {
             p = TypePlante.SANS;
         }
-        System.out.println("Changement de plante demande");
-        simulation1.setPlante1(p);
+        try {
+            simulation1.setPlante1(p);
+        } catch (Exception ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "allocine", ex);
+        }
 }//GEN-LAST:event_plante1Changed
 
     private void plante2Changed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plante2Changed
@@ -651,7 +674,11 @@ public class MainWindow extends javax.swing.JFrame {
         } else {
             p = TypePlante.SANS;
         }
-        simulation1.setPlante2(p);
+        try {
+            simulation1.setPlante2(p);
+        } catch (Exception ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "imdb", ex);
+        }
     }//GEN-LAST:event_plante2Changed
 
     private void lumiereChanged(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lumiereChanged
@@ -701,7 +728,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void joursArrosageChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_joursArrosageChanged
         try {
-            simulation1.getEnvironnment().getEau().setNbjourArrosage(joursArrosageSlider.getValue());
+            simulation1.getEnvironnment().getEau().setNbJoursArrosage(joursArrosageSlider.getValue());
         } catch (Exception ex) {
             Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "ho", ex);
         }
@@ -768,6 +795,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton aboutButton;
+    private javax.swing.JPanel bottom;
     private javax.swing.JPanel climatPanel;
     private javax.swing.ButtonGroup climatRBgroup;
     private javax.swing.JRadioButton directRB;
@@ -805,12 +833,15 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.ButtonGroup plante1group;
     private javax.swing.JPanel plante1panel;
     private javax.swing.JScrollPane plante1scroller;
+    private javax.swing.JPanel plante1semaine;
     private javax.swing.JCheckBox plante2CB;
     private javax.swing.ButtonGroup plante2group;
     private javax.swing.JPanel plante2panel;
     private javax.swing.JScrollPane plante2scroller;
     private javax.swing.JPanel plantesPanel;
     private javax.swing.JTabbedPane prefsPanels;
+    private javax.swing.JLabel qcroisslabel;
+    private javax.swing.JLabel qcroissval;
     private javax.swing.JLabel quantiteEauLabel;
     private javax.swing.JSlider quantiteEauSlider;
     private javax.swing.JSlider quantiteTerreSlider;

@@ -20,8 +20,7 @@ public class JSmallPlant extends javax.swing.JPanel implements JPlant {
 
         setLayout(new java.awt.GridBagLayout());
 
-        etatPlante.setFont(etatPlante.getFont().deriveFont(etatPlante.getFont().getStyle() | java.awt.Font.BOLD, etatPlante.getFont().getSize()+5));
-        etatPlante.setText("texte plante");
+        etatPlante.setText("plante");
         etatPlante.setName("etatPlante"); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -29,8 +28,7 @@ public class JSmallPlant extends javax.swing.JPanel implements JPlant {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         add(etatPlante, gridBagConstraints);
 
-        etatFruit.setFont(etatFruit.getFont().deriveFont(etatFruit.getFont().getStyle() | java.awt.Font.BOLD, etatFruit.getFont().getSize()+5));
-        etatFruit.setText("texte fruit");
+        etatFruit.setText("fruit");
         etatFruit.setName("etatFruit"); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;

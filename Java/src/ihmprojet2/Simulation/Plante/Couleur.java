@@ -14,16 +14,16 @@ AUCUNE,
     String nomCoul = new String();
             switch(c){
                 case AUCUNE:
-                    nomCoul="Aucune";
+                    nomCoul="-";
                     break;
                 case VERT:
-                    nomCoul="Vert";
+                    nomCoul="vert";
                     break;
                 case ROUGE:
-                    nomCoul="Rouge";
+                    nomCoul="rouge";
                     break;
                 case MARRON:
-                    nomCoul="Marron";
+                    nomCoul="marron";
                     break;
             }
              return nomCoul;
