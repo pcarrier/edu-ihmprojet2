@@ -15,6 +15,7 @@ public class Environnement {
     private double qualiteCroissance = 0;
     public static final String PROP_QUALITECROISSANCE = "qualiteCroissance";
     private TypePlante otherPlante;
+    private PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
 
     public Environnement() {
         terre = new Terre();
@@ -98,7 +99,6 @@ public class Environnement {
         this.qualiteCroissance = qualiteCroissance;
         propertyChangeSupport.firePropertyChange(PROP_QUALITECROISSANCE, oldQualiteCroissance, qualiteCroissance);
     }
-    private PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
 
     /**
      * Add PropertyChangeListener.
