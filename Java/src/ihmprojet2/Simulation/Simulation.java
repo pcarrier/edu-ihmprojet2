@@ -94,7 +94,6 @@ public class Simulation implements PropertyChangeListener, Serializable {
 
     public void setPlante1(TypePlante plante) {
         plante1 = plante;
-        System.out.println("Changement de plante obtenu");
         updateEtatsPlante1();
         updateEtatsPlante2();
     }
@@ -159,7 +158,7 @@ public class Simulation implements PropertyChangeListener, Serializable {
     }
 
     public void propertyChange(PropertyChangeEvent evt) {
-        System.out.println("mise a jour de l'etat des plantes");
+        System.out.println("SIMULATION PROPERTYCHANGE");
         updateEtatsPlante1();
         updateEtatsPlante2();
     }
