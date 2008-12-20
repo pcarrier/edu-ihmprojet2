@@ -25,7 +25,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,-123,0,0,2,120"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,-5,0,0,3,-67"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
@@ -90,7 +90,7 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="41" max="32767" attributes="0"/>
+                          <EmptySpace pref="107" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -109,7 +109,7 @@
                           <Component id="p2cacaiRB" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="p2tomatitoRB" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="173" max="32767" attributes="0"/>
+                          <EmptySpace pref="312" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -211,7 +211,7 @@
                               <Component id="indirectRB" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="directRB" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="temperatureLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="temperatureSlider" alignment="1" pref="106" max="32767" attributes="0"/>
+                              <Component id="temperatureSlider" alignment="1" pref="172" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -229,7 +229,7 @@
                           <Component id="temperatureLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="temperatureSlider" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="181" max="32767" attributes="0"/>
+                          <EmptySpace pref="320" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -305,7 +305,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jSlider3" alignment="0" pref="106" max="32767" attributes="0"/>
+                              <Component id="jSlider3" alignment="0" pref="172" max="32767" attributes="0"/>
                               <Component id="jCheckBox1" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -321,7 +321,7 @@
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jSlider3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="233" max="32767" attributes="0"/>
+                          <EmptySpace pref="372" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -376,12 +376,12 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="joursArrosageSlider" alignment="0" pref="106" max="32767" attributes="0"/>
+                              <Component id="joursArrosageSlider" alignment="0" pref="172" max="32767" attributes="0"/>
                               <Component id="joursArrosageLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="quantiteEauLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="dureteLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="dureteSlider" alignment="0" pref="106" max="32767" attributes="0"/>
-                              <Component id="quantiteEauSlider" alignment="1" pref="106" max="32767" attributes="0"/>
+                              <Component id="dureteSlider" alignment="0" pref="172" max="32767" attributes="0"/>
+                              <Component id="quantiteEauSlider" alignment="1" pref="172" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -402,7 +402,7 @@
                           <Component id="dureteLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="dureteSlider" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="83" max="32767" attributes="0"/>
+                          <EmptySpace pref="222" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -479,9 +479,9 @@
             </Container>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="vuePanel">
+        <Container class="javax.swing.JTabbedPane" name="semainePanels">
           <Properties>
-            <Property name="name" type="java.lang.String" value="vuePanel" noResource="true"/>
+            <Property name="name" type="java.lang.String" value="semainePanels" noResource="true"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JSplitPaneSupportLayout$JSplitPaneConstraintsDescription">
@@ -489,136 +489,133 @@
             </Constraint>
           </Constraints>
 
-          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout">
-            <Property name="axis" type="int" value="1"/>
-          </Layout>
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
           <SubComponents>
-            <Container class="javax.swing.JPanel" name="jourPanel">
+            <Container class="javax.swing.JScrollPane" name="jScrollPane2">
               <Properties>
-                <Property name="name" type="java.lang.String" value="jourPanel" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="jScrollPane2" noResource="true"/>
               </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="Plante 1">
+                    <Property name="tabTitle" type="java.lang.String" value="Plante 1"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
 
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="492" max="32767" attributes="0"/>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="162" max="32767" attributes="0"/>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-            </Container>
-            <Container class="javax.swing.JTabbedPane" name="semainePanels">
-              <Properties>
-                <Property name="name" type="java.lang.String" value="semainePanels" noResource="true"/>
-              </Properties>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
                 <Container class="javax.swing.JPanel" name="plante1panel">
                   <Properties>
                     <Property name="name" type="java.lang.String" value="plante1panel" noResource="true"/>
                   </Properties>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Plante 1">
-                        <Property name="tabTitle" type="java.lang.String" value="Plante 1"/>
-                      </JTabbedPaneConstraints>
-                    </Constraint>
-                  </Constraints>
 
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
                   <SubComponents>
-                    <Component class="ihmprojet2.IHM.JPlant" name="jPlant1">
+                    <Component class="ihmprojet2.IHM.JBigPlant" name="jBigPlant1">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="jPlant1" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="jBigPlant1" noResource="true"/>
                       </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+                          <GridBagConstraints gridX="-1" gridY="-1" gridWidth="7" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+                        </Constraint>
+                      </Constraints>
                     </Component>
-                    <Component class="ihmprojet2.IHM.JPlant" name="jPlant2">
+                    <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant1">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="jPlant2" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="jSmallPlant1" noResource="true"/>
                       </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+                          <GridBagConstraints gridX="0" gridY="1" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+                        </Constraint>
+                      </Constraints>
                     </Component>
-                    <Component class="ihmprojet2.IHM.JPlant" name="jPlant3">
+                    <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant2">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="jPlant3" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="jSmallPlant2" noResource="true"/>
                       </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+                          <GridBagConstraints gridX="1" gridY="1" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+                        </Constraint>
+                      </Constraints>
                     </Component>
-                    <Component class="ihmprojet2.IHM.JPlant" name="jPlant4">
+                    <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant3">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="jPlant4" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="jSmallPlant3" noResource="true"/>
                       </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+                          <GridBagConstraints gridX="2" gridY="1" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+                        </Constraint>
+                      </Constraints>
                     </Component>
-                    <Component class="ihmprojet2.IHM.JPlant" name="jPlant5">
+                    <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant4">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="jPlant5" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="jSmallPlant4" noResource="true"/>
                       </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+                          <GridBagConstraints gridX="3" gridY="1" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+                        </Constraint>
+                      </Constraints>
                     </Component>
-                    <Component class="ihmprojet2.IHM.JPlant" name="jPlant6">
+                    <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant5">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="jPlant6" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="jSmallPlant5" noResource="true"/>
                       </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+                          <GridBagConstraints gridX="4" gridY="1" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+                        </Constraint>
+                      </Constraints>
                     </Component>
-                    <Component class="ihmprojet2.IHM.JPlant" name="jPlant7">
+                    <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant6">
                       <Properties>
-                        <Property name="name" type="java.lang.String" value="jPlant7" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="jSmallPlant6" noResource="true"/>
                       </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+                          <GridBagConstraints gridX="5" gridY="1" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant7">
+                      <Properties>
+                        <Property name="name" type="java.lang.String" value="jSmallPlant7" noResource="true"/>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+                          <GridBagConstraints gridX="6" gridY="1" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+                        </Constraint>
+                      </Constraints>
                     </Component>
                   </SubComponents>
                 </Container>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+              <Properties>
+                <Property name="name" type="java.lang.String" value="jScrollPane3" noResource="true"/>
+              </Properties>
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                  <JTabbedPaneConstraints tabName="Plante 2">
+                    <Property name="tabTitle" type="java.lang.String" value="Plante 2"/>
+                  </JTabbedPaneConstraints>
+                </Constraint>
+              </Constraints>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
                 <Container class="javax.swing.JPanel" name="plante2panel">
                   <Properties>
                     <Property name="name" type="java.lang.String" value="plante2panel" noResource="true"/>
                   </Properties>
-                  <Constraints>
-                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Plante 2">
-                        <Property name="tabTitle" type="java.lang.String" value="Plante 2"/>
-                      </JTabbedPaneConstraints>
-                    </Constraint>
-                  </Constraints>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
-                  <SubComponents>
-                    <Component class="ihmprojet2.IHM.JPlant" name="jPlant8">
-                      <Properties>
-                        <Property name="name" type="java.lang.String" value="jPlant8" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="ihmprojet2.IHM.JPlant" name="jPlant9">
-                      <Properties>
-                        <Property name="name" type="java.lang.String" value="jPlant9" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="ihmprojet2.IHM.JPlant" name="jPlant10">
-                      <Properties>
-                        <Property name="name" type="java.lang.String" value="jPlant10" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="ihmprojet2.IHM.JPlant" name="jPlant11">
-                      <Properties>
-                        <Property name="name" type="java.lang.String" value="jPlant11" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="ihmprojet2.IHM.JPlant" name="jPlant12">
-                      <Properties>
-                        <Property name="name" type="java.lang.String" value="jPlant12" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="ihmprojet2.IHM.JPlant" name="jPlant13">
-                      <Properties>
-                        <Property name="name" type="java.lang.String" value="jPlant13" noResource="true"/>
-                      </Properties>
-                    </Component>
-                    <Component class="ihmprojet2.IHM.JPlant" name="jPlant14">
-                      <Properties>
-                        <Property name="name" type="java.lang.String" value="jPlant14" noResource="true"/>
-                      </Properties>
-                    </Component>
-                  </SubComponents>
                 </Container>
               </SubComponents>
             </Container>
