@@ -95,12 +95,14 @@ public class Simulation implements PropertyChangeListener, Serializable {
     public void setPlante1(TypePlante plante) {
         plante1 = plante;
         System.out.println("Changement de plante obtenu");
-        environnement.updateQualiteCroissance();
+        updateEtatsPlante1();
+        updateEtatsPlante2();
     }
 
     public void setPlante2(TypePlante plante) {
         plante2 = plante;
-        environnement.updateQualiteCroissance();
+        updateEtatsPlante1();
+        updateEtatsPlante2();
     }
 
     public Environnement getEnvironnment() {

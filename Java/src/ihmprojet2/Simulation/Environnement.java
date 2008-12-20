@@ -222,6 +222,7 @@ public class Environnement {
             }
             this.quantite = quantite;
             updateQualiteCroissance();
+             throw new Exception("Geoffroy :)");
         }
 
         public Durete getDurete() {
