@@ -1,6 +1,7 @@
 package ihmprojet2.Simulation;
 
 
+import ihmprojet2.Plante.Plante;
 import ihmprojet2.Plante.Tomatito;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -17,7 +18,7 @@ public class Environnement {
     private double qualiteCroissance = 0;
     public static final String PROP_QUALITECROISSANCE = "qualiteCroissance";
 
-    private ArrayList plantes;
+    private ArrayList<Plante> plantes;
 
     /** L'instance statique */
     private static Environnement instance;
@@ -49,7 +50,7 @@ public class Environnement {
 
     }
 
-    public void addPlante(Object plante) throws Exception{
+    public void addPlante(Plante plante) throws Exception{
         if(plantes.size()<2){
             plantes.add(plante);
         }else{
@@ -58,6 +59,9 @@ public class Environnement {
 
     }
 
+    public Plante getPlante(int i){
+        return plantes.get(i);
+    }
     public void removePlante(int index) throws Exception{
         System.out.println(plantes.size());
         plantes.remove(index);

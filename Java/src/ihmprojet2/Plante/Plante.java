@@ -13,6 +13,7 @@ public class Plante extends Object implements PropertyChangeListener{
 
     private Boolean vivante = true;
 
+    public static ArrayList etats=new ArrayList(7);
     //protected static Environnement environnement = new Environnement();
 
     private double taille = 0;
@@ -48,12 +49,34 @@ public class Plante extends Object implements PropertyChangeListener{
     }
 
     public Fruit getFruit() throws Exception{
-        throw new Exception("No implemented method.");
+        throw new UnsupportedOperationException("No implemented method.");
     }
 
     public void propertyChange(PropertyChangeEvent evt){
         throw new UnsupportedOperationException("Not supported yet.");
     }
+    public ArrayList Etats() throws Exception{
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public static void updateEtats() throws Exception{
+        throw new UnsupportedOperationException("Not supported yet.");
+    
 
 }
+
+interface Factory<E> {
+    E create();
+}
+
+class planteFactory<E> {
+    private final Factory<E> factory;
+    planteFactory(Factory<E> factory) {
+        this.factory = factory;
+    }
+    E createContents() {
+        return factory.create();
+    }
+}
+
 

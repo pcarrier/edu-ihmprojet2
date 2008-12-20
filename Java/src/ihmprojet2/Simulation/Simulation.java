@@ -31,9 +31,15 @@ public class Simulation {
 
     }
     
-
     public void addPlante(Plante plante)throws Exception{
         Environnement.getInstance().addPlante(plante);
         Environnement.getInstance().addPropertyChangeListener(plante);
+    }
+
+    public Plante[][] getEtats()
+    {
+        Plante[][] retour = new Plante[2][7];
+        return retour;
+        
     }
 }

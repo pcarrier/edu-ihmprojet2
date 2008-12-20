@@ -8,8 +8,7 @@ import java.util.ArrayList;
 
 public class Cacai extends Plante implements PropertyChangeListener {
     private Fruit fruit=null;
-    public static ArrayList etats=new ArrayList(7);
-
+    
     public static void updateEtats() throws Exception{
          DegresLumiere vraieLumiere=Environnement.getInstance().getClimat().getLumiere();
          //Si on a tomatito comme voisin
@@ -155,6 +154,14 @@ public class Cacai extends Plante implements PropertyChangeListener {
         return p;
     }
 
+    @Override
+    public void propertyChange(java.beans.PropertyChangeEvent evt){
+        try{
+         Cacai.updateEtats();
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+   }
         
         
     public Cacai () {
@@ -209,13 +216,7 @@ public class Cacai extends Plante implements PropertyChangeListener {
         }
     }
 
-    @Override
-    public void propertyChange(java.beans.PropertyChangeEvent evt){
-        try{
-         Cacai.updateEtats();
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-        }
-    }
+  
+ 
 }
 
