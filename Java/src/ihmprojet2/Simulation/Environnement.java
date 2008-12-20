@@ -14,7 +14,7 @@ public class Environnement {
     private double qualiteEnvironnement = 0;
     private double qualiteCroissance = 0;
     public static final String PROP_QUALITECROISSANCE = "qualiteCroissance";
-    private TypePlante otherPlante;
+    private TypePlante otherPlante=TypePlante.SANS;
 
     public Environnement() {
         terre = new Terre();
@@ -48,7 +48,7 @@ public class Environnement {
     }
 
     public Eau getEau() {
-        return eau;
+        return this.eau;
     }
 
     public Terre getTerre() {
@@ -98,6 +98,7 @@ public class Environnement {
         double oldQualiteCroissance = this.qualiteCroissance;
         this.qualiteCroissance = qualiteCroissance;
         propertyChangeSupport.firePropertyChange(PROP_QUALITECROISSANCE, oldQualiteCroissance, qualiteCroissance);
+        System.out.println("Fired!");
     }
     private PropertyChangeSupport propertyChangeSupport = new PropertyChangeSupport(this);
 
@@ -134,7 +135,7 @@ public class Environnement {
                         "et 500 grammes.");
             }
             this.quantite = quantite;
-            updateQualiteArrosage();
+            updateQualiteCroissance();
         }
 
         public Terre() {
@@ -246,7 +247,7 @@ public class Environnement {
                         "1 et 7");
             }
             this.nbjourArrosage = val;
-            updateQualiteArrosage();
+            updateQualiteCroissance();
         }
     }
 }
