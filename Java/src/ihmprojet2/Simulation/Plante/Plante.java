@@ -21,16 +21,16 @@ public class Plante extends Object implements PropertyChangeListener {
     }
 
     public String getDescription() {
-        String  retour;
+        String retour;
 
-        if( !this.vivante){
-            retour ="Morte";
-        }else{
-         if(taille==0){
-         retour="Germée";
-         }else{
-            retour=taille+"mm";
-         }
+        if (!this.vivante) {
+            retour = "Morte";
+        } else {
+            if (taille == 0) {
+                retour = "Germée";
+            } else {
+                retour = taille + "mm";
+            }
         }
         return retour;
     }
@@ -59,7 +59,6 @@ public class Plante extends Object implements PropertyChangeListener {
         vivante = val;
     }
 
-
     public Fruit getFruit() throws Exception {
         throw new UnsupportedOperationException("No implemented method.");
     }
@@ -68,8 +67,8 @@ public class Plante extends Object implements PropertyChangeListener {
         environnement = evt;
     }
 
-    public Environnement  getEnvironnement() {
-        return environnement ;
+    public Environnement getEnvironnement() {
+        return environnement;
     }
 
     public void propertyChange(PropertyChangeEvent evt) {

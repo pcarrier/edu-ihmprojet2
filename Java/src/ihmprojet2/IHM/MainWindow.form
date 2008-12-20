@@ -8,6 +8,11 @@
     </Component>
     <Component class="javax.swing.ButtonGroup" name="plante2group">
     </Component>
+    <Component class="ihmprojet2.Simulation.Simulation" name="simulation1">
+      <Events>
+        <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="simulation1PropertyChange"/>
+      </Events>
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -26,7 +31,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,-5,0,0,3,-67"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,16,0,0,3,-67"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
@@ -136,7 +141,7 @@
                               <Component id="p2cacaiRB" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="p2tomatitoRB" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="289" max="32767" attributes="0"/>
+                              <EmptySpace pref="310" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -154,6 +159,9 @@
                       <BindingProperties>
                         <BindingProperty name="enabled" source="plante1CB" sourcePath="${selected}" target="p1cacaiRB" targetPath="enabled" updateStrategy="0" immediately="false"/>
                       </BindingProperties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="plante1Changed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="p1tomatitoRB">
                       <Properties>
@@ -166,6 +174,9 @@
                       <BindingProperties>
                         <BindingProperty name="enabled" source="plante1CB" sourcePath="${selected}" target="p1tomatitoRB" targetPath="enabled" updateStrategy="0" immediately="false"/>
                       </BindingProperties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="plante1Changed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="p2cacaiRB">
                       <Properties>
@@ -179,6 +190,9 @@
                       <BindingProperties>
                         <BindingProperty name="enabled" source="plante2CB" sourcePath="${selected}" target="p2cacaiRB" targetPath="enabled" updateStrategy="0" immediately="false"/>
                       </BindingProperties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="plante2Changed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="p2tomatitoRB">
                       <Properties>
@@ -191,6 +205,9 @@
                       <BindingProperties>
                         <BindingProperty name="enabled" source="plante2CB" sourcePath="${selected}" target="p2tomatitoRB" targetPath="enabled" updateStrategy="0" immediately="false"/>
                       </BindingProperties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="plante2Changed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JCheckBox" name="plante1CB">
                       <Properties>
@@ -202,6 +219,9 @@
                         <Property name="text" type="java.lang.String" value="Plante 1"/>
                         <Property name="name" type="java.lang.String" value="plante1CB" noResource="true"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="plante1Changed"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JCheckBox" name="plante2CB">
                       <Properties>
@@ -213,6 +233,9 @@
                         <Property name="text" type="java.lang.String" value="Plante 2"/>
                         <Property name="name" type="java.lang.String" value="plante2CB" noResource="true"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="plante2Changed"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -234,11 +257,11 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="temperatureSlider" alignment="0" pref="172" max="32767" attributes="0"/>
                                   <Component id="obscuriteRB" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="indirectRB" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="directRB" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="temperatureLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="temperatureSlider" alignment="1" pref="172" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -246,7 +269,8 @@
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="obscuriteRB" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="indirectRB" min="-2" max="-2" attributes="0"/>
@@ -256,7 +280,7 @@
                               <Component id="temperatureLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="temperatureSlider" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="297" max="32767" attributes="0"/>
+                              <EmptySpace pref="306" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -271,6 +295,9 @@
                         <Property name="text" type="java.lang.String" value="Obscurit&#xe9;"/>
                         <Property name="name" type="java.lang.String" value="obscuriteRB" noResource="true"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lumiereChanged"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="indirectRB">
                       <Properties>
@@ -280,6 +307,9 @@
                         <Property name="text" type="java.lang.String" value="Lumi&#xe8;re indirecte"/>
                         <Property name="name" type="java.lang.String" value="indirectRB" noResource="true"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lumiereChanged"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="directRB">
                       <Properties>
@@ -289,6 +319,9 @@
                         <Property name="text" type="java.lang.String" value="Lumi&#xe8;re directe"/>
                         <Property name="name" type="java.lang.String" value="directRB" noResource="true"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lumiereChanged"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="temperatureLabel">
                       <Properties>
@@ -311,6 +344,9 @@
                         <Property name="snapToTicks" type="boolean" value="true"/>
                         <Property name="name" type="java.lang.String" value="temperatureSlider" noResource="true"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="temperatureChanged"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -332,8 +368,8 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jSlider3" alignment="0" pref="172" max="32767" attributes="0"/>
-                                  <Component id="jCheckBox1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="quantiteTerreSlider" alignment="0" pref="172" max="32767" attributes="0"/>
+                                  <Component id="engraisCB" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -343,12 +379,13 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="engraisCB" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jSlider3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="349" max="32767" attributes="0"/>
+                              <Component id="quantiteTerreSlider" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="358" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -365,13 +402,16 @@
                         <Property name="name" type="java.lang.String" value="jLabel2" noResource="true"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+                    <Component class="javax.swing.JCheckBox" name="engraisCB">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Engrais"/>
-                        <Property name="name" type="java.lang.String" value="jCheckBox1" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="engraisCB" noResource="true"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="engraisChanged"/>
+                      </Events>
                     </Component>
-                    <Component class="javax.swing.JSlider" name="jSlider3">
+                    <Component class="javax.swing.JSlider" name="quantiteTerreSlider">
                       <Properties>
                         <Property name="majorTickSpacing" type="int" value="100"/>
                         <Property name="maximum" type="int" value="500"/>
@@ -380,8 +420,11 @@
                         <Property name="paintLabels" type="boolean" value="true"/>
                         <Property name="paintTicks" type="boolean" value="true"/>
                         <Property name="snapToTicks" type="boolean" value="true"/>
-                        <Property name="name" type="java.lang.String" value="jSlider3" noResource="true"/>
+                        <Property name="name" type="java.lang.String" value="quantiteTerreSlider" noResource="true"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="quantiteTerreChanged"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -400,15 +443,15 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="dureteSlider" alignment="0" pref="172" max="32767" attributes="0"/>
                                   <Component id="joursArrosageSlider" alignment="0" pref="172" max="32767" attributes="0"/>
                                   <Component id="joursArrosageLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="quantiteEauLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="dureteLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="dureteSlider" alignment="0" pref="172" max="32767" attributes="0"/>
                                   <Component id="quantiteEauSlider" alignment="1" pref="172" max="32767" attributes="0"/>
+                                  <Component id="dureteLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -429,7 +472,7 @@
                               <Component id="dureteLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="dureteSlider" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="199" max="32767" attributes="0"/>
+                              <EmptySpace pref="220" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -445,6 +488,9 @@
                         <Property name="snapToTicks" type="boolean" value="true"/>
                         <Property name="name" type="java.lang.String" value="joursArrosageSlider" noResource="true"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="joursArrosageChanged"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="joursArrosageLabel">
                       <Properties>
@@ -490,6 +536,9 @@
                         <Property name="value" type="int" value="500"/>
                         <Property name="name" type="java.lang.String" value="quantiteEauSlider" noResource="true"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="quantiteEauChanged"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JSlider" name="dureteSlider">
                       <Properties>
@@ -501,6 +550,9 @@
                         <Property name="snapToTicks" type="boolean" value="true"/>
                         <Property name="name" type="java.lang.String" value="dureteSlider" noResource="true"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="dureteChanged"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -644,7 +696,89 @@
                     <Property name="name" type="java.lang.String" value="plante2panel" noResource="true"/>
                   </Properties>
 
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
+                  <SubComponents>
+                    <Component class="ihmprojet2.IHM.JBigPlant" name="jBigPlant2">
+                      <Properties>
+                        <Property name="name" type="java.lang.String" value="jBigPlant2" noResource="true"/>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+                          <GridBagConstraints gridX="-1" gridY="-1" gridWidth="7" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant8">
+                      <Properties>
+                        <Property name="name" type="java.lang.String" value="jSmallPlant8" noResource="true"/>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+                          <GridBagConstraints gridX="0" gridY="1" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant9">
+                      <Properties>
+                        <Property name="name" type="java.lang.String" value="jSmallPlant9" noResource="true"/>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+                          <GridBagConstraints gridX="1" gridY="1" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant10">
+                      <Properties>
+                        <Property name="name" type="java.lang.String" value="jSmallPlant10" noResource="true"/>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+                          <GridBagConstraints gridX="2" gridY="1" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant11">
+                      <Properties>
+                        <Property name="name" type="java.lang.String" value="jSmallPlant11" noResource="true"/>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+                          <GridBagConstraints gridX="3" gridY="1" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant12">
+                      <Properties>
+                        <Property name="name" type="java.lang.String" value="jSmallPlant12" noResource="true"/>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+                          <GridBagConstraints gridX="4" gridY="1" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant13">
+                      <Properties>
+                        <Property name="name" type="java.lang.String" value="jSmallPlant13" noResource="true"/>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+                          <GridBagConstraints gridX="5" gridY="1" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                    <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant14">
+                      <Properties>
+                        <Property name="name" type="java.lang.String" value="jSmallPlant14" noResource="true"/>
+                      </Properties>
+                      <Constraints>
+                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
+                          <GridBagConstraints gridX="6" gridY="1" gridWidth="1" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="0" insetsLeft="0" insetsBottom="0" insetsRight="0" anchor="10" weightX="0.0" weightY="0.0"/>
+                        </Constraint>
+                      </Constraints>
+                    </Component>
+                  </SubComponents>
                 </Container>
               </SubComponents>
             </Container>
