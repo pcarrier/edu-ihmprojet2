@@ -5,9 +5,9 @@ public interface JPlant {
     public void setPlanteText(String PlanteText);
     public String getFruitText();
     public void setFruitText(String PlanteText);
-    public void setFruitIcon(Icon icon);
-    public void setPlanteIcon(Icon icon);
-    public enum Icon {
+    public void setFruitIcon(SimulIcon icon);
+    public void setPlanteIcon(SimulIcon icon);
+    public enum SimulIcon {
         SANS_PLANTE,
         GRAINE,
         CACAI_MORTE,

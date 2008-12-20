@@ -10,18 +10,18 @@ import ihmprojet2.Simulation.Plante.Tomatito;
 import java.io.Serializable;
 
 public class Simulation implements PropertyChangeListener, Serializable {
+
     private TypePlante plante1 = TypePlante.SANS;
     private TypePlante plante2 = TypePlante.SANS;
     private Plante[] etatsPlante1;
     private Plante[] etatsPlante2;
     public static final String PROP_ETATSPLANTE2 = "etatsPlante2";
 
-
-    public TypePlante getPlannte1(){
+    public TypePlante getPlante1() {
         return plante1;
     }
 
-    public TypePlante getPlannte2(){
+    public TypePlante getPlante2() {
         return plante2;
     }
 
@@ -39,7 +39,7 @@ public class Simulation implements PropertyChangeListener, Serializable {
      *
      * @param etatsPlante2 new value of etatsPlante2
      */
-    public void setEtatsPlante2(Plante[] etatsPlante2) {
+    private void setEtatsPlante2(Plante[] etatsPlante2) {
         Plante[] oldEtatsPlante2 = this.etatsPlante2;
         this.etatsPlante2 = etatsPlante2;
         propertyChangeSupport.firePropertyChange(PROP_ETATSPLANTE2, oldEtatsPlante2, etatsPlante2);
@@ -61,7 +61,7 @@ public class Simulation implements PropertyChangeListener, Serializable {
      *
      * @param etatsPlante1 new value of etatsPlante1
      */
-    public void setEtatsPlante1(Plante[] etatsPlante1) {
+    private void setEtatsPlante1(Plante[] etatsPlante1) {
         Plante[] oldEtatsPlante1 = this.etatsPlante1;
         this.etatsPlante1 = etatsPlante1;
         propertyChangeSupport.firePropertyChange(PROP_ETATSPLANTE1, oldEtatsPlante1, etatsPlante1);
@@ -85,39 +85,42 @@ public class Simulation implements PropertyChangeListener, Serializable {
     public void removePropertyChangeListener(PropertyChangeListener listener) {
         propertyChangeSupport.removePropertyChangeListener(listener);
     }
-    private Environnement environnment;
+    private Environnement environnement;
 
     public Simulation() {
-        environnment = new Environnement();
-        environnment.addPropertyChangeListener(this);
+        environnement = new Environnement();
+        environnement.addPropertyChangeListener(this);
     }
 
     public void setPlante1(TypePlante plante) {
         plante1 = plante;
+        System.out.println("Changement de plante obtenu");
+        environnement.updateQualiteCroissance();
     }
 
     public void setPlante2(TypePlante plante) {
         plante2 = plante;
+        environnement.updateQualiteCroissance();
     }
 
     public Environnement getEnvironnment() {
-        return environnment;
+        return environnement;
     }
 
     public void updateEtatsPlante1() {
         Plante[] retour = new Plante[7];
         switch (plante1) {
             case TOMATITO:
-                environnment.setAutreplante(plante2);
-                Tomatito.setEnvironnement(environnment);
+                environnement.setAutreplante(plante2);
+                Tomatito.setEnvironnement(environnement);
                 try {
                     retour = Tomatito.getEtats();
                 } catch (Exception e) {
                 }
                 break;
             case CACAI:
-                environnment.setAutreplante(plante2);
-                Cacai.setEnvironnement(environnment);
+                environnement.setAutreplante(plante2);
+                Cacai.setEnvironnement(environnement);
 
                 try {
                     retour = Cacai.getEtats();
@@ -131,17 +134,17 @@ public class Simulation implements PropertyChangeListener, Serializable {
 
     public void updateEtatsPlante2() {
         Plante[] retour = new Plante[7];
-        environnment.setAutreplante(plante1);
+        environnement.setAutreplante(plante1);
         switch (plante2) {
             case TOMATITO:
-                Tomatito.setEnvironnement(environnment);
+                Tomatito.setEnvironnement(environnement);
                 try {
                     retour = Tomatito.getEtats();
                 } catch (Exception e) {
                 }
                 break;
             case CACAI:
-                Cacai.setEnvironnement(environnment);
+                Cacai.setEnvironnement(environnement);
 
                 try {
                     retour = Cacai.getEtats();
@@ -154,6 +157,7 @@ public class Simulation implements PropertyChangeListener, Serializable {
     }
 
     public void propertyChange(PropertyChangeEvent evt) {
+        System.out.println("mise a jour de l'etat des plantes");
         updateEtatsPlante1();
         updateEtatsPlante2();
     }

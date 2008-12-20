@@ -131,7 +131,7 @@ public class JBigPlant extends javax.swing.JPanel implements JPlant {
         etatLumiere.setText(LumiereText);
     }
 
-    public void setFruitIcon(Icon icon) {
+    public void setFruitIcon(SimulIcon icon) {
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance().getContext().getResourceMap(JBigPlant.class);
         switch (icon) {
             case SANS_FRUIT:
@@ -155,7 +155,7 @@ public class JBigPlant extends javax.swing.JPanel implements JPlant {
         }
     }
 
-    public void setPlanteIcon(Icon icon) {
+    public void setPlanteIcon(SimulIcon icon) {
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance().getContext().getResourceMap(JBigPlant.class);
         switch (icon) {
             case SANS_PLANTE:

@@ -97,7 +97,7 @@ public class JSmallPlant extends javax.swing.JPanel implements JPlant {
         etatFruit.setText(PlanteText);
     }
 
-    public void setFruitIcon(Icon icon) {
+    public void setFruitIcon(SimulIcon icon) {
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance().getContext().getResourceMap(JSmallPlant.class);
         switch (icon) {
             case SANS_FRUIT:
@@ -121,7 +121,7 @@ public class JSmallPlant extends javax.swing.JPanel implements JPlant {
         }
     }
 
-    public void setPlanteIcon(Icon icon) {
+    public void setPlanteIcon(SimulIcon icon) {
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance().getContext().getResourceMap(JSmallPlant.class);
         switch (icon) {
             case SANS_PLANTE:
