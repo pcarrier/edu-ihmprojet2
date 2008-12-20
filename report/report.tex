@@ -1,0 +1,100 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[utf8]{inputenc}
+
+% Title Page
+\title{IMH Projet 2 : Compte Rendu}
+\author{Saad-Dupuy Jean-Christophe, Carrier Geoffroy}
+
+
+\begin{document}
+\maketitle
+
+%\begin{abstract}
+%\end{abstract}
+
+
+\section{Présentation du projet}
+Ce projet porte sur le développement d'un programme de simulation du développement plantes dans un environnement défini par l'utilisateur.
+\subsection{Contraintes}
+\subsubsection{Interface}
+L'utilisateur doit être capable d'ajouter une plante ou deux dans ce laboratore virtuel.
+Il doit aussi pouvoir modifier différents paramètres afin de configurer l'environement pour
+la semaine complète et voir les répercusions sur l'évolution de ces \textit{cobayes}.
+dans lequel les plantes vont évoluer.
+
+\subsubsection{Environnement}
+L'environnement dans lequel évoluent les plantes est constitué des facteurs suivants :
+
+\begin{enumerate}
+
+\item \textbf{Plantes}
+
+Nous disposons de  deux types de plantes :
+\begin{enumerate}
+ \item \textbf{Tomatito} 
+\item \textbf{Cacai}
+Ces plantes ont toutes deux trois états :
+	\begin{itemize}
+		\item la graine a germée (oui ou non),
+		\item la plante s'est développée,
+		\item le plante est morte.
+	\end{itemize}
+  
+\end{enumerate}
+
+\item \textbf{Fruit}
+  .
+Nos deux plantes peuvent aussi donner des fruits. Ces derniers sont spécifiques à chaque plantes et ont des propriéte partiulières, décrites ci-dessous :
+\begin{enumerate}
+ \item \textbf{Tomatito}
+	\begin{enumerate}
+		\item Couleur (vert, rouge, marron),
+		\item Gout (amer, fade, acidulé)
+	\end{enumerate}
+ \item \textbf{Cacai}
+		\begin{enumerate}
+			\item Gout (sucre, amer),
+			\item son diammetre
+		\end{enumerate}
+	\end{enumerate}
+
+\item \textbf{La lumière}
+
+L'utilisateur doit pouvoir régler la valeur de la lumière. D'après l'énoncé, les valeurs de celle-ci 
+sont les suivantes :
+	\begin{itemize}
+	\item lumière directe = 1,
+	\item lumière indirecte = 2,
+	\item obscurité = 3.
+	\end{itemize}
+
+  \item \textbf{L'eau}
+
+L'eau quand à elle est déterminée par deux éléments :
+\begin{enumerate}
+	\item Sa quantité, exprimée en centilitres,
+	\item Sa dureté. Les valeurs possibles sonts les suivantes :
+		\begin{itemize}
+			\item Très douce (0),
+			\item Douce (1),
+			\item Moyennement dure (2),
+			\item Dure (3),
+			\item Très dure (4).
+		\end{itemize}
+	\end{enumerate}
+De plus, l'utilisateur doit pouvoir configurer le nombre de jours d'arrosage (de 1 à 7).
+
+ \item \textbf{terre}.
+	\begin{enumerate}
+	\item Sa quantité, exprimée en grammes,
+	\item la présence d'engrais (oui ou non).
+	\end{enumerate}
+\end{enumerate}
+
+
+\section{Conception}
+Nous avons établi 
+\subsection{Diagramme de classe}
+\section{Rendu}
+\end{document}          
