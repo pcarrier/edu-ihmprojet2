@@ -3,7 +3,7 @@
  * and open the template in the editor.
  */
 
-package ihmprojet2.Plante;
+package ihmprojet2.Simulation.Plante;
 
 import java.beans.*;
 
@@ -16,7 +16,7 @@ public class TomatitoBeanInfo extends SimpleBeanInfo {
     // Bean descriptor//GEN-FIRST:BeanDescriptor
     /*lazy BeanDescriptor*/
     private static BeanDescriptor getBdescriptor(){
-        BeanDescriptor beanDescriptor = new BeanDescriptor  ( ihmprojet2.Plante.Tomatito.class , null ); // NOI18N//GEN-HEADEREND:BeanDescriptor
+        BeanDescriptor beanDescriptor = new BeanDescriptor  ( ihmprojet2.Simulation.Plante.Tomatito.class , null ); // NOI18N//GEN-HEADEREND:BeanDescriptor
 
     // Here you can add code for customizing the BeanDescriptor.
 
@@ -34,9 +34,9 @@ public class TomatitoBeanInfo extends SimpleBeanInfo {
         PropertyDescriptor[] properties = new PropertyDescriptor[3];
     
         try {
-            properties[PROPERTY_germee] = new PropertyDescriptor ( "germee", ihmprojet2.Plante.Tomatito.class, null, "setGermee" ); // NOI18N
-            properties[PROPERTY_taille] = new PropertyDescriptor ( "taille", ihmprojet2.Plante.Tomatito.class, "getTaille", "setTaille" ); // NOI18N
-            properties[PROPERTY_vivante] = new PropertyDescriptor ( "vivante", ihmprojet2.Plante.Tomatito.class, null, "setVivante" ); // NOI18N
+            properties[PROPERTY_germee] = new PropertyDescriptor ( "germee", ihmprojet2.Simulation.Plante.Tomatito.class, null, "setGermee" ); // NOI18N
+            properties[PROPERTY_taille] = new PropertyDescriptor ( "taille", ihmprojet2.Simulation.Plante.Tomatito.class, "getTaille", "setTaille" ); // NOI18N
+            properties[PROPERTY_vivante] = new PropertyDescriptor ( "vivante", ihmprojet2.Simulation.Plante.Tomatito.class, null, "setVivante" ); // NOI18N
         }
         catch(IntrospectionException e) {
             e.printStackTrace();
@@ -67,9 +67,9 @@ public class TomatitoBeanInfo extends SimpleBeanInfo {
         MethodDescriptor[] methods = new MethodDescriptor[2];
     
         try {
-            methods[METHOD_isGermee0] = new MethodDescriptor(ihmprojet2.Plante.Plante.class.getMethod("isGermee", new Class[] {})); // NOI18N
+            methods[METHOD_isGermee0] = new MethodDescriptor(ihmprojet2.Simulation.Plante.Plante.class.getMethod("isGermee", new Class[] {})); // NOI18N
             methods[METHOD_isGermee0].setDisplayName ( "" );
-            methods[METHOD_isVivante1] = new MethodDescriptor(ihmprojet2.Plante.Plante.class.getMethod("isVivante", new Class[] {})); // NOI18N
+            methods[METHOD_isVivante1] = new MethodDescriptor(ihmprojet2.Simulation.Plante.Plante.class.getMethod("isVivante", new Class[] {})); // NOI18N
             methods[METHOD_isVivante1].setDisplayName ( "" );
         }
         catch( Exception e) {}//GEN-HEADEREND:Methods

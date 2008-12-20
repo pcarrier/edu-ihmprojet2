@@ -1,4 +1,4 @@
-package ihmprojet2.Plante;
+package ihmprojet2.Simulation.Plante;
 
 
 public enum Gout {

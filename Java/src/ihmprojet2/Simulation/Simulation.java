@@ -5,7 +5,7 @@
 
 package ihmprojet2.Simulation;
 
-import ihmprojet2.Plante.Plante;
+import ihmprojet2.Simulation.Plante.Plante;
 
 
 

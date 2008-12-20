@@ -1,8 +1,8 @@
 package ihmprojet2.Simulation;
 
 
-import ihmprojet2.Plante.Plante;
-import ihmprojet2.Plante.Tomatito;
+import ihmprojet2.Simulation.Plante.Plante;
+import ihmprojet2.Simulation.Plante.Tomatito;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;

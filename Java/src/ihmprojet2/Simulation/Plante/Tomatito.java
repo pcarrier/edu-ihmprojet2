@@ -1,4 +1,4 @@
-package ihmprojet2.Plante;
+package ihmprojet2.Simulation.Plante;
 
 import ihmprojet2.Simulation.Environnement;
 import java.beans.PropertyChangeEvent;
@@ -171,7 +171,7 @@ public class Tomatito extends Plante {
         return fruit;
     }
 
-    public class Fruit extends ihmprojet2.Plante.Fruit {
+    public class Fruit extends ihmprojet2.Simulation.Plante.Fruit {
 
         private Couleur couleur=Couleur.AUCUNE;
 

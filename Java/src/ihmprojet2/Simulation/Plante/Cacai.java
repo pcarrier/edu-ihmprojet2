@@ -1,4 +1,4 @@
-package ihmprojet2.Plante;
+package ihmprojet2.Simulation.Plante;
 
 import ihmprojet2.Simulation.DegresLumiere;
 import ihmprojet2.Simulation.Environnement;
@@ -174,7 +174,7 @@ public class Cacai extends Plante implements PropertyChangeListener {
         return this.fruit;
         }
 
-    public class Fruit extends ihmprojet2.Plante.Fruit {
+    public class Fruit extends ihmprojet2.Simulation.Plante.Fruit {
 
         private double diametre = 0;
 
