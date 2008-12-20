@@ -125,6 +125,9 @@ public class JBigPlant extends javax.swing.JPanel implements JPlant {
     public void setPlanteIcon(Icon icon) {
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance().getContext().getResourceMap(JBigPlant.class);
         switch (icon) {
+            case SANS_PLANTE:
+                imageFruit.setIcon(resourceMap.getIcon("ICON_SANS_PLANTE"));
+                break;
             case GRAINE:
                 imageFruit.setIcon(resourceMap.getIcon("ICON_GRAINE"));
                 break;

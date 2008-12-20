@@ -21,8 +21,8 @@ public class MainWindow extends javax.swing.JFrame {
         p1tomatitoRB = new javax.swing.JRadioButton();
         p2cacaiRB = new javax.swing.JRadioButton();
         p2tomatitoRB = new javax.swing.JRadioButton();
-        plante1 = new javax.swing.JCheckBox();
-        plante2 = new javax.swing.JCheckBox();
+        plante1CB = new javax.swing.JCheckBox();
+        plante2CB = new javax.swing.JCheckBox();
         climatPanel = new javax.swing.JPanel();
         obscuriteRB = new javax.swing.JRadioButton();
         indirectRB = new javax.swing.JRadioButton();
@@ -40,7 +40,6 @@ public class MainWindow extends javax.swing.JFrame {
         quantiteEauLabel = new javax.swing.JLabel();
         quantiteEauSlider = new javax.swing.JSlider();
         dureteSlider = new javax.swing.JSlider();
-        jTextField1 = new javax.swing.JTextField();
         semainePanels = new javax.swing.JTabbedPane();
         jScrollPane2 = new javax.swing.JScrollPane();
         plante1panel = new javax.swing.JPanel();
@@ -69,14 +68,14 @@ public class MainWindow extends javax.swing.JFrame {
         p1cacaiRB.setText("Cacaï");
         p1cacaiRB.setName("p1cacaiRB"); // NOI18N
 
-        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, plante1, org.jdesktop.beansbinding.ELProperty.create("${selected}"), p1cacaiRB, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, plante1CB, org.jdesktop.beansbinding.ELProperty.create("${selected}"), p1cacaiRB, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
         plante1group.add(p1tomatitoRB);
         p1tomatitoRB.setText("Tomatito");
         p1tomatitoRB.setName("p1tomatitoRB"); // NOI18N
 
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, plante1, org.jdesktop.beansbinding.ELProperty.create("${selected}"), p1tomatitoRB, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, plante1CB, org.jdesktop.beansbinding.ELProperty.create("${selected}"), p1tomatitoRB, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
         plante2group.add(p2cacaiRB);
@@ -84,23 +83,23 @@ public class MainWindow extends javax.swing.JFrame {
         p2cacaiRB.setText("Cacaï");
         p2cacaiRB.setName("p2cacaiRB"); // NOI18N
 
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, plante2, org.jdesktop.beansbinding.ELProperty.create("${selected}"), p2cacaiRB, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, plante2CB, org.jdesktop.beansbinding.ELProperty.create("${selected}"), p2cacaiRB, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
         plante2group.add(p2tomatitoRB);
         p2tomatitoRB.setText("Tomatito");
         p2tomatitoRB.setName("p2tomatitoRB"); // NOI18N
 
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, plante2, org.jdesktop.beansbinding.ELProperty.create("${selected}"), p2tomatitoRB, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, plante2CB, org.jdesktop.beansbinding.ELProperty.create("${selected}"), p2tomatitoRB, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
-        plante1.setFont(plante1.getFont().deriveFont(plante1.getFont().getStyle() | java.awt.Font.BOLD));
-        plante1.setText("Plante 1");
-        plante1.setName("plante1"); // NOI18N
+        plante1CB.setFont(plante1CB.getFont().deriveFont(plante1CB.getFont().getStyle() | java.awt.Font.BOLD));
+        plante1CB.setText("Plante 1");
+        plante1CB.setName("plante1CB"); // NOI18N
 
-        plante2.setFont(plante2.getFont().deriveFont(plante2.getFont().getStyle() | java.awt.Font.BOLD));
-        plante2.setText("Plante 2");
-        plante2.setName("plante2"); // NOI18N
+        plante2CB.setFont(plante2CB.getFont().deriveFont(plante2CB.getFont().getStyle() | java.awt.Font.BOLD));
+        plante2CB.setText("Plante 2");
+        plante2CB.setName("plante2CB"); // NOI18N
 
         javax.swing.GroupLayout plantesPanelLayout = new javax.swing.GroupLayout(plantesPanel);
         plantesPanel.setLayout(plantesPanelLayout);
@@ -109,13 +108,13 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(plantesPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(plantesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(plante1)
+                    .addComponent(plante1CB)
                     .addGroup(plantesPanelLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(plantesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(p1tomatitoRB)
                             .addComponent(p1cacaiRB)))
-                    .addComponent(plante2)
+                    .addComponent(plante2CB)
                     .addGroup(plantesPanelLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(plantesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,13 +126,13 @@ public class MainWindow extends javax.swing.JFrame {
             plantesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(plantesPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(plante1)
+                .addComponent(plante1CB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(p1cacaiRB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(p1tomatitoRB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(plante2)
+                .addComponent(plante2CB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(p2cacaiRB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -283,14 +282,6 @@ public class MainWindow extends javax.swing.JFrame {
         dureteSlider.setSnapToTicks(true);
         dureteSlider.setName("dureteSlider"); // NOI18N
 
-        jTextField1.setText("jTextField1");
-        jTextField1.setName("jTextField1"); // NOI18N
-        jTextField1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jTextField1PropertyChange(evt);
-            }
-        });
-
         javax.swing.GroupLayout eauPanelLayout = new javax.swing.GroupLayout(eauPanel);
         eauPanel.setLayout(eauPanelLayout);
         eauPanelLayout.setHorizontalGroup(
@@ -303,8 +294,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(quantiteEauLabel)
                     .addComponent(dureteLabel)
                     .addComponent(dureteSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                    .addComponent(quantiteEauSlider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
+                    .addComponent(quantiteEauSlider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
                 .addContainerGap())
         );
         eauPanelLayout.setVerticalGroup(
@@ -322,9 +312,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(dureteLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dureteSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(183, Short.MAX_VALUE))
+                .addContainerGap(222, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Eau", eauPanel);
@@ -405,12 +393,9 @@ public class MainWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jTextField1PropertyChange
-        jBigPlant1.setPlanteText(jTextField1.getText());
-    }//GEN-LAST:event_jTextField1PropertyChange
-
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
                 new MainWindow().setVisible(true);
             }
@@ -438,7 +423,6 @@ public class MainWindow extends javax.swing.JFrame {
     private ihmprojet2.IHM.JSmallPlant jSmallPlant5;
     private ihmprojet2.IHM.JSmallPlant jSmallPlant6;
     private ihmprojet2.IHM.JSmallPlant jSmallPlant7;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel joursArrosageLabel;
     private javax.swing.JSlider joursArrosageSlider;
     private javax.swing.JRadioButton obscuriteRB;
@@ -446,10 +430,10 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JRadioButton p1tomatitoRB;
     private javax.swing.JRadioButton p2cacaiRB;
     private javax.swing.JRadioButton p2tomatitoRB;
-    private javax.swing.JCheckBox plante1;
+    private javax.swing.JCheckBox plante1CB;
     private javax.swing.ButtonGroup plante1group;
     private javax.swing.JPanel plante1panel;
-    private javax.swing.JCheckBox plante2;
+    private javax.swing.JCheckBox plante2CB;
     private javax.swing.ButtonGroup plante2group;
     private javax.swing.JPanel plante2panel;
     private javax.swing.JPanel plantesPanel;
@@ -463,5 +447,4 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JPanel terrePanel;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
-
 }

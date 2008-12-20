@@ -1,6 +1,5 @@
 package ihmprojet2.Simulation.Plante;
 
-import ihmprojet2.Simulation.Environnement;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
