@@ -1,9 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package ihmprojet2.Simulation;
-
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -11,17 +6,12 @@ import java.beans.PropertyChangeSupport;
 import ihmprojet2.Simulation.Plante.Cacai;
 import ihmprojet2.Simulation.Plante.Plante;
 import ihmprojet2.Simulation.Plante.Tomatito;
+import java.io.Serializable;
 
-
-/**
- *
- * @author jc
- */
-public class Simulation implements PropertyChangeListener {
+public class Simulation implements PropertyChangeListener, Serializable {
 
     private TypePlante plante1;
     private TypePlante plante2;
-
     private Plante[] etatsPlante1;
     private Plante[] etatsPlante2;
     public static final String PROP_ETATSPLANTE2 = "etatsPlante2";
@@ -46,7 +36,6 @@ public class Simulation implements PropertyChangeListener {
         propertyChangeSupport.firePropertyChange(PROP_ETATSPLANTE2, oldEtatsPlante2, etatsPlante2);
     }
     ;
-    
     public static final String PROP_ETATSPLANTE1 = "etatsPlante1";
 
     /**
@@ -87,7 +76,6 @@ public class Simulation implements PropertyChangeListener {
     public void removePropertyChangeListener(PropertyChangeListener listener) {
         propertyChangeSupport.removePropertyChangeListener(listener);
     }
-
     private Environnement environnment;
 
     public Simulation() {
@@ -103,9 +91,10 @@ public class Simulation implements PropertyChangeListener {
         plante2 = plante;
     }
 
-    public Environnement getEnvironnment(){
+    public Environnement getEnvironnment() {
         return environnment;
     }
+
     public void updateEtatsPlante1() {
         Plante[] retour = new Plante[7];
         switch (plante1) {
@@ -121,7 +110,7 @@ public class Simulation implements PropertyChangeListener {
                 environnment.setAutreplante(plante2);
                 Cacai.setEnvironnement(environnment);
 
-               try {
+                try {
                     retour = Cacai.getEtats();
                 } catch (Exception e) {
                 }
@@ -133,7 +122,7 @@ public class Simulation implements PropertyChangeListener {
 
     public void updateEtatsPlante2() {
         Plante[] retour = new Plante[7];
-         environnment.setAutreplante(plante1);
+        environnment.setAutreplante(plante1);
         switch (plante2) {
             case TOMATITO:
                 Tomatito.setEnvironnement(environnment);

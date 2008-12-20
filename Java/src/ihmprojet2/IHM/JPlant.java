@@ -1,14 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package ihmprojet2.IHM;
 
-/**
- *
- * @author gcarrier
- */
 public interface JPlant {
     public String getPlanteText();
     public void setPlanteText(String PlanteText);

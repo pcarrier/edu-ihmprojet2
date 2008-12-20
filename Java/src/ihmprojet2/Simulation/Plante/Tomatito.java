@@ -1,9 +1,6 @@
 package ihmprojet2.Simulation.Plante;
 
-
-import ihmprojet2.Simulation.Plante.Plante;
-public class Tomatito extends Plante{
-
+public class Tomatito extends Plante {
 
     private Fruit fruit;
 
@@ -154,8 +151,6 @@ public class Tomatito extends Plante{
         fruit = new Fruit();
     }
 
-
-
     @Override
     public Fruit getFruit() {
         return fruit;
@@ -192,17 +187,17 @@ public class Tomatito extends Plante{
         public String getDescription() {
             String retour;
 
-            retour=""+Couleur.getCouleurName(couleur)+"\n"+Gout.getGoutName(gout);
+            retour = "" + Couleur.getCouleurName(couleur) + "\n" + Gout.getGoutName(gout);
             return retour;
         }
 
         /*
         @Override
         public java.util.Hashtable getInfos() {
-            java.util.Hashtable retour = new java.util.Hashtable();
-            retour.put("GOUT", this.gout);
-            retour.put("COUL", this.couleur);
-            return retour;
+        java.util.Hashtable retour = new java.util.Hashtable();
+        retour.put("GOUT", this.gout);
+        retour.put("COUL", this.couleur);
+        return retour;
         }
          * */
     }

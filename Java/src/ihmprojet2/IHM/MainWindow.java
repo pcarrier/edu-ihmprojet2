@@ -1,5 +1,13 @@
 package ihmprojet2.IHM;
 
+import ihmprojet2.Simulation.DegresLumiere;
+import ihmprojet2.Simulation.Durete;
+import ihmprojet2.Simulation.Plante.Plante;
+import ihmprojet2.Simulation.Plante.Tomatito;
+import ihmprojet2.Simulation.Simulation.TypePlante;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class MainWindow extends javax.swing.JFrame {
 
     public MainWindow() {
@@ -14,6 +22,7 @@ public class MainWindow extends javax.swing.JFrame {
         climatRBgroup = new javax.swing.ButtonGroup();
         plante1group = new javax.swing.ButtonGroup();
         plante2group = new javax.swing.ButtonGroup();
+        simulation1 = new ihmprojet2.Simulation.Simulation();
         splitter = new javax.swing.JSplitPane();
         gauche = new javax.swing.JPanel();
         aboutButton = new javax.swing.JButton();
@@ -33,8 +42,8 @@ public class MainWindow extends javax.swing.JFrame {
         temperatureSlider = new javax.swing.JSlider();
         terrePanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jSlider3 = new javax.swing.JSlider();
+        engraisCB = new javax.swing.JCheckBox();
+        quantiteTerreSlider = new javax.swing.JSlider();
         eauPanel = new javax.swing.JPanel();
         joursArrosageSlider = new javax.swing.JSlider();
         joursArrosageLabel = new javax.swing.JLabel();
@@ -55,6 +64,20 @@ public class MainWindow extends javax.swing.JFrame {
         jSmallPlant7 = new ihmprojet2.IHM.JSmallPlant();
         plante2scroller = new javax.swing.JScrollPane();
         plante2panel = new javax.swing.JPanel();
+        jBigPlant2 = new ihmprojet2.IHM.JBigPlant();
+        jSmallPlant8 = new ihmprojet2.IHM.JSmallPlant();
+        jSmallPlant9 = new ihmprojet2.IHM.JSmallPlant();
+        jSmallPlant10 = new ihmprojet2.IHM.JSmallPlant();
+        jSmallPlant11 = new ihmprojet2.IHM.JSmallPlant();
+        jSmallPlant12 = new ihmprojet2.IHM.JSmallPlant();
+        jSmallPlant13 = new ihmprojet2.IHM.JSmallPlant();
+        jSmallPlant14 = new ihmprojet2.IHM.JSmallPlant();
+
+        simulation1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                simulation1PropertyChange(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ihmProjet2"); // NOI18N
@@ -86,12 +109,24 @@ public class MainWindow extends javax.swing.JFrame {
         org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, plante1CB, org.jdesktop.beansbinding.ELProperty.create("${selected}"), p1cacaiRB, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
+        p1cacaiRB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                plante1Changed(evt);
+            }
+        });
+
         plante1group.add(p1tomatitoRB);
         p1tomatitoRB.setText("Tomatito");
         p1tomatitoRB.setName("p1tomatitoRB"); // NOI18N
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, plante1CB, org.jdesktop.beansbinding.ELProperty.create("${selected}"), p1tomatitoRB, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
+
+        p1tomatitoRB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                plante1Changed(evt);
+            }
+        });
 
         plante2group.add(p2cacaiRB);
         p2cacaiRB.setSelected(true);
@@ -101,6 +136,12 @@ public class MainWindow extends javax.swing.JFrame {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, plante2CB, org.jdesktop.beansbinding.ELProperty.create("${selected}"), p2cacaiRB, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
+        p2cacaiRB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                plante2Changed(evt);
+            }
+        });
+
         plante2group.add(p2tomatitoRB);
         p2tomatitoRB.setText("Tomatito");
         p2tomatitoRB.setName("p2tomatitoRB"); // NOI18N
@@ -108,13 +149,29 @@ public class MainWindow extends javax.swing.JFrame {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, plante2CB, org.jdesktop.beansbinding.ELProperty.create("${selected}"), p2tomatitoRB, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
         bindingGroup.addBinding(binding);
 
+        p2tomatitoRB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                plante2Changed(evt);
+            }
+        });
+
         plante1CB.setFont(plante1CB.getFont().deriveFont(plante1CB.getFont().getStyle() | java.awt.Font.BOLD));
         plante1CB.setText("Plante 1");
         plante1CB.setName("plante1CB"); // NOI18N
+        plante1CB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                plante1Changed(evt);
+            }
+        });
 
         plante2CB.setFont(plante2CB.getFont().deriveFont(plante2CB.getFont().getStyle() | java.awt.Font.BOLD));
         plante2CB.setText("Plante 2");
         plante2CB.setName("plante2CB"); // NOI18N
+        plante2CB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                plante2Changed(evt);
+            }
+        });
 
         javax.swing.GroupLayout plantesPanelLayout = new javax.swing.GroupLayout(plantesPanel);
         plantesPanel.setLayout(plantesPanelLayout);
@@ -152,7 +209,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(p2cacaiRB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(p2tomatitoRB)
-                .addContainerGap(289, Short.MAX_VALUE))
+                .addContainerGap(310, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Plantes", plantesPanel);
@@ -163,14 +220,29 @@ public class MainWindow extends javax.swing.JFrame {
         obscuriteRB.setSelected(true);
         obscuriteRB.setText("Obscurité");
         obscuriteRB.setName("obscuriteRB"); // NOI18N
+        obscuriteRB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lumiereChanged(evt);
+            }
+        });
 
         climatRBgroup.add(indirectRB);
         indirectRB.setText("Lumière indirecte");
         indirectRB.setName("indirectRB"); // NOI18N
+        indirectRB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lumiereChanged(evt);
+            }
+        });
 
         climatRBgroup.add(directRB);
         directRB.setText("Lumière directe");
         directRB.setName("directRB"); // NOI18N
+        directRB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lumiereChanged(evt);
+            }
+        });
 
         temperatureLabel.setFont(temperatureLabel.getFont().deriveFont(temperatureLabel.getFont().getStyle() | java.awt.Font.BOLD));
         temperatureLabel.setText("Température");
@@ -183,6 +255,11 @@ public class MainWindow extends javax.swing.JFrame {
         temperatureSlider.setPaintTicks(true);
         temperatureSlider.setSnapToTicks(true);
         temperatureSlider.setName("temperatureSlider"); // NOI18N
+        temperatureSlider.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                temperatureChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout climatPanelLayout = new javax.swing.GroupLayout(climatPanel);
         climatPanel.setLayout(climatPanelLayout);
@@ -191,16 +268,17 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(climatPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(climatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(temperatureSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
                     .addComponent(obscuriteRB)
                     .addComponent(indirectRB)
                     .addComponent(directRB)
-                    .addComponent(temperatureLabel)
-                    .addComponent(temperatureSlider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
+                    .addComponent(temperatureLabel))
                 .addContainerGap())
         );
         climatPanelLayout.setVerticalGroup(
             climatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(climatPanelLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(obscuriteRB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(indirectRB)
@@ -210,7 +288,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(temperatureLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(temperatureSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(297, Short.MAX_VALUE))
+                .addContainerGap(306, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Climat", climatPanel);
@@ -221,17 +299,27 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel2.setText("Quantité");
         jLabel2.setName("jLabel2"); // NOI18N
 
-        jCheckBox1.setText("Engrais");
-        jCheckBox1.setName("jCheckBox1"); // NOI18N
+        engraisCB.setText("Engrais");
+        engraisCB.setName("engraisCB"); // NOI18N
+        engraisCB.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                engraisChanged(evt);
+            }
+        });
 
-        jSlider3.setMajorTickSpacing(100);
-        jSlider3.setMaximum(500);
-        jSlider3.setMinimum(100);
-        jSlider3.setMinorTickSpacing(10);
-        jSlider3.setPaintLabels(true);
-        jSlider3.setPaintTicks(true);
-        jSlider3.setSnapToTicks(true);
-        jSlider3.setName("jSlider3"); // NOI18N
+        quantiteTerreSlider.setMajorTickSpacing(100);
+        quantiteTerreSlider.setMaximum(500);
+        quantiteTerreSlider.setMinimum(100);
+        quantiteTerreSlider.setMinorTickSpacing(10);
+        quantiteTerreSlider.setPaintLabels(true);
+        quantiteTerreSlider.setPaintTicks(true);
+        quantiteTerreSlider.setSnapToTicks(true);
+        quantiteTerreSlider.setName("quantiteTerreSlider"); // NOI18N
+        quantiteTerreSlider.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                quantiteTerreChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout terrePanelLayout = new javax.swing.GroupLayout(terrePanel);
         terrePanel.setLayout(terrePanelLayout);
@@ -240,20 +328,21 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(terrePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(terrePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSlider3, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                    .addComponent(jCheckBox1)
+                    .addComponent(quantiteTerreSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                    .addComponent(engraisCB)
                     .addComponent(jLabel2))
                 .addContainerGap())
         );
         terrePanelLayout.setVerticalGroup(
             terrePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(terrePanelLayout.createSequentialGroup()
-                .addComponent(jCheckBox1)
+                .addContainerGap()
+                .addComponent(engraisCB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSlider3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(349, Short.MAX_VALUE))
+                .addComponent(quantiteTerreSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(358, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Terre", terrePanel);
@@ -267,6 +356,11 @@ public class MainWindow extends javax.swing.JFrame {
         joursArrosageSlider.setPaintTicks(true);
         joursArrosageSlider.setSnapToTicks(true);
         joursArrosageSlider.setName("joursArrosageSlider"); // NOI18N
+        joursArrosageSlider.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                joursArrosageChanged(evt);
+            }
+        });
 
         joursArrosageLabel.setFont(joursArrosageLabel.getFont().deriveFont(joursArrosageLabel.getFont().getStyle() | java.awt.Font.BOLD));
         joursArrosageLabel.setText("Jours d'arrosage");
@@ -288,6 +382,11 @@ public class MainWindow extends javax.swing.JFrame {
         quantiteEauSlider.setSnapToTicks(true);
         quantiteEauSlider.setValue(500);
         quantiteEauSlider.setName("quantiteEauSlider"); // NOI18N
+        quantiteEauSlider.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                quantiteEauChanged(evt);
+            }
+        });
 
         dureteSlider.setMajorTickSpacing(1);
         dureteSlider.setMaximum(5);
@@ -296,6 +395,11 @@ public class MainWindow extends javax.swing.JFrame {
         dureteSlider.setPaintTicks(true);
         dureteSlider.setSnapToTicks(true);
         dureteSlider.setName("dureteSlider"); // NOI18N
+        dureteSlider.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                dureteChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout eauPanelLayout = new javax.swing.GroupLayout(eauPanel);
         eauPanel.setLayout(eauPanelLayout);
@@ -304,12 +408,12 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(eauPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(eauPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dureteSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
                     .addComponent(joursArrosageSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
                     .addComponent(joursArrosageLabel)
                     .addComponent(quantiteEauLabel)
-                    .addComponent(dureteLabel)
-                    .addComponent(dureteSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                    .addComponent(quantiteEauSlider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
+                    .addComponent(quantiteEauSlider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                    .addComponent(dureteLabel))
                 .addContainerGap())
         );
         eauPanelLayout.setVerticalGroup(
@@ -327,7 +431,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(dureteLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dureteSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(199, Short.MAX_VALUE))
+                .addContainerGap(220, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Eau", eauPanel);
@@ -397,6 +501,55 @@ public class MainWindow extends javax.swing.JFrame {
         plante2scroller.setName("plante2scroller"); // NOI18N
 
         plante2panel.setName("plante2panel"); // NOI18N
+        plante2panel.setLayout(new java.awt.GridBagLayout());
+
+        jBigPlant2.setName("jBigPlant2"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = 7;
+        plante2panel.add(jBigPlant2, gridBagConstraints);
+
+        jSmallPlant8.setName("jSmallPlant8"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        plante2panel.add(jSmallPlant8, gridBagConstraints);
+
+        jSmallPlant9.setName("jSmallPlant9"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        plante2panel.add(jSmallPlant9, gridBagConstraints);
+
+        jSmallPlant10.setName("jSmallPlant10"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        plante2panel.add(jSmallPlant10, gridBagConstraints);
+
+        jSmallPlant11.setName("jSmallPlant11"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 1;
+        plante2panel.add(jSmallPlant11, gridBagConstraints);
+
+        jSmallPlant12.setName("jSmallPlant12"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 1;
+        plante2panel.add(jSmallPlant12, gridBagConstraints);
+
+        jSmallPlant13.setName("jSmallPlant13"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 1;
+        plante2panel.add(jSmallPlant13, gridBagConstraints);
+
+        jSmallPlant14.setName("jSmallPlant14"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 1;
+        plante2panel.add(jSmallPlant14, gridBagConstraints);
+
         plante2scroller.setViewportView(plante2panel);
 
         vuePanels.addTab("Plante 2", plante2scroller);
@@ -413,6 +566,171 @@ public class MainWindow extends javax.swing.JFrame {
     private void aboutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutButtonActionPerformed
         CreditsDialog.launch(this, false);
     }//GEN-LAST:event_aboutButtonActionPerformed
+
+    private void simulation1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_simulation1PropertyChange
+        System.out.println("CHANGEMENT");
+        Plante[] plantes1 = simulation1.getEtatsPlante1();
+        Plante[] plantes2 = simulation1.getEtatsPlante2();
+        JPlant[] jplants1 = {
+            jSmallPlant1,
+            jSmallPlant2,
+            jSmallPlant3,
+            jSmallPlant4,
+            jSmallPlant5,
+            jSmallPlant6,
+            jSmallPlant7
+        };
+        JPlant[] jplants2 = {
+            jSmallPlant8,
+            jSmallPlant9,
+            jSmallPlant10,
+            jSmallPlant11,
+            jSmallPlant12,
+            jSmallPlant13,
+            jSmallPlant14
+        };
+        for (int i = 0; i < plantes1.length; i++) {
+            jplants1[i].setPlanteText(plantes1[i].getDescription());
+            try {
+                jplants1[i].setFruitText(plantes1[i].getFruit().getDescription());
+            } catch (Exception ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            jplants2[i].setPlanteText(plantes2[i].getDescription());
+            try {
+                jplants1[i].setFruitText(plantes2[i].getFruit().getDescription());
+            } catch (Exception ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_simulation1PropertyChange
+
+    private void plante1Changed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plante1Changed
+        TypePlante p;
+        if (plante1CB.isSelected()) {
+            if (p1cacaiRB.isSelected()) {
+                p = TypePlante.CACAI;
+            } else {
+                p = TypePlante.TOMATITO;
+            }
+        } else {
+            p = TypePlante.SANS;
+        }
+        simulation1.setPlante1(p);
+}//GEN-LAST:event_plante1Changed
+
+    private void plante2Changed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plante2Changed
+        TypePlante p;
+        if (plante2CB.isSelected()) {
+            if (p2cacaiRB.isSelected()) {
+                p = TypePlante.CACAI;
+            } else {
+                p = TypePlante.TOMATITO;
+            }
+        } else {
+            p = TypePlante.SANS;
+        }
+        simulation1.setPlante2(p);
+    }//GEN-LAST:event_plante2Changed
+
+    private void lumiereChanged(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lumiereChanged
+        if (obscuriteRB.isSelected()) {
+            try {
+                simulation1.getEnvironnment().getClimat().setLumiere(DegresLumiere.OBSCURITE);
+            } catch (Exception ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else if (directRB.isSelected()) {
+            try {
+                simulation1.getEnvironnment().getClimat().setLumiere(DegresLumiere.DIRECTE);
+            } catch (Exception ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            try {
+                simulation1.getEnvironnment().getClimat().setLumiere(DegresLumiere.INDIRECTE);
+            } catch (Exception ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_lumiereChanged
+
+    private void temperatureChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_temperatureChanged
+        try {
+            simulation1.getEnvironnment().getClimat().setTemperature(temperatureSlider.getValue());
+        } catch (Exception ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_temperatureChanged
+
+    private void engraisChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_engraisChanged
+        simulation1.getEnvironnment().getTerre().setEngrais(engraisCB.isSelected());
+    }//GEN-LAST:event_engraisChanged
+
+    private void quantiteTerreChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_quantiteTerreChanged
+        try {
+            simulation1.getEnvironnment().getTerre().setQuantite(quantiteTerreSlider.getValue());
+        } catch (Exception ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_quantiteTerreChanged
+
+    private void joursArrosageChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_joursArrosageChanged
+        try {
+            simulation1.getEnvironnment().getEau().setNbjourArrosage(joursArrosageSlider.getValue());
+        } catch (Exception ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_joursArrosageChanged
+
+    private void quantiteEauChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_quantiteEauChanged
+        try {
+            simulation1.getEnvironnment().getEau().setQuantite(quantiteEauSlider.getValue());
+        } catch (Exception ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_quantiteEauChanged
+
+    private void dureteChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_dureteChanged
+        int val = dureteSlider.getValue();
+        switch(val) {
+            case 1:
+        try {
+            simulation1.getEnvironnment().getEau().setDurete(Durete.TRES_DOUCE);
+        } catch (Exception ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                break;
+            case 2:
+        try {
+            simulation1.getEnvironnment().getEau().setDurete(Durete.DOUCE);
+        } catch (Exception ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                break;
+            case 3:
+        try {
+            simulation1.getEnvironnment().getEau().setDurete(Durete.MOY_DURE);
+        } catch (Exception ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                break;
+            case 4:
+        try {
+            simulation1.getEnvironnment().getEau().setDurete(Durete.DURE);
+        } catch (Exception ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                break;
+            case 5:
+        try {
+            simulation1.getEnvironnment().getEau().setDurete(Durete.TRES_DURE);
+        } catch (Exception ex) {
+            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                break;
+        }
+    }//GEN-LAST:event_dureteChanged
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -431,19 +749,26 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel dureteLabel;
     private javax.swing.JSlider dureteSlider;
     private javax.swing.JPanel eauPanel;
+    private javax.swing.JCheckBox engraisCB;
     private javax.swing.JPanel gauche;
     private javax.swing.JRadioButton indirectRB;
     private ihmprojet2.IHM.JBigPlant jBigPlant1;
-    private javax.swing.JCheckBox jCheckBox1;
+    private ihmprojet2.IHM.JBigPlant jBigPlant2;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JSlider jSlider3;
     private ihmprojet2.IHM.JSmallPlant jSmallPlant1;
+    private ihmprojet2.IHM.JSmallPlant jSmallPlant10;
+    private ihmprojet2.IHM.JSmallPlant jSmallPlant11;
+    private ihmprojet2.IHM.JSmallPlant jSmallPlant12;
+    private ihmprojet2.IHM.JSmallPlant jSmallPlant13;
+    private ihmprojet2.IHM.JSmallPlant jSmallPlant14;
     private ihmprojet2.IHM.JSmallPlant jSmallPlant2;
     private ihmprojet2.IHM.JSmallPlant jSmallPlant3;
     private ihmprojet2.IHM.JSmallPlant jSmallPlant4;
     private ihmprojet2.IHM.JSmallPlant jSmallPlant5;
     private ihmprojet2.IHM.JSmallPlant jSmallPlant6;
     private ihmprojet2.IHM.JSmallPlant jSmallPlant7;
+    private ihmprojet2.IHM.JSmallPlant jSmallPlant8;
+    private ihmprojet2.IHM.JSmallPlant jSmallPlant9;
     private javax.swing.JLabel joursArrosageLabel;
     private javax.swing.JSlider joursArrosageSlider;
     private javax.swing.JRadioButton obscuriteRB;
@@ -463,6 +788,8 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JTabbedPane prefsPanels;
     private javax.swing.JLabel quantiteEauLabel;
     private javax.swing.JSlider quantiteEauSlider;
+    private javax.swing.JSlider quantiteTerreSlider;
+    private ihmprojet2.Simulation.Simulation simulation1;
     private javax.swing.JSplitPane splitter;
     private javax.swing.JLabel temperatureLabel;
     private javax.swing.JSlider temperatureSlider;
