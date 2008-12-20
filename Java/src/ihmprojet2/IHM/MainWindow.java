@@ -15,6 +15,8 @@ public class MainWindow extends javax.swing.JFrame {
         plante1group = new javax.swing.ButtonGroup();
         plante2group = new javax.swing.ButtonGroup();
         splitter = new javax.swing.JSplitPane();
+        gauche = new javax.swing.JPanel();
+        aboutButton = new javax.swing.JButton();
         prefsPanels = new javax.swing.JTabbedPane();
         plantesPanel = new javax.swing.JPanel();
         p1cacaiRB = new javax.swing.JRadioButton();
@@ -40,8 +42,8 @@ public class MainWindow extends javax.swing.JFrame {
         quantiteEauLabel = new javax.swing.JLabel();
         quantiteEauSlider = new javax.swing.JSlider();
         dureteSlider = new javax.swing.JSlider();
-        semainePanels = new javax.swing.JTabbedPane();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        vuePanels = new javax.swing.JTabbedPane();
+        plante1scroller = new javax.swing.JScrollPane();
         plante1panel = new javax.swing.JPanel();
         jBigPlant1 = new ihmprojet2.IHM.JBigPlant();
         jSmallPlant1 = new ihmprojet2.IHM.JSmallPlant();
@@ -51,13 +53,20 @@ public class MainWindow extends javax.swing.JFrame {
         jSmallPlant5 = new ihmprojet2.IHM.JSmallPlant();
         jSmallPlant6 = new ihmprojet2.IHM.JSmallPlant();
         jSmallPlant7 = new ihmprojet2.IHM.JSmallPlant();
-        jScrollPane3 = new javax.swing.JScrollPane();
+        plante2scroller = new javax.swing.JScrollPane();
         plante2panel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         splitter.setDividerLocation(200);
         splitter.setName("splitter"); // NOI18N
+
+        gauche.setName("gauche"); // NOI18N
+        gauche.setLayout(new java.awt.BorderLayout());
+
+        aboutButton.setText("À propos");
+        aboutButton.setName("aboutButton"); // NOI18N
+        gauche.add(aboutButton, java.awt.BorderLayout.SOUTH);
 
         prefsPanels.setName("prefsPanels"); // NOI18N
 
@@ -120,7 +129,7 @@ public class MainWindow extends javax.swing.JFrame {
                         .addGroup(plantesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(p2tomatitoRB)
                             .addComponent(p2cacaiRB))))
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addContainerGap(295, Short.MAX_VALUE))
         );
         plantesPanelLayout.setVerticalGroup(
             plantesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,7 +146,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(p2cacaiRB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(p2tomatitoRB)
-                .addContainerGap(312, Short.MAX_VALUE))
+                .addContainerGap(282, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Plantes", plantesPanel);
@@ -180,7 +189,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(indirectRB)
                     .addComponent(directRB)
                     .addComponent(temperatureLabel)
-                    .addComponent(temperatureSlider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
+                    .addComponent(temperatureSlider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE))
                 .addContainerGap())
         );
         climatPanelLayout.setVerticalGroup(
@@ -195,7 +204,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(temperatureLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(temperatureSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(320, Short.MAX_VALUE))
+                .addContainerGap(290, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Climat", climatPanel);
@@ -225,7 +234,7 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(terrePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(terrePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSlider3, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                    .addComponent(jSlider3, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
                     .addComponent(jCheckBox1)
                     .addComponent(jLabel2))
                 .addContainerGap())
@@ -238,7 +247,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSlider3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(372, Short.MAX_VALUE))
+                .addContainerGap(342, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Terre", terrePanel);
@@ -289,12 +298,12 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(eauPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(eauPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(joursArrosageSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                    .addComponent(joursArrosageSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
                     .addComponent(joursArrosageLabel)
                     .addComponent(quantiteEauLabel)
                     .addComponent(dureteLabel)
-                    .addComponent(dureteSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                    .addComponent(quantiteEauSlider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
+                    .addComponent(dureteSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+                    .addComponent(quantiteEauSlider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE))
                 .addContainerGap())
         );
         eauPanelLayout.setVerticalGroup(
@@ -312,16 +321,18 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(dureteLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dureteSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(222, Short.MAX_VALUE))
+                .addContainerGap(192, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Eau", eauPanel);
 
-        splitter.setLeftComponent(prefsPanels);
+        gauche.add(prefsPanels, java.awt.BorderLayout.CENTER);
 
-        semainePanels.setName("semainePanels"); // NOI18N
+        splitter.setLeftComponent(gauche);
 
-        jScrollPane2.setName("jScrollPane2"); // NOI18N
+        vuePanels.setName("vuePanels"); // NOI18N
+
+        plante1scroller.setName("plante1scroller"); // NOI18N
 
         plante1panel.setName("plante1panel"); // NOI18N
         plante1panel.setLayout(new java.awt.GridBagLayout());
@@ -373,18 +384,18 @@ public class MainWindow extends javax.swing.JFrame {
         gridBagConstraints.gridy = 1;
         plante1panel.add(jSmallPlant7, gridBagConstraints);
 
-        jScrollPane2.setViewportView(plante1panel);
+        plante1scroller.setViewportView(plante1panel);
 
-        semainePanels.addTab("Plante 1", jScrollPane2);
+        vuePanels.addTab("Plante 1", plante1scroller);
 
-        jScrollPane3.setName("jScrollPane3"); // NOI18N
+        plante2scroller.setName("plante2scroller"); // NOI18N
 
         plante2panel.setName("plante2panel"); // NOI18N
-        jScrollPane3.setViewportView(plante2panel);
+        plante2scroller.setViewportView(plante2panel);
 
-        semainePanels.addTab("Plante 2", jScrollPane3);
+        vuePanels.addTab("Plante 2", plante2scroller);
 
-        splitter.setRightComponent(semainePanels);
+        splitter.setRightComponent(vuePanels);
 
         getContentPane().add(splitter, java.awt.BorderLayout.CENTER);
 
@@ -403,18 +414,18 @@ public class MainWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton aboutButton;
     private javax.swing.JPanel climatPanel;
     private javax.swing.ButtonGroup climatRBgroup;
     private javax.swing.JRadioButton directRB;
     private javax.swing.JLabel dureteLabel;
     private javax.swing.JSlider dureteSlider;
     private javax.swing.JPanel eauPanel;
+    private javax.swing.JPanel gauche;
     private javax.swing.JRadioButton indirectRB;
     private ihmprojet2.IHM.JBigPlant jBigPlant1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSlider jSlider3;
     private ihmprojet2.IHM.JSmallPlant jSmallPlant1;
     private ihmprojet2.IHM.JSmallPlant jSmallPlant2;
@@ -433,18 +444,20 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JCheckBox plante1CB;
     private javax.swing.ButtonGroup plante1group;
     private javax.swing.JPanel plante1panel;
+    private javax.swing.JScrollPane plante1scroller;
     private javax.swing.JCheckBox plante2CB;
     private javax.swing.ButtonGroup plante2group;
     private javax.swing.JPanel plante2panel;
+    private javax.swing.JScrollPane plante2scroller;
     private javax.swing.JPanel plantesPanel;
     private javax.swing.JTabbedPane prefsPanels;
     private javax.swing.JLabel quantiteEauLabel;
     private javax.swing.JSlider quantiteEauSlider;
-    private javax.swing.JTabbedPane semainePanels;
     private javax.swing.JSplitPane splitter;
     private javax.swing.JLabel temperatureLabel;
     private javax.swing.JSlider temperatureSlider;
     private javax.swing.JPanel terrePanel;
+    private javax.swing.JTabbedPane vuePanels;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }
