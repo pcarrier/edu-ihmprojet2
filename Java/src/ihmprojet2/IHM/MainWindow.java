@@ -30,6 +30,8 @@ public class MainWindow extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         climatRBgroup = new javax.swing.ButtonGroup();
         plante1group = new javax.swing.ButtonGroup();
@@ -37,12 +39,12 @@ public class MainWindow extends javax.swing.JFrame {
         splitter = new javax.swing.JSplitPane();
         prefsPanels = new javax.swing.JTabbedPane();
         plantesPanel = new javax.swing.JPanel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        temperatureLabel1 = new javax.swing.JLabel();
-        temperatureLabel2 = new javax.swing.JLabel();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        p1cacaiRB = new javax.swing.JRadioButton();
+        p1tomatitoRB = new javax.swing.JRadioButton();
+        p2cacaiRB = new javax.swing.JRadioButton();
+        p2tomatitoRB = new javax.swing.JRadioButton();
+        plante1 = new javax.swing.JCheckBox();
+        plante2 = new javax.swing.JCheckBox();
         climatPanel = new javax.swing.JPanel();
         obscuriteRB = new javax.swing.JRadioButton();
         indirectRB = new javax.swing.JRadioButton();
@@ -60,9 +62,19 @@ public class MainWindow extends javax.swing.JFrame {
         quantiteEauLabel = new javax.swing.JLabel();
         quantiteEauSlider = new javax.swing.JSlider();
         dureteSlider = new javax.swing.JSlider();
-        vuePanel = new javax.swing.JPanel();
-        finalPanel = new javax.swing.JPanel();
-        semainePanel = new javax.swing.JPanel();
+        semainePanels = new javax.swing.JTabbedPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        plante1panel = new javax.swing.JPanel();
+        jBigPlant1 = new ihmprojet2.IHM.JBigPlant();
+        jSmallPlant1 = new ihmprojet2.IHM.JSmallPlant();
+        jSmallPlant2 = new ihmprojet2.IHM.JSmallPlant();
+        jSmallPlant3 = new ihmprojet2.IHM.JSmallPlant();
+        jSmallPlant4 = new ihmprojet2.IHM.JSmallPlant();
+        jSmallPlant5 = new ihmprojet2.IHM.JSmallPlant();
+        jSmallPlant6 = new ihmprojet2.IHM.JSmallPlant();
+        jSmallPlant7 = new ihmprojet2.IHM.JSmallPlant();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        plante2panel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,51 +85,43 @@ public class MainWindow extends javax.swing.JFrame {
 
         plantesPanel.setName("plantesPanel"); // NOI18N
 
-        plante1group.add(jRadioButton1);
-        jRadioButton1.setSelected(true);
-        jRadioButton1.setText("Cacaï");
-        jRadioButton1.setName("jRadioButton1"); // NOI18N
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
-            }
-        });
+        plante1group.add(p1cacaiRB);
+        p1cacaiRB.setSelected(true);
+        p1cacaiRB.setText("Cacaï");
+        p1cacaiRB.setName("p1cacaiRB"); // NOI18N
 
-        plante1group.add(jRadioButton2);
-        jRadioButton2.setText("Tomatito");
-        jRadioButton2.setName("jRadioButton2"); // NOI18N
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
-            }
-        });
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, plante1, org.jdesktop.beansbinding.ELProperty.create("${selected}"), p1cacaiRB, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
 
-        temperatureLabel1.setFont(temperatureLabel1.getFont().deriveFont(temperatureLabel1.getFont().getStyle() | java.awt.Font.BOLD));
-        temperatureLabel1.setText("Plante 1");
-        temperatureLabel1.setName("temperatureLabel1"); // NOI18N
+        plante1group.add(p1tomatitoRB);
+        p1tomatitoRB.setText("Tomatito");
+        p1tomatitoRB.setName("p1tomatitoRB"); // NOI18N
 
-        temperatureLabel2.setFont(temperatureLabel2.getFont().deriveFont(temperatureLabel2.getFont().getStyle() | java.awt.Font.BOLD));
-        temperatureLabel2.setText("Plante 2");
-        temperatureLabel2.setName("temperatureLabel2"); // NOI18N
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, plante1, org.jdesktop.beansbinding.ELProperty.create("${selected}"), p1tomatitoRB, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
 
-        plante2group.add(jRadioButton3);
-        jRadioButton3.setSelected(true);
-        jRadioButton3.setText("Cacaï");
-        jRadioButton3.setName("jRadioButton3"); // NOI18N
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
-            }
-        });
+        plante2group.add(p2cacaiRB);
+        p2cacaiRB.setSelected(true);
+        p2cacaiRB.setText("Cacaï");
+        p2cacaiRB.setName("p2cacaiRB"); // NOI18N
 
-        plante2group.add(jRadioButton4);
-        jRadioButton4.setText("Tomatito");
-        jRadioButton4.setName("jRadioButton4"); // NOI18N
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
-            }
-        });
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, plante2, org.jdesktop.beansbinding.ELProperty.create("${selected}"), p2cacaiRB, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
+
+        plante2group.add(p2tomatitoRB);
+        p2tomatitoRB.setText("Tomatito");
+        p2tomatitoRB.setName("p2tomatitoRB"); // NOI18N
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, plante2, org.jdesktop.beansbinding.ELProperty.create("${selected}"), p2tomatitoRB, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
+        bindingGroup.addBinding(binding);
+
+        plante1.setFont(plante1.getFont().deriveFont(plante1.getFont().getStyle() | java.awt.Font.BOLD));
+        plante1.setText("Plante 1");
+        plante1.setName("plante1"); // NOI18N
+
+        plante2.setFont(plante2.getFont().deriveFont(plante2.getFont().getStyle() | java.awt.Font.BOLD));
+        plante2.setText("Plante 2");
+        plante2.setName("plante2"); // NOI18N
 
         javax.swing.GroupLayout plantesPanelLayout = new javax.swing.GroupLayout(plantesPanel);
         plantesPanel.setLayout(plantesPanelLayout);
@@ -126,36 +130,36 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(plantesPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(plantesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(temperatureLabel1)
+                    .addComponent(plante1)
                     .addGroup(plantesPanelLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(plantesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton1)))
-                    .addComponent(temperatureLabel2)
+                            .addComponent(p1tomatitoRB)
+                            .addComponent(p1cacaiRB)))
+                    .addComponent(plante2)
                     .addGroup(plantesPanelLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(plantesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jRadioButton4)
-                            .addComponent(jRadioButton3))))
+                            .addComponent(p2tomatitoRB)
+                            .addComponent(p2cacaiRB))))
                 .addContainerGap(107, Short.MAX_VALUE))
         );
         plantesPanelLayout.setVerticalGroup(
             plantesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(plantesPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(temperatureLabel1)
+                .addComponent(plante1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton1)
+                .addComponent(p1cacaiRB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton2)
+                .addComponent(p1tomatitoRB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(temperatureLabel2)
+                .addComponent(plante2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton3)
+                .addComponent(p2cacaiRB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton4)
-                .addContainerGap(323, Short.MAX_VALUE))
+                .addComponent(p2tomatitoRB)
+                .addContainerGap(312, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Plantes", plantesPanel);
@@ -213,7 +217,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(temperatureLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(temperatureSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(317, Short.MAX_VALUE))
+                .addContainerGap(320, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Climat", climatPanel);
@@ -256,7 +260,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSlider3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(369, Short.MAX_VALUE))
+                .addContainerGap(372, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Terre", terrePanel);
@@ -330,70 +334,86 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(dureteLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dureteSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(219, Short.MAX_VALUE))
+                .addContainerGap(222, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Eau", eauPanel);
 
         splitter.setLeftComponent(prefsPanels);
 
-        vuePanel.setName("vuePanel"); // NOI18N
-        vuePanel.setLayout(new javax.swing.BoxLayout(vuePanel, javax.swing.BoxLayout.Y_AXIS));
+        semainePanels.setName("semainePanels"); // NOI18N
 
-        finalPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Après une semaine"));
-        finalPanel.setName("finalPanel"); // NOI18N
+        jScrollPane2.setName("jScrollPane2"); // NOI18N
 
-        javax.swing.GroupLayout finalPanelLayout = new javax.swing.GroupLayout(finalPanel);
-        finalPanel.setLayout(finalPanelLayout);
-        finalPanelLayout.setHorizontalGroup(
-            finalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 487, Short.MAX_VALUE)
-        );
-        finalPanelLayout.setVerticalGroup(
-            finalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 338, Short.MAX_VALUE)
-        );
+        plante1panel.setName("plante1panel"); // NOI18N
+        plante1panel.setLayout(new java.awt.GridBagLayout());
 
-        vuePanel.add(finalPanel);
+        jBigPlant1.setName("jBigPlant1"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = 7;
+        plante1panel.add(jBigPlant1, gridBagConstraints);
 
-        semainePanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Jour par jour"));
-        semainePanel.setName("semainePanel"); // NOI18N
+        jSmallPlant1.setName("jSmallPlant1"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        plante1panel.add(jSmallPlant1, gridBagConstraints);
 
-        javax.swing.GroupLayout semainePanelLayout = new javax.swing.GroupLayout(semainePanel);
-        semainePanel.setLayout(semainePanelLayout);
-        semainePanelLayout.setHorizontalGroup(
-            semainePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 487, Short.MAX_VALUE)
-        );
-        semainePanelLayout.setVerticalGroup(
-            semainePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 113, Short.MAX_VALUE)
-        );
+        jSmallPlant2.setName("jSmallPlant2"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        plante1panel.add(jSmallPlant2, gridBagConstraints);
 
-        vuePanel.add(semainePanel);
+        jSmallPlant3.setName("jSmallPlant3"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        plante1panel.add(jSmallPlant3, gridBagConstraints);
 
-        splitter.setRightComponent(vuePanel);
+        jSmallPlant4.setName("jSmallPlant4"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 1;
+        plante1panel.add(jSmallPlant4, gridBagConstraints);
+
+        jSmallPlant5.setName("jSmallPlant5"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 1;
+        plante1panel.add(jSmallPlant5, gridBagConstraints);
+
+        jSmallPlant6.setName("jSmallPlant6"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 1;
+        plante1panel.add(jSmallPlant6, gridBagConstraints);
+
+        jSmallPlant7.setName("jSmallPlant7"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 1;
+        plante1panel.add(jSmallPlant7, gridBagConstraints);
+
+        jScrollPane2.setViewportView(plante1panel);
+
+        semainePanels.addTab("Plante 1", jScrollPane2);
+
+        jScrollPane3.setName("jScrollPane3"); // NOI18N
+
+        plante2panel.setName("plante2panel"); // NOI18N
+        jScrollPane3.setViewportView(plante2panel);
+
+        semainePanels.addTab("Plante 2", jScrollPane3);
+
+        splitter.setRightComponent(semainePanels);
 
         getContentPane().add(splitter, java.awt.BorderLayout.CENTER);
 
+        bindingGroup.bind();
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
-
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
-
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
-
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton4ActionPerformed
 
     /**
     * @param args the command line arguments
@@ -413,32 +433,43 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel dureteLabel;
     private javax.swing.JSlider dureteSlider;
     private javax.swing.JPanel eauPanel;
-    private javax.swing.JPanel finalPanel;
     private javax.swing.JRadioButton indirectRB;
+    private ihmprojet2.IHM.JBigPlant jBigPlant1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSlider jSlider3;
+    private ihmprojet2.IHM.JSmallPlant jSmallPlant1;
+    private ihmprojet2.IHM.JSmallPlant jSmallPlant2;
+    private ihmprojet2.IHM.JSmallPlant jSmallPlant3;
+    private ihmprojet2.IHM.JSmallPlant jSmallPlant4;
+    private ihmprojet2.IHM.JSmallPlant jSmallPlant5;
+    private ihmprojet2.IHM.JSmallPlant jSmallPlant6;
+    private ihmprojet2.IHM.JSmallPlant jSmallPlant7;
     private javax.swing.JLabel joursArrosageLabel;
     private javax.swing.JSlider joursArrosageSlider;
     private javax.swing.JRadioButton obscuriteRB;
+    private javax.swing.JRadioButton p1cacaiRB;
+    private javax.swing.JRadioButton p1tomatitoRB;
+    private javax.swing.JRadioButton p2cacaiRB;
+    private javax.swing.JRadioButton p2tomatitoRB;
+    private javax.swing.JCheckBox plante1;
     private javax.swing.ButtonGroup plante1group;
+    private javax.swing.JPanel plante1panel;
+    private javax.swing.JCheckBox plante2;
     private javax.swing.ButtonGroup plante2group;
+    private javax.swing.JPanel plante2panel;
     private javax.swing.JPanel plantesPanel;
     private javax.swing.JTabbedPane prefsPanels;
     private javax.swing.JLabel quantiteEauLabel;
     private javax.swing.JSlider quantiteEauSlider;
-    private javax.swing.JPanel semainePanel;
+    private javax.swing.JTabbedPane semainePanels;
     private javax.swing.JSplitPane splitter;
     private javax.swing.JLabel temperatureLabel;
-    private javax.swing.JLabel temperatureLabel1;
-    private javax.swing.JLabel temperatureLabel2;
     private javax.swing.JSlider temperatureSlider;
     private javax.swing.JPanel terrePanel;
-    private javax.swing.JPanel vuePanel;
+    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 
 }
