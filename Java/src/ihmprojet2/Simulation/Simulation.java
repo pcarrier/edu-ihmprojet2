@@ -11,7 +11,7 @@ import java.beans.PropertyChangeSupport;
 import ihmprojet2.Simulation.Plante.Cacai;
 import ihmprojet2.Simulation.Plante.Plante;
 import ihmprojet2.Simulation.Plante.Tomatito;
-
+import ihmprojet2.Simulation.Plante;
 
 /**
  *
