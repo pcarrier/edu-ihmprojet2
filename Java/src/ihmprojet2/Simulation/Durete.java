@@ -22,7 +22,7 @@ public enum Durete {
         value=d;
     }
 
-    int value(){
+    public int value(){
         return value;
     }
 }
