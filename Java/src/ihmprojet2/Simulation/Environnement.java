@@ -49,7 +49,7 @@ public class Environnement {
     }
 
     public Eau getEau() {
-        return eau;
+        return this.eau;
     }
 
     public Terre getTerre() {
@@ -98,6 +98,7 @@ public class Environnement {
         double oldQualiteCroissance = this.qualiteCroissance;
         this.qualiteCroissance = qualiteCroissance;
         propertyChangeSupport.firePropertyChange(PROP_QUALITECROISSANCE, oldQualiteCroissance, qualiteCroissance);
+        System.out.println("Fired!");
     }
 
     /**
@@ -133,7 +134,7 @@ public class Environnement {
                         "et 500 grammes.");
             }
             this.quantite = quantite;
-            updateQualiteArrosage();
+            updateQualiteCroissance();
         }
 
         public Terre() {
@@ -245,7 +246,7 @@ public class Environnement {
                         "1 et 7");
             }
             this.nbjourArrosage = val;
-            updateQualiteArrosage();
+            updateQualiteCroissance();
         }
     }
 }

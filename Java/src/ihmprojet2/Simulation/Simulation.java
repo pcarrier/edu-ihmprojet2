@@ -16,6 +16,12 @@ public class Simulation implements PropertyChangeListener, Serializable {
     private Plante[] etatsPlante1;
     private Plante[] etatsPlante2;
     public static final String PROP_ETATSPLANTE2 = "etatsPlante2";
+    public Environnement environnement;
+
+    public Simulation() {
+        environnement = new Environnement();
+        environnement.addPropertyChangeListener(this);
+    }
 
     public Simulation() {
         environnement = new Environnement();
