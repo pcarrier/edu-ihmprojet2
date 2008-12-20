@@ -6,10 +6,10 @@ import java.beans.PropertyChangeSupport;
 import ihmprojet2.Simulation.Plante.Cacai;
 import ihmprojet2.Simulation.Plante.Plante;
 import ihmprojet2.Simulation.Plante.Tomatito;
+
 import java.io.Serializable;
 
 public class Simulation implements PropertyChangeListener, Serializable {
-
     private TypePlante plante1 = TypePlante.SANS;
     private TypePlante plante2 = TypePlante.SANS;
     private Plante[] etatsPlante1;
