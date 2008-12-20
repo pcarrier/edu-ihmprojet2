@@ -1,7 +1,10 @@
 package ihmprojet2.Simulation;
 
+
+import ihmprojet2.Plante.Tomatito;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.util.ArrayList;
 
 public class Environnement {
 
@@ -14,12 +17,59 @@ public class Environnement {
     private double qualiteCroissance = 0;
     public static final String PROP_QUALITECROISSANCE = "qualiteCroissance";
 
-    public Environnement() {
+    private ArrayList plantes;
+
+    /** L'instance statique */
+    private static Environnement instance;
+
+    public static Environnement getInstance() {
+        if (null == instance) { // Premier appel
+            instance = new Environnement();
+        }
+        return instance;
+    }
+
+    private Environnement() {
        terre = new Terre();
        climat=new Climat();
        eau = new Eau();
+       plantes = new ArrayList();
     }
 
+    public Boolean containsTomatito()
+    {
+        int i;
+        for(i=0;i<plantes.size();i++ ){
+            if(Tomatito.class.isInstance(plantes.get(i))){
+                return true;
+            }
+        }
+       
+        return false;
+
+    }
+
+    public void addPlante(Object plante) throws Exception{
+        if(plantes.size()<2){
+            plantes.add(plante);
+        }else{
+            throw new Exception("Seulement deux plantes autorisées");
+        }
+
+    }
+
+    public void removePlante(int index) throws Exception{
+        System.out.println(plantes.size());
+        plantes.remove(index);
+        System.out.println(plantes.size());
+    }
+
+    public void viderPlantes(){
+        System.out.println(plantes.size());
+        plantes.clear();
+        System.out.println(plantes.size());
+    }
+    
     public Climat getClimat() {
         return climat;
     }
@@ -161,6 +211,17 @@ public class Environnement {
                     updateQualiteCroissance();   
             
         }
+        public void reduitLumiere() throws Exception{
+            switch(this.lumiere){
+                case DIRECTE:
+                    this.setLumiere(DegresLumiere.DIRECTE);
+                    break;
+                case INDIRECTE:
+                    this.setLumiere(DegresLumiere.OBSCURITE);
+                    break;
+            }
+
+        }
 
         public int getTemperature() {
             return temperature;
@@ -175,6 +236,11 @@ public class Environnement {
             temperature=val;
             updateQualiteEnvironnement();
             }
+        }
+
+        public void setVraieLumiere(DegresLumiere vraieLumiere) {
+            this.lumiere=vraieLumiere;
+            /*Pas d'update ici*/
         }
     }
 

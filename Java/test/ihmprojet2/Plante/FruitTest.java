@@ -55,7 +55,7 @@ public class FruitTest {
     }
 
 
-    @Test(expected=NullPointerException.class)
+    @Test(expected=Exception.class)
     public void testSetGoutFruitTomatito() throws Exception {
         System.out.println("setGout");
         Gout val = null;
@@ -79,7 +79,7 @@ public class FruitTest {
         instance.getFruit().setGout(val);
     }
 
-    @Test(expected=NullPointerException.class)
+    @Test(expected=Exception.class)
     public void testSetGoutFruitCacai() throws Exception {
         System.out.println("setGout");
         Gout val = null;
@@ -118,7 +118,7 @@ public class FruitTest {
     public void testCacaiGetInfos2() throws Exception {
         System.out.println("getInfos");
         Cacai instance = new Cacai();
-        String expResult="0";
+        String expResult="0.0";
         java.util.Hashtable result = instance.getFruit().getInfos();
         assertEquals(expResult, result.get("DIAM"));
     }

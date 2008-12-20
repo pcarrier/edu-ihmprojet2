@@ -7,35 +7,33 @@ package ihmprojet2.Simulation;
 
 import ihmprojet2.Plante.Plante;
 
+
+
 /**
  *
  * @author jc
  */
 public class Simulation {
-    public Simulation(){
 
+    /** L'instance statique */
+    private static Simulation instance;
+
+    public static Simulation getInstance() {
+        if (null == instance) { // Premier appel
+            instance = new Simulation();
+        }
+        return instance;
     }
 
+
+  //  private Environnement environnement = new Environnement();
+    private Simulation(){
+
+    }
     
-    public void setEnvironnement(Environnement environnement) {
-        this.environnement = environnement;
+
+    public void addPlante(Plante plante)throws Exception{
+        Environnement.getInstance().addPlante(plante);
+        Environnement.getInstance().addPropertyChangeListener(plante);
     }
-
-    public void setPlantes(Plante[] plantes) {
-        this.plantes = plantes;
-    }
-    private Environnement environnement;
-
-    public Environnement getEnvironnement() {
-        return environnement;
-    }
-
-    public Plante[] getPlantes() {
-        return plantes;
-    }
-    private Plante[] plantes;
-
-
-   
-
 }
