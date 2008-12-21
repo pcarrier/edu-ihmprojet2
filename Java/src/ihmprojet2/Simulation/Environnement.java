@@ -64,7 +64,7 @@ public class Environnement {
         if (terre.hasEngrais()) {
             qualiteArrosage = tauxArrosage / eau.getDurete().value();
         } else {
-            qualiteArrosage = tauxArrosage / 0.9 * eau.getDurete().value();
+            qualiteArrosage = tauxArrosage / (0.9 * eau.getDurete().value());
         }
 
     }
@@ -101,7 +101,7 @@ public class Environnement {
     public class Terre {
 
         private boolean engrais = false;
-        private int quantite = 150;
+        private int quantite = 500;
 
         public int getQuantite() {
             return quantite;
@@ -175,7 +175,7 @@ public class Environnement {
 
         private int nbJoursArrosage = 7;
         private int quantite = 500;
-        private Durete durete = Durete.DOUCE;
+        private Durete durete = Durete.TRES_DURE;
 
         public Durete getDurete() {
             return durete;
