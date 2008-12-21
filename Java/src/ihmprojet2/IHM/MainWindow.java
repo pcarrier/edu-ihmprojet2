@@ -4,7 +4,6 @@ import ihmprojet2.IHM.JPlant.SimulIcon;
 import ihmprojet2.Simulation.DegresLumiere;
 import ihmprojet2.Simulation.Durete;
 import ihmprojet2.Simulation.Plante.Plante;
-import ihmprojet2.Simulation.Plante.Tomatito;
 import ihmprojet2.Simulation.Simulation.TypePlante;
 import java.util.logging.Level;
 import java.util.logging.Logger;
