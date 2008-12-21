@@ -603,46 +603,46 @@ public class MainWindow extends javax.swing.JFrame {
         };
         if (simulation1.getPlante1() == TypePlante.SANS) {
             for (int i = 0; i < jplants1.length; i++) {
-                //jplants1[i].setPlanteIcon(SimulIcon.SANS_PLANTE);
-                //jplants1[i].setFruitIcon(SimulIcon.SANS_FRUIT);
+                jplants1[i].setFruitIcon(SimulIcon.SANS_FRUIT);
+                jplants1[i].setPlanteIcon(SimulIcon.SANS_PLANTE);
             }
         } else {
             Plante[] plantes = simulation1.getEtatsPlante1();
             for (int i = 0; i < plantes.length; i++) {
                 jplants1[i].setPlanteText(plantes[i].getDescription());
                 try {
-                    System.out.println(plantes[i].getFruit().getDescription());
                     jplants1[i].setFruitText(plantes[i].getFruit().getDescription());
                 } catch (Exception ex) {
                     Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }
-//        Plante[] plantes2 = simulation1.getEtatsPlante2();
-//        JPlant[] jplants2 = {
-//            jSmallPlant8,
-//            jSmallPlant9,
-//            jSmallPlant10,
-//            jSmallPlant11,
-//            jSmallPlant12,
-//            jSmallPlant13,
-//            jSmallPlant14
-//        };
-//        for (int i = 0; i < plantes1.length; i++) {
-//            jplants1[i].setPlanteText(plantes1[i].getDescription());
-//            try {
-//                System.out.println(plantes1[i].getFruit().getDescription());
-//                jplants1[i].setFruitText(plantes1[i].getFruit().getDescription());
-//            } catch (Exception ex) {
-//                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//            jplants2[i].setPlanteText(plantes2[i].getDescription());
-//            try {
-//                jplants1[i].setFruitText(plantes2[i].getFruit().getDescription());
-//            } catch (Exception ex) {
-//                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//        }
+
+        JPlant[] jplants2 = {
+            jSmallPlant8,
+            jSmallPlant9,
+            jSmallPlant10,
+            jSmallPlant11,
+            jSmallPlant12,
+            jSmallPlant13,
+            jSmallPlant14
+        };
+        if (simulation1.getPlante2() == TypePlante.SANS) {
+            for (int i = 0; i < jplants1.length; i++) {
+                jplants1[i].setFruitIcon(SimulIcon.SANS_FRUIT);
+                jplants1[i].setPlanteIcon(SimulIcon.SANS_PLANTE);
+            }
+        } else {
+            Plante[] plantes = simulation1.getEtatsPlante2();
+            for (int i = 0; i < plantes.length; i++) {
+                jplants2[i].setPlanteText(plantes[i].getDescription());
+                try {
+                    jplants2[i].setFruitText(plantes[i].getFruit().getDescription());
+                } catch (Exception ex) {
+                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
     }//GEN-LAST:event_simulation1PropertyChange
 
     private void plante1Changed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plante1Changed

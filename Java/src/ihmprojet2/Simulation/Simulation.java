@@ -65,14 +65,22 @@ public class Simulation implements PropertyChangeListener, Serializable {
 
     public void setPlante1(TypePlante plante) throws Exception {
         plante1 = plante;
-        updateEtatsPlante1();
-        updateEtatsPlante2();
+        if (plante == TypePlante.SANS) {
+            propertyChangeSupport.firePropertyChange("EtatsPlante1", 0, 1);
+        } else {
+            updateEtatsPlante1();
+            updateEtatsPlante2();
+        }
     }
 
     public void setPlante2(TypePlante plante) throws Exception {
         plante2 = plante;
-        updateEtatsPlante1();
-        updateEtatsPlante2();
+        if (plante == TypePlante.SANS) {
+            propertyChangeSupport.firePropertyChange("EtatsPlante1", 0, 1);
+        } else {
+            updateEtatsPlante1();
+            updateEtatsPlante2();
+        }
     }
 
     public Environnement getEnvironnment() {

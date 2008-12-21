@@ -159,25 +159,25 @@ public class JBigPlant extends javax.swing.JPanel implements JPlant {
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance().getContext().getResourceMap(JBigPlant.class);
         switch (icon) {
             case SANS_PLANTE:
-                imageFruit.setIcon(resourceMap.getIcon("ICON_SANS_PLANTE"));
+                imagePlante.setIcon(resourceMap.getIcon("ICON_SANS_PLANTE"));
                 break;
             case GRAINE:
-                imageFruit.setIcon(resourceMap.getIcon("ICON_GRAINE"));
+                imagePlante.setIcon(resourceMap.getIcon("ICON_GRAINE"));
                 break;
             case CACAI_MORTE:
-                imageFruit.setIcon(resourceMap.getIcon("ICON_CACAI_MORTE"));
+                imagePlante.setIcon(resourceMap.getIcon("ICON_CACAI_MORTE"));
                 break;
             case CACAI_VIVANTE:
-                imageFruit.setIcon(resourceMap.getIcon("ICON_CACAI_VIVANTE"));
+                imagePlante.setIcon(resourceMap.getIcon("ICON_CACAI_VIVANTE"));
                 break;
             case TOMATITO_MORTE:
-                imageFruit.setIcon(resourceMap.getIcon("ICON_TOMATITO_MORTE"));
+                imagePlante.setIcon(resourceMap.getIcon("ICON_TOMATITO_MORTE"));
                 break;
             case TOMATITO_MORTE1:
-                imageFruit.setIcon(resourceMap.getIcon("ICON_TOMATITO_MORTE1"));
+                imagePlante.setIcon(resourceMap.getIcon("ICON_TOMATITO_MORTE1"));
                 break;
             case TOMATITO_VIVANTE:
-                imageFruit.setIcon(resourceMap.getIcon("ICON_TOMATITO_VIVANTE"));
+                imagePlante.setIcon(resourceMap.getIcon("ICON_TOMATITO_VIVANTE"));
                 break;
         }
     }
