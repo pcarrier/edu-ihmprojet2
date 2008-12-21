@@ -15,11 +15,11 @@ public class MainWindow extends javax.swing.JFrame {
     public MainWindow() {
         initComponents();
         simulation1.getEnvironnment().updateQualiteCroissance();
-    };
+    }
+    ;
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
         bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         climatRBgroup = new javax.swing.ButtonGroup();
@@ -72,6 +72,7 @@ public class MainWindow extends javax.swing.JFrame {
         plante2scroller = new javax.swing.JScrollPane();
         plante2panel = new javax.swing.JPanel();
         jBigPlant2 = new ihmprojet2.IHM.JBigPlant();
+        plante2semaine = new javax.swing.JPanel();
         jSmallPlant8 = new ihmprojet2.IHM.JSmallPlant();
         jSmallPlant9 = new ihmprojet2.IHM.JSmallPlant();
         jSmallPlant10 = new ihmprojet2.IHM.JSmallPlant();
@@ -441,9 +442,11 @@ public class MainWindow extends javax.swing.JFrame {
         qcroisslabel.setText("Qualité de croissance :");
         qcroisslabel.setName("qcroisslabel"); // NOI18N
 
+        qcroissval.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        qcroissval.setAutoscrolls(true);
         qcroissval.setName("qcroissval"); // NOI18N
 
-        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, simulation1, org.jdesktop.beansbinding.ELProperty.create("${environnment.qualiteCroissance}"), qcroissval, org.jdesktop.beansbinding.BeanProperty.create("text"));
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, simulation1, org.jdesktop.beansbinding.ELProperty.create("${environnment.qualiteCroissance}"), qcroissval, org.jdesktop.beansbinding.BeanProperty.create("text"));
         bindingGroup.addBinding(binding);
 
         aboutButton.setText("À propos");
@@ -464,17 +467,17 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(aboutButton, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
                     .addGroup(bottomLayout.createSequentialGroup()
                         .addComponent(qcroisslabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                        .addComponent(qcroissval)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(qcroissval, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         bottomLayout.setVerticalGroup(
             bottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bottomLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(bottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(qcroissval, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(qcroisslabel, javax.swing.GroupLayout.Alignment.LEADING))
+                .addGroup(bottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(qcroissval, javax.swing.GroupLayout.DEFAULT_SIZE, 13, Short.MAX_VALUE)
+                    .addComponent(qcroisslabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(aboutButton)
                 .addContainerGap())
@@ -495,7 +498,7 @@ public class MainWindow extends javax.swing.JFrame {
         plante1panel.add(jBigPlant1, java.awt.BorderLayout.CENTER);
 
         plante1semaine.setName("plante1semaine"); // NOI18N
-        plante1semaine.setLayout(new java.awt.GridLayout(1, 0, 8, 0));
+        plante1semaine.setLayout(new java.awt.GridLayout(1, 0));
 
         jSmallPlant1.setName("jSmallPlant1"); // NOI18N
         plante1semaine.add(jSmallPlant1);
@@ -527,54 +530,36 @@ public class MainWindow extends javax.swing.JFrame {
         plante2scroller.setName("plante2scroller"); // NOI18N
 
         plante2panel.setName("plante2panel"); // NOI18N
-        plante2panel.setLayout(new java.awt.GridBagLayout());
+        plante2panel.setLayout(new java.awt.BorderLayout(0, 8));
 
         jBigPlant2.setName("jBigPlant2"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridwidth = 7;
-        plante2panel.add(jBigPlant2, gridBagConstraints);
+        plante2panel.add(jBigPlant2, java.awt.BorderLayout.CENTER);
+
+        plante2semaine.setName("plante2semaine"); // NOI18N
+        plante2semaine.setLayout(new java.awt.GridLayout(1, 0));
 
         jSmallPlant8.setName("jSmallPlant8"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        plante2panel.add(jSmallPlant8, gridBagConstraints);
+        plante2semaine.add(jSmallPlant8);
 
         jSmallPlant9.setName("jSmallPlant9"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        plante2panel.add(jSmallPlant9, gridBagConstraints);
+        plante2semaine.add(jSmallPlant9);
 
         jSmallPlant10.setName("jSmallPlant10"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 1;
-        plante2panel.add(jSmallPlant10, gridBagConstraints);
+        plante2semaine.add(jSmallPlant10);
 
         jSmallPlant11.setName("jSmallPlant11"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 1;
-        plante2panel.add(jSmallPlant11, gridBagConstraints);
+        plante2semaine.add(jSmallPlant11);
 
         jSmallPlant12.setName("jSmallPlant12"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 1;
-        plante2panel.add(jSmallPlant12, gridBagConstraints);
+        plante2semaine.add(jSmallPlant12);
 
         jSmallPlant13.setName("jSmallPlant13"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
-        gridBagConstraints.gridy = 1;
-        plante2panel.add(jSmallPlant13, gridBagConstraints);
+        plante2semaine.add(jSmallPlant13);
 
         jSmallPlant14.setName("jSmallPlant14"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 1;
-        plante2panel.add(jSmallPlant14, gridBagConstraints);
+        plante2semaine.add(jSmallPlant14);
+
+        plante2panel.add(plante2semaine, java.awt.BorderLayout.SOUTH);
 
         plante2scroller.setViewportView(plante2panel);
 
@@ -598,10 +583,10 @@ public class MainWindow extends javax.swing.JFrame {
             if (!vivante) {
                 return SimulIcon.CACAI_MORTE;
             } else if (germee) {
-                if(taille > 0) {
+                if (taille > 0) {
                     return SimulIcon.CACAI_VIVANTE;
                 } else {
-                return SimulIcon.CACAI_GERMEE;
+                    return SimulIcon.CACAI_GERMEE;
                 }
             } else {
                 return SimulIcon.GRAINE;
@@ -610,10 +595,10 @@ public class MainWindow extends javax.swing.JFrame {
             if (!vivante) {
                 return SimulIcon.TOMATITO_MORTE;
             } else if (germee) {
-                if(taille > 0) {
+                if (taille > 0) {
                     return SimulIcon.TOMATITO_VIVANTE;
                 } else {
-                return SimulIcon.TOMATITO_GERMEE;
+                    return SimulIcon.TOMATITO_GERMEE;
                 }
             } else {
                 return SimulIcon.GRAINE;
@@ -653,7 +638,18 @@ public class MainWindow extends javax.swing.JFrame {
             jSmallPlant5,
             jSmallPlant6,
             jSmallPlant7,
-            jBigPlant1
+            jBigPlant1,
+        };
+
+        JPlant[] jplants2 = {
+            jSmallPlant8,
+            jSmallPlant9,
+            jSmallPlant10,
+            jSmallPlant11,
+            jSmallPlant12,
+            jSmallPlant13,
+            jSmallPlant14,
+            jBigPlant2,
         };
 
         if (simulation1.getPlante1() == TypePlante.SANS) {
@@ -663,7 +659,7 @@ public class MainWindow extends javax.swing.JFrame {
             }
         } else {
             Plante[] plantes1 = simulation1.getEtatsPlante1();
-            for (int i = 0; i < plantes1.length; i++) {
+            for (int i = 0; i < plantes1.length - 1; i++) {
                 try {
                     jplants1[i].setPlanteText(plantes1[i].getDescription());
                     jplants1[i].setPlanteIcon(selectPlanteIcon(simulation1.getPlante1(),
@@ -674,28 +670,18 @@ public class MainWindow extends javax.swing.JFrame {
                 } catch (Exception ex) {
                     Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "hi han hi han", ex);
                 }
-                try {
-                    jBigPlant1.setPlanteText(plantes1[6].getDescription());
-                    jBigPlant1.setPlanteIcon(selectPlanteIcon(simulation1.getPlante1(),
-                            plantes1[6].isVivante(), plantes1[6].isGermee(), plantes1[6].getTaille()));
-                    jBigPlant1.setFruitText(plantes1[6].getFruit().getDescription());
-                    jBigPlant1.setFruitIcon(selectFruitIcon(simulation1.getPlante1(),
-                            plantes1[6].getFruit().getGout(), plantes1[6].getFruit().getCouleur()));
-                } catch (Exception ex) {
-                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-                }
+            }
+            try {
+                jBigPlant1.setPlanteText(plantes1[6].getDescription());
+                jBigPlant1.setPlanteIcon(selectPlanteIcon(simulation1.getPlante1(),
+                        plantes1[6].isVivante(), plantes1[6].isGermee(), plantes1[6].getTaille()));
+                jBigPlant1.setFruitText(plantes1[6].getFruit().getDescription());
+                jBigPlant1.setFruitIcon(selectFruitIcon(simulation1.getPlante1(),
+                        plantes1[6].getFruit().getGout(), plantes1[6].getFruit().getCouleur()));
+            } catch (Exception ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "roooh", ex);
             }
         }
-
-        JPlant[] jplants2 = {
-            jSmallPlant8,
-            jSmallPlant9,
-            jSmallPlant10,
-            jSmallPlant11,
-            jSmallPlant12,
-            jSmallPlant13,
-            jSmallPlant14
-        };
 
         if (simulation1.getPlante2() == TypePlante.SANS) {
             for (int i = 0; i < jplants2.length; i++) {
@@ -704,7 +690,8 @@ public class MainWindow extends javax.swing.JFrame {
             }
         } else {
             Plante[] plantes2 = simulation1.getEtatsPlante2();
-            for (int i = 0; i < plantes2.length; i++) {
+            System.out.println(plantes2);
+            for (int i = 0; i < plantes2.length - 1; i++) {
                 try {
                     jplants2[i].setPlanteText(plantes2[i].getDescription());
                     jplants2[i].setPlanteIcon(selectPlanteIcon(simulation1.getPlante2(),
@@ -715,16 +702,16 @@ public class MainWindow extends javax.swing.JFrame {
                 } catch (Exception ex) {
                     Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "hi han hi han bis", ex);
                 }
-                try {
-                    jBigPlant2.setPlanteText(plantes2[6].getDescription());
-                    jBigPlant2.setPlanteIcon(selectPlanteIcon(simulation1.getPlante1(),
-                            plantes2[6].isVivante(), plantes2[6].isGermee(), plantes2[6].getTaille()));
-                    jBigPlant2.setFruitText(plantes2[6].getFruit().getDescription());
-                    jBigPlant2.setFruitIcon(selectFruitIcon(simulation1.getPlante1(),
-                            plantes2[6].getFruit().getGout(), plantes2[6].getFruit().getCouleur()));
-                } catch (Exception ex) {
-                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-                }
+            }
+            try {
+                jBigPlant2.setPlanteText(plantes2[6].getDescription());
+                jBigPlant2.setPlanteIcon(selectPlanteIcon(simulation1.getPlante1(),
+                        plantes2[6].isVivante(), plantes2[6].isGermee(), plantes2[6].getTaille()));
+                jBigPlant2.setFruitText(plantes2[6].getFruit().getDescription());
+                jBigPlant2.setFruitIcon(selectFruitIcon(simulation1.getPlante1(),
+                        plantes2[6].getFruit().getGout(), plantes2[6].getFruit().getCouleur()));
+            } catch (Exception ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "roooh bis", ex);
             }
         }
     }//GEN-LAST:event_simulation1PropertyChange
@@ -922,6 +909,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.ButtonGroup plante2group;
     private javax.swing.JPanel plante2panel;
     private javax.swing.JScrollPane plante2scroller;
+    private javax.swing.JPanel plante2semaine;
     private javax.swing.JPanel plantesPanel;
     private javax.swing.JTabbedPane prefsPanels;
     private javax.swing.JLabel qcroisslabel;

@@ -63,7 +63,7 @@ public class Simulation implements PropertyChangeListener, Serializable {
     public void setPlante1(TypePlante plante) throws Exception {
         plante1 = plante;
         if (plante == TypePlante.SANS) {
-            propertyChangeSupport.firePropertyChange("EtatsPlante1", 0, -1);
+            propertyChangeSupport.firePropertyChange(PROP_ETATSPLANTE1, 0, -1);
         } else {
             updateEtatsPlante1();
             updateEtatsPlante2();
@@ -74,7 +74,7 @@ public class Simulation implements PropertyChangeListener, Serializable {
         plante2 =plante;
         
         if (plante == TypePlante.SANS) {
-            propertyChangeSupport.firePropertyChange("EtatsPlante2", 0, -2);
+            propertyChangeSupport.firePropertyChange(PROP_ETATSPLANTE2, 0, -2);
         } else {
             updateEtatsPlante1();
             updateEtatsPlante2();
@@ -87,23 +87,20 @@ public class Simulation implements PropertyChangeListener, Serializable {
 
     public void updateEtatsPlante1() throws Exception, Exception {
         Plante[] resultat = new Plante[7];
+        environnement.setAutrePlante(plante2);
         switch (plante1) {
             case TOMATITO:
-                environnement.setAutrePlante(plante2);
                 Tomatito.setEnvironnement(environnement);
                 resultat = Tomatito.getEtats();
 
                 break;
             case CACAI:
-                environnement.setAutrePlante(plante2);
                 Cacai.setEnvironnement(environnement);
                 resultat = Cacai.getEtats();
                 break;
         }
-        System.out.println("On va mettre a jour etatsPlante1");
         setEtatsPlante1(resultat);
-        System.out.println("AH AH AH " + resultat[0]);
-        propertyChangeSupport.firePropertyChange("EtatsPlante1", 0, 1);
+        propertyChangeSupport.firePropertyChange(PROP_ETATSPLANTE1, 0, 1);
     }
 
     public void updateEtatsPlante2() throws Exception {
@@ -120,7 +117,7 @@ public class Simulation implements PropertyChangeListener, Serializable {
                 break;
         }
         setEtatsPlante2(resultat);
-        propertyChangeSupport.firePropertyChange("EtatsPlante2", 0, 2);
+        propertyChangeSupport.firePropertyChange(PROP_ETATSPLANTE2, 0, 2);
     }
 
     public synchronized void propertyChange(PropertyChangeEvent evt) {
