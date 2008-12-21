@@ -29,6 +29,7 @@ public class Environnement {
     }
 
     public boolean containsTomatito() {
+        System.out.println(autrePlante);
         return (autrePlante == TypePlante.TOMATITO);
     }
 
@@ -146,6 +147,8 @@ public class Environnement {
         private int temperature = 30;
         private DegresLumiere lumiere = DegresLumiere.OBSCURITE;
 
+        
+
         public DegresLumiere getLumiere() {
             return lumiere;
         }
@@ -158,10 +161,25 @@ public class Environnement {
         public void reduitLumiere() throws Exception {
             switch (this.lumiere) {
                 case DIRECTE:
-                    this.setLumiere(DegresLumiere.INDIRECTE);
+                    this.lumiere=DegresLumiere.INDIRECTE;
+                    System.out.println("Switch Indirecte");
                     break;
                 case INDIRECTE:
-                    this.setLumiere(DegresLumiere.OBSCURITE);
+                    this.lumiere=DegresLumiere.OBSCURITE;
+                    System.out.println("Switch Obscurité");
+                    break;
+            }
+        }
+
+        public void augmenteLumiere() throws Exception{
+            switch (this.lumiere) {
+                case OBSCURITE:
+                    this.lumiere=DegresLumiere.INDIRECTE;
+                    System.out.println("Switch Indirecte");
+                    break;
+                case INDIRECTE:
+                     System.out.println("Switch Directe");
+                    this.lumiere=DegresLumiere.DIRECTE;
                     break;
             }
         }
@@ -178,10 +196,12 @@ public class Environnement {
                 updateQualiteCroissance();
             }
         }
-
+/*
         public void setVraieLumiere(DegresLumiere vraieLumiere) {
             this.lumiere = vraieLumiere;
         }
+ */
+    
     }
 
     public class Eau {

@@ -1,5 +1,7 @@
 package ihmprojet2.Simulation.Plante;
 
+import ihmprojet2.Simulation.DegresLumiere;
+
 public class Cacai extends Plante {
 
     private CacaiFruit fruit = new CacaiFruit();
@@ -14,6 +16,7 @@ public class Cacai extends Plante {
         etats[6] = jour7();
     }
 
+   
     public static Plante[] getEtats() throws Exception {
         Cacai.updateEtats();
         return etats;
@@ -31,7 +34,7 @@ public class Cacai extends Plante {
     private static Cacai jour2() {
         Cacai p = new Cacai();
         double qtCroiss = Tomatito.environnement.getQualiteCroissance();
-       
+
         if (qtCroiss > 20) {
             p.setGermee(true);
         }
@@ -62,7 +65,7 @@ public class Cacai extends Plante {
         }
         if (qtCroiss > 35) {
             p.setTaille(1);
-             p.getFruit().setGout(Gout.AMER);
+            p.getFruit().setGout(Gout.AMER);
             p.getFruit().setDiametre(0.5);
         }
         if (qtCroiss > 60) {
@@ -74,15 +77,17 @@ public class Cacai extends Plante {
     private static Cacai jour5() throws Exception {
         Cacai p = new Cacai();
         double qtCroiss = Tomatito.environnement.getQualiteCroissance();
-        if ((qtCroiss > 20) && (qtCroiss > 35)) {
+        if ((qtCroiss > 20) && (qtCroiss <= 35)) {
             p.setGermee(true);
             p.setTaille(1);
             p.getFruit().setGout(Gout.AMER);
             p.getFruit().setDiametre(0.5);
         }
-        if ((qtCroiss > 35) && (qtCroiss > 60)) {
+        if ((qtCroiss > 35) && (qtCroiss <= 60)) {
             p.setTaille(2);
             p.getFruit().setDiametre(1);
+            p.getFruit().setGout(Gout.SUCRE);
+
         }
         if (qtCroiss > 60) {
             p.getFruit().setDiametre(0.2);
@@ -93,13 +98,13 @@ public class Cacai extends Plante {
     private static Cacai jour6() throws Exception {
         Cacai p = new Cacai();
         double qtCroiss = Tomatito.environnement.getQualiteCroissance();
-        if ((qtCroiss > 20) && (qtCroiss > 35)) {
+        if ((qtCroiss > 20) && (qtCroiss <= 35)) {
             p.setGermee(true);
             p.setTaille(2);
             p.getFruit().setGout(Gout.AMER);
             p.getFruit().setDiametre(1);
         }
-        if ((qtCroiss > 35) && (qtCroiss > 60)) {
+        if ((qtCroiss > 35) && (qtCroiss <= 60)) {
             p.setTaille(2.5);
             p.getFruit().setGout(Gout.SUCRE);
             p.getFruit().setDiametre(1);
@@ -115,7 +120,7 @@ public class Cacai extends Plante {
     private static Cacai jour7() throws Exception {
         Cacai p = new Cacai();
         double qtCroiss = Tomatito.environnement.getQualiteCroissance();
-        if ((qtCroiss > 20) && (qtCroiss > 35)) {
+        if ((qtCroiss > 20) && (qtCroiss <= 35)) {
             p.setGermee(true);
             p.setTaille(2.5);
             p.getFruit().setGout(Gout.SUCRE);
