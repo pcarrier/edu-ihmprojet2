@@ -3,7 +3,7 @@
     <type>com.sun.tools.ide.uml.project</type>
     <configuration>
         <data xmlns="http://www.sun.com/ns/uml-project/1">
-            <name>ihmUMLProject2</name>
+            <name>ihmProjet2UML</name>
             <minimum-ant-version>1.6</minimum-ant-version>
         </data>
         <references xmlns="http://www.netbeans.org/ns/ant-project-references/1">
