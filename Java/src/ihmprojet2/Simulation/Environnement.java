@@ -56,6 +56,19 @@ public class Environnement {
         return this.terre;
     }
 
+
+    public double getTauxArrosage()
+    {
+        return tauxArrosage;
+    }
+    public double getQualiteArrosage()
+    {
+        return qualiteArrosage;
+    }
+    public double getQualiteEnvironnement(){
+        return qualiteEnvironnement;
+    }
+    
     public void updateTauxArrosage() {
         tauxArrosage = (eau.getQuantite() * eau.getNbJoursArrosage()) / terre.getQuantite();
     }
