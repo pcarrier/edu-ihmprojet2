@@ -128,11 +128,17 @@ public class JSmallPlant extends javax.swing.JPanel implements JPlant {
             case GRAINE:
                 imagePlante.setIcon(resourceMap.getIcon("ICON_GRAINE"));
                 break;
+            case CACAI_GERMEE:
+                imagePlante.setIcon(resourceMap.getIcon("ICON_CACAI_GERMEE"));
+                break;
             case CACAI_MORTE:
                 imagePlante.setIcon(resourceMap.getIcon("ICON_CACAI_MORTE"));
                 break;
             case CACAI_VIVANTE:
                 imagePlante.setIcon(resourceMap.getIcon("ICON_CACAI_VIVANTE"));
+                break;
+            case TOMATITO_GERMEE:
+                imagePlante.setIcon(resourceMap.getIcon("ICON_TOMATITO_GERMEE"));
                 break;
             case TOMATITO_MORTE:
                 imagePlante.setIcon(resourceMap.getIcon("ICON_TOMATITO_MORTE"));

@@ -125,8 +125,8 @@ public class CreditsDialog extends javax.swing.JDialog {
             public void actionPerformed(ActionEvent e) {
                 gp = (Point) gpi.clone();
                 jp = (Point) jpi.clone();
-                gp.translate((int) (Math.random() * 32 - 16), (int) (Math.random() * 16 - 8));
-                jp.translate((int) (Math.random() * 32 - 16), (int) (Math.random() * 16 - 8));
+                gp.translate((int) (Math.random() * 32 - 16), (int) (Math.random() * 32 - 16));
+                jp.translate((int) (Math.random() * 32 - 16), (int) (Math.random() * 32 - 16));
                 JissImgLabel.setLocation(jp);
                 gcarrierImgLabel.setLocation(gp);
             }
