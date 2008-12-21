@@ -2,7 +2,7 @@ package ihmprojet2.Simulation.Plante;
 
 public class Tomatito extends Plante {
 
-    private Fruit fruit;
+    private TomatitoFruit fruit = new TomatitoFruit();
 
     public static void updateEtats() throws Exception {
 
@@ -147,60 +147,16 @@ public class Tomatito extends Plante {
         }
     }
 
-    public Tomatito() {
-        fruit = new Fruit();
-    }
-
     @Override
     public Fruit getFruit() {
         return fruit;
     }
 
-    public class Fruit extends ihmprojet2.Simulation.Plante.Fruit {
-
-        private Couleur couleur = Couleur.AUCUNE;
-
-        public Fruit() {
-        }
-
-        public Couleur getCouleur() {
-            return couleur;
-        }
-
-        public void setCouleur(Couleur val) {
-            couleur=val;
-        }
-
+    public class TomatitoFruit extends ihmprojet2.Simulation.Plante.Fruit {
         @Override
-        public void setGout(Gout val) throws Exception {
-            switch (val) {
-                case SUCRE:
-                case AMER:
-                    this.gout = val;
-                    break;
-                default:
-                    throw new Exception("Le gout " + Gout.getGoutName(val) + "n'est " +
-                            "pas autorisé pour Tomatito.");
-            }
-
-        }
-
         public String getDescription() {
-            String retour;
-
-            retour = "" + Couleur.getCouleurName(couleur) + "\n" + Gout.getGoutName(gout);
-            return retour;
+            return "" + Couleur.getCouleurName(couleur) + ", " + Gout.getGoutName(gout);
         }
-
-        /*
-        @Override
-        public java.util.Hashtable getInfos() {
-        java.util.Hashtable retour = new java.util.Hashtable();
-        retour.put("GOUT", this.gout);
-        retour.put("COUL", this.couleur);
-        return retour;
-        }
-         * */
     }
 }
 

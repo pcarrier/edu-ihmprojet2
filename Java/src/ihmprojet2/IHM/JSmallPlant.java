@@ -20,8 +20,7 @@ public class JSmallPlant extends javax.swing.JPanel implements JPlant {
 
         setLayout(new java.awt.GridBagLayout());
 
-        etatPlante.setFont(etatPlante.getFont().deriveFont(etatPlante.getFont().getStyle() | java.awt.Font.BOLD, etatPlante.getFont().getSize()+5));
-        etatPlante.setText("texte plante");
+        etatPlante.setText("plante");
         etatPlante.setName("etatPlante"); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -29,8 +28,7 @@ public class JSmallPlant extends javax.swing.JPanel implements JPlant {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         add(etatPlante, gridBagConstraints);
 
-        etatFruit.setFont(etatFruit.getFont().deriveFont(etatFruit.getFont().getStyle() | java.awt.Font.BOLD, etatFruit.getFont().getSize()+5));
-        etatFruit.setText("texte fruit");
+        etatFruit.setText("fruit");
         etatFruit.setName("etatFruit"); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -125,25 +123,25 @@ public class JSmallPlant extends javax.swing.JPanel implements JPlant {
         org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance().getContext().getResourceMap(JSmallPlant.class);
         switch (icon) {
             case SANS_PLANTE:
-                imageFruit.setIcon(resourceMap.getIcon("ICON_SANS_PLANTE"));
+                imagePlante.setIcon(resourceMap.getIcon("ICON_SANS_PLANTE"));
                 break;
             case GRAINE:
-                imageFruit.setIcon(resourceMap.getIcon("ICON_GRAINE"));
+                imagePlante.setIcon(resourceMap.getIcon("ICON_GRAINE"));
                 break;
             case CACAI_MORTE:
-                imageFruit.setIcon(resourceMap.getIcon("ICON_CACAI_MORTE"));
+                imagePlante.setIcon(resourceMap.getIcon("ICON_CACAI_MORTE"));
                 break;
             case CACAI_VIVANTE:
-                imageFruit.setIcon(resourceMap.getIcon("ICON_CACAI_VIVANTE"));
+                imagePlante.setIcon(resourceMap.getIcon("ICON_CACAI_VIVANTE"));
                 break;
             case TOMATITO_MORTE:
-                imageFruit.setIcon(resourceMap.getIcon("ICON_TOMATITO_MORTE"));
+                imagePlante.setIcon(resourceMap.getIcon("ICON_TOMATITO_MORTE"));
                 break;
             case TOMATITO_MORTE1:
-                imageFruit.setIcon(resourceMap.getIcon("ICON_TOMATITO_MORTE1"));
+                imagePlante.setIcon(resourceMap.getIcon("ICON_TOMATITO_MORTE1"));
                 break;
             case TOMATITO_VIVANTE:
-                imageFruit.setIcon(resourceMap.getIcon("ICON_TOMATITO_VIVANTE"));
+                imagePlante.setIcon(resourceMap.getIcon("ICON_TOMATITO_VIVANTE"));
                 break;
         }
     }
