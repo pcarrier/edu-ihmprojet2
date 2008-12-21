@@ -58,7 +58,7 @@ public class Tomatito extends Plante {
         return p;
     }
 
-    private static Tomatito jour4() {
+    private static Tomatito jour4() throws Exception{
         Tomatito p = new Tomatito();
         double qtCroiss = Tomatito.environnement.getQualiteCroissance();
         if ((qtCroiss > 15) && (qtCroiss <= 30)) {
@@ -70,6 +70,7 @@ public class Tomatito extends Plante {
         }
         if (qtCroiss > 50) {
             p.setTaille(4);
+            p.getFruit().setGout(Gout.ACIDULE);
         }
         return p;
     }
