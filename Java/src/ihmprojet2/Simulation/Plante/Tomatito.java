@@ -13,7 +13,6 @@ public class Tomatito extends Plante {
         etats[4] = jour5();
         etats[5] = jour6();
         etats[6] = jour7();
-
     }
 
     public static Plante[] getEtats() throws Exception {
@@ -71,6 +70,8 @@ public class Tomatito extends Plante {
         if (qtCroiss > 50) {
             p.setTaille(4);
             p.getFruit().setGout(Gout.ACIDULE);
+            p.getFruit().setCouleur(Couleur.VERT);
+            
         }
         return p;
     }

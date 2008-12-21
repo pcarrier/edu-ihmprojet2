@@ -23,6 +23,7 @@ public class Fruit {
     }
 
     public Couleur getCouleur() {
+        
         return couleur;
     }
 
