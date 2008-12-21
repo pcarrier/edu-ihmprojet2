@@ -28,7 +28,7 @@ public class Environnement {
         autrePlante = p;
     }
 
-    public Boolean containsTomatito() {
+    public boolean containsTomatito() {
         return (autrePlante == TypePlante.TOMATITO);
     }
 

@@ -132,15 +132,6 @@ public class Cacai extends Plante {
         return p;
     }
 
-    @Override
-    public void propertyChange(java.beans.PropertyChangeEvent evt) {
-        try {
-            Cacai.updateEtats();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
     public Cacai() {
         fruit = new CacaiFruit();
     }

@@ -646,9 +646,9 @@ public class MainWindow extends javax.swing.JFrame {
             jSmallPlant14
         };
         if (simulation1.getPlante2() == TypePlante.SANS) {
-            for (int i = 0; i < jplants1.length; i++) {
-                jplants1[i].setFruitIcon(SimulIcon.SANS_FRUIT);
-                jplants1[i].setPlanteIcon(SimulIcon.SANS_PLANTE);
+            for (int i = 0; i < jplants2.length; i++) {
+                jplants2[i].setFruitIcon(SimulIcon.SANS_FRUIT);
+                jplants2[i].setPlanteIcon(SimulIcon.SANS_PLANTE);
             }
         } else {
             Plante[] plantes = simulation1.getEtatsPlante2();

@@ -26,7 +26,6 @@ public class Simulation implements PropertyChangeListener, Serializable {
         environnement = new Environnement();
         environnement.addPropertyChangeListener(this);
         propertyChangeSupport = new PropertyChangeSupport(this);
-
     }
 
     public synchronized void addPropertyChangeListener(PropertyChangeListener listener) {
@@ -54,12 +53,10 @@ public class Simulation implements PropertyChangeListener, Serializable {
     }
 
     private void setEtatsPlante1(Plante[] etatsPlante1) {
-        Plante[] oldEtatsPlante1 = this.etatsPlante1;
         this.etatsPlante1 = etatsPlante1;
     }
 
     private void setEtatsPlante2(Plante[] etatsPlante2) {
-        Plante[] oldEtatsPlante2 = this.etatsPlante2;
         this.etatsPlante2 = etatsPlante2;
     }
 
@@ -101,7 +98,9 @@ public class Simulation implements PropertyChangeListener, Serializable {
                 resultat = Cacai.getEtats();
                 break;
         }
+        System.out.println("On va mettre a jour etatsPlante1");
         setEtatsPlante1(resultat);
+        System.out.println("AH AH AH " + resultat[0]);
         propertyChangeSupport.firePropertyChange("EtatsPlante1", 0, 1);
     }
 

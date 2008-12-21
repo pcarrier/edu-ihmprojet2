@@ -139,15 +139,6 @@ public class Tomatito extends Plante {
     }
 
     @Override
-    public void propertyChange(java.beans.PropertyChangeEvent evt) {
-        try {
-            Tomatito.updateEtats();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    @Override
     public Fruit getFruit() {
         return fruit;
     }

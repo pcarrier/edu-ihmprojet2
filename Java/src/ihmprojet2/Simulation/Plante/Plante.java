@@ -1,17 +1,14 @@
 package ihmprojet2.Simulation.Plante;
 
 import ihmprojet2.Simulation.Environnement;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.util.ArrayList;
 
-public class Plante extends Object implements PropertyChangeListener {
+public class Plante extends Object {
 
-    private Boolean germee = false;
-    private Boolean vivante = true;
+    protected boolean germee = false;
+    protected boolean vivante = true;
     public static Plante etats[] = new Plante[7];
     protected static Environnement environnement = new Environnement();
-    private double taille = 0;
+    protected double taille = 0;
 
     public static Plante[] getEtats() throws Exception {
         throw new Exception("Not implemented.");
@@ -26,17 +23,17 @@ public class Plante extends Object implements PropertyChangeListener {
             if (taille == 0) {
                 retour = "Germée";
             } else {
-                retour = taille + "mm";
+                retour = "" + taille + "mm";
             }
         }
         return retour;
     }
 
-    public Boolean isGermee() {
-        return null;
+    public boolean isGermee() {
+        return germee;
     }
 
-    public void setGermee(Boolean val) {
+    public void setGermee(boolean val) {
         germee = val;
     }
 
@@ -48,11 +45,11 @@ public class Plante extends Object implements PropertyChangeListener {
         taille = val;
     }
 
-    public Boolean isVivante() {
+    public boolean isVivante() {
         return vivante;
     }
 
-    public void setVivante(Boolean val) {
+    public void setVivante(boolean val) {
         vivante = val;
     }
 
@@ -66,14 +63,6 @@ public class Plante extends Object implements PropertyChangeListener {
 
     public Environnement getEnvironnement() {
         return environnement;
-    }
-
-    public void propertyChange(PropertyChangeEvent evt) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    public ArrayList Etats() throws Exception {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     public static void updateEtats() throws Exception {
