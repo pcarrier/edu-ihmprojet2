@@ -66,7 +66,7 @@ public class Simulation implements PropertyChangeListener, Serializable {
     public void setPlante1(TypePlante plante) throws Exception {
         plante1 = plante;
         if (plante == TypePlante.SANS) {
-            propertyChangeSupport.firePropertyChange("EtatsPlante1", 0, 1);
+            propertyChangeSupport.firePropertyChange("EtatsPlante1", 0, -1);
         } else {
             updateEtatsPlante1();
             updateEtatsPlante2();
@@ -76,7 +76,7 @@ public class Simulation implements PropertyChangeListener, Serializable {
     public void setPlante2(TypePlante plante) throws Exception {
         plante2 = plante;
         if (plante == TypePlante.SANS) {
-            propertyChangeSupport.firePropertyChange("EtatsPlante1", 0, 1);
+            propertyChangeSupport.firePropertyChange("EtatsPlante2", 0, -2);
         } else {
             updateEtatsPlante1();
             updateEtatsPlante2();
@@ -119,7 +119,7 @@ public class Simulation implements PropertyChangeListener, Serializable {
                 break;
         }
         setEtatsPlante2(resultat);
-        propertyChangeSupport.firePropertyChange("EtatsPlante2", 0, 1);
+        propertyChangeSupport.firePropertyChange("EtatsPlante2", 0, 2);
     }
 
     public synchronized void propertyChange(PropertyChangeEvent evt) {

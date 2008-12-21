@@ -589,6 +589,23 @@ public class MainWindow extends javax.swing.JFrame {
         CreditsDialog.launch(this, false);
     }//GEN-LAST:event_aboutButtonActionPerformed
 
+    private SimulIcon selectPlanteIcon(TypePlante type, boolean vivante, boolean germee) {
+        if (type == TypePlante.CACAI) {
+            if (!vivante) {
+                return SimulIcon.CACAI_MORTE;
+            } else if (germee) {
+                return SimulIcon.CACAI_VIVANTE;
+            }
+        } else { // Tomatito
+            if (!vivante) {
+                return SimulIcon.TOMATITO_MORTE;
+            } else if (germee) {
+                return SimulIcon.TOMATITO_VIVANTE;
+            }
+        }
+        return SimulIcon.GRAINE;
+    }
+
     private void simulation1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_simulation1PropertyChange
         System.out.println("Changement recu de la simulation !");
 
@@ -610,6 +627,8 @@ public class MainWindow extends javax.swing.JFrame {
             Plante[] plantes = simulation1.getEtatsPlante1();
             for (int i = 0; i < plantes.length; i++) {
                 jplants1[i].setPlanteText(plantes[i].getDescription());
+                jplants1[i].setPlanteIcon(selectPlanteIcon(simulation1.getPlante1(),
+                        plantes[i].isVivante(), plantes[i].isGermee()));
                 try {
                     jplants1[i].setFruitText(plantes[i].getFruit().getDescription());
                 } catch (Exception ex) {
@@ -636,6 +655,8 @@ public class MainWindow extends javax.swing.JFrame {
             Plante[] plantes = simulation1.getEtatsPlante2();
             for (int i = 0; i < plantes.length; i++) {
                 jplants2[i].setPlanteText(plantes[i].getDescription());
+                jplants2[i].setPlanteIcon(selectPlanteIcon(simulation1.getPlante2(),
+                        plantes[i].isVivante(), plantes[i].isGermee()));
                 try {
                     jplants2[i].setFruitText(plantes[i].getFruit().getDescription());
                 } catch (Exception ex) {
