@@ -38,7 +38,6 @@
   <SubComponents>
     <Container class="javax.swing.JSplitPane" name="splitter">
       <Properties>
-        <Property name="dividerLocation" type="int" value="200"/>
         <Property name="name" type="java.lang.String" value="splitter" noResource="true"/>
       </Properties>
       <Constraints>
@@ -564,7 +563,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="qcroisslabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="qcroissval" pref="62" max="32767" attributes="0"/>
+                                  <Component id="qcroissval" min="-2" pref="62" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -576,7 +575,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="qcroissval" pref="13" max="32767" attributes="1"/>
+                              <Component id="qcroissval" min="-2" pref="13" max="-2" attributes="1"/>
                               <Component id="qcroisslabel" alignment="0" min="-2" max="-2" attributes="1"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -628,182 +627,122 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
           <SubComponents>
-            <Container class="javax.swing.JScrollPane" name="plante1scroller">
+            <Container class="javax.swing.JPanel" name="finalPanel">
               <Properties>
-                <Property name="name" type="java.lang.String" value="plante1scroller" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="finalPanel" noResource="true"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="Plante 1">
-                    <Property name="tabTitle" type="java.lang.String" value="Plante 1"/>
+                  <JTabbedPaneConstraints tabName="Plantes apr&#xe8;s 7 jours">
+                    <Property name="tabTitle" type="java.lang.String" value="Plantes apr&#xe8;s 7 jours"/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
 
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+                <Property name="columns" type="int" value="0"/>
+                <Property name="rows" type="int" value="2"/>
+              </Layout>
               <SubComponents>
-                <Container class="javax.swing.JPanel" name="plante1panel">
+                <Component class="ihmprojet2.IHM.JBigPlant" name="jBigPlant1">
                   <Properties>
-                    <Property name="name" type="java.lang.String" value="plante1panel" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="jBigPlant1" noResource="true"/>
                   </Properties>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout">
-                    <Property name="verticalGap" type="int" value="8"/>
-                  </Layout>
-                  <SubComponents>
-                    <Component class="ihmprojet2.IHM.JBigPlant" name="jBigPlant1">
-                      <Properties>
-                        <Property name="name" type="java.lang.String" value="jBigPlant1" noResource="true"/>
-                      </Properties>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
-                          <BorderConstraints direction="Center"/>
-                        </Constraint>
-                      </Constraints>
-                    </Component>
-                    <Container class="javax.swing.JPanel" name="plante1semaine">
-                      <Properties>
-                        <Property name="name" type="java.lang.String" value="plante1semaine" noResource="true"/>
-                      </Properties>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
-                          <BorderConstraints direction="South"/>
-                        </Constraint>
-                      </Constraints>
-
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
-                        <Property name="columns" type="int" value="0"/>
-                        <Property name="rows" type="int" value="1"/>
-                      </Layout>
-                      <SubComponents>
-                        <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant1">
-                          <Properties>
-                            <Property name="name" type="java.lang.String" value="jSmallPlant1" noResource="true"/>
-                          </Properties>
-                        </Component>
-                        <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant2">
-                          <Properties>
-                            <Property name="name" type="java.lang.String" value="jSmallPlant2" noResource="true"/>
-                          </Properties>
-                        </Component>
-                        <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant3">
-                          <Properties>
-                            <Property name="name" type="java.lang.String" value="jSmallPlant3" noResource="true"/>
-                          </Properties>
-                        </Component>
-                        <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant4">
-                          <Properties>
-                            <Property name="name" type="java.lang.String" value="jSmallPlant4" noResource="true"/>
-                          </Properties>
-                        </Component>
-                        <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant5">
-                          <Properties>
-                            <Property name="name" type="java.lang.String" value="jSmallPlant5" noResource="true"/>
-                          </Properties>
-                        </Component>
-                        <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant6">
-                          <Properties>
-                            <Property name="name" type="java.lang.String" value="jSmallPlant6" noResource="true"/>
-                          </Properties>
-                        </Component>
-                        <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant7">
-                          <Properties>
-                            <Property name="name" type="java.lang.String" value="jSmallPlant7" noResource="true"/>
-                          </Properties>
-                        </Component>
-                      </SubComponents>
-                    </Container>
-                  </SubComponents>
-                </Container>
+                </Component>
+                <Component class="ihmprojet2.IHM.JBigPlant" name="jBigPlant2">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="jBigPlant2" noResource="true"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JScrollPane" name="plante2scroller">
+            <Container class="javax.swing.JPanel" name="semainePanel">
               <Properties>
-                <Property name="name" type="java.lang.String" value="plante2scroller" noResource="true"/>
+                <Property name="name" type="java.lang.String" value="semainePanel" noResource="true"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                  <JTabbedPaneConstraints tabName="Plante 2">
-                    <Property name="tabTitle" type="java.lang.String" value="Plante 2"/>
+                  <JTabbedPaneConstraints tabName="D&#xe9;tails de la semaine">
+                    <Property name="tabTitle" type="java.lang.String" value="D&#xe9;tails de la semaine"/>
                   </JTabbedPaneConstraints>
                 </Constraint>
               </Constraints>
 
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+                <Property name="columns" type="int" value="0"/>
+                <Property name="rows" type="int" value="2"/>
+              </Layout>
               <SubComponents>
-                <Container class="javax.swing.JPanel" name="plante2panel">
+                <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant1">
                   <Properties>
-                    <Property name="name" type="java.lang.String" value="plante2panel" noResource="true"/>
+                    <Property name="name" type="java.lang.String" value="jSmallPlant1" noResource="true"/>
                   </Properties>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout">
-                    <Property name="verticalGap" type="int" value="8"/>
-                  </Layout>
-                  <SubComponents>
-                    <Component class="ihmprojet2.IHM.JBigPlant" name="jBigPlant2">
-                      <Properties>
-                        <Property name="name" type="java.lang.String" value="jBigPlant2" noResource="true"/>
-                      </Properties>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
-                          <BorderConstraints direction="Center"/>
-                        </Constraint>
-                      </Constraints>
-                    </Component>
-                    <Container class="javax.swing.JPanel" name="plante2semaine">
-                      <Properties>
-                        <Property name="name" type="java.lang.String" value="plante2semaine" noResource="true"/>
-                      </Properties>
-                      <Constraints>
-                        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
-                          <BorderConstraints direction="South"/>
-                        </Constraint>
-                      </Constraints>
-
-                      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
-                        <Property name="columns" type="int" value="0"/>
-                        <Property name="rows" type="int" value="1"/>
-                      </Layout>
-                      <SubComponents>
-                        <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant8">
-                          <Properties>
-                            <Property name="name" type="java.lang.String" value="jSmallPlant8" noResource="true"/>
-                          </Properties>
-                        </Component>
-                        <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant9">
-                          <Properties>
-                            <Property name="name" type="java.lang.String" value="jSmallPlant9" noResource="true"/>
-                          </Properties>
-                        </Component>
-                        <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant10">
-                          <Properties>
-                            <Property name="name" type="java.lang.String" value="jSmallPlant10" noResource="true"/>
-                          </Properties>
-                        </Component>
-                        <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant11">
-                          <Properties>
-                            <Property name="name" type="java.lang.String" value="jSmallPlant11" noResource="true"/>
-                          </Properties>
-                        </Component>
-                        <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant12">
-                          <Properties>
-                            <Property name="name" type="java.lang.String" value="jSmallPlant12" noResource="true"/>
-                          </Properties>
-                        </Component>
-                        <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant13">
-                          <Properties>
-                            <Property name="name" type="java.lang.String" value="jSmallPlant13" noResource="true"/>
-                          </Properties>
-                        </Component>
-                        <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant14">
-                          <Properties>
-                            <Property name="name" type="java.lang.String" value="jSmallPlant14" noResource="true"/>
-                          </Properties>
-                        </Component>
-                      </SubComponents>
-                    </Container>
-                  </SubComponents>
-                </Container>
+                </Component>
+                <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant2">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="jSmallPlant2" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant3">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="jSmallPlant3" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant4">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="jSmallPlant4" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant5">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="jSmallPlant5" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant6">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="jSmallPlant6" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant7">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="jSmallPlant7" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant8">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="jSmallPlant8" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant9">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="jSmallPlant9" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant10">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="jSmallPlant10" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant11">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="jSmallPlant11" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant12">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="jSmallPlant12" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant13">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="jSmallPlant13" noResource="true"/>
+                  </Properties>
+                </Component>
+                <Component class="ihmprojet2.IHM.JSmallPlant" name="jSmallPlant14">
+                  <Properties>
+                    <Property name="name" type="java.lang.String" value="jSmallPlant14" noResource="true"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
           </SubComponents>

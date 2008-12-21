@@ -58,10 +58,10 @@ public class MainWindow extends javax.swing.JFrame {
         qcroissval = new javax.swing.JLabel();
         aboutButton = new javax.swing.JButton();
         vuePanels = new javax.swing.JTabbedPane();
-        plante1scroller = new javax.swing.JScrollPane();
-        plante1panel = new javax.swing.JPanel();
+        finalPanel = new javax.swing.JPanel();
         jBigPlant1 = new ihmprojet2.IHM.JBigPlant();
-        plante1semaine = new javax.swing.JPanel();
+        jBigPlant2 = new ihmprojet2.IHM.JBigPlant();
+        semainePanel = new javax.swing.JPanel();
         jSmallPlant1 = new ihmprojet2.IHM.JSmallPlant();
         jSmallPlant2 = new ihmprojet2.IHM.JSmallPlant();
         jSmallPlant3 = new ihmprojet2.IHM.JSmallPlant();
@@ -69,10 +69,6 @@ public class MainWindow extends javax.swing.JFrame {
         jSmallPlant5 = new ihmprojet2.IHM.JSmallPlant();
         jSmallPlant6 = new ihmprojet2.IHM.JSmallPlant();
         jSmallPlant7 = new ihmprojet2.IHM.JSmallPlant();
-        plante2scroller = new javax.swing.JScrollPane();
-        plante2panel = new javax.swing.JPanel();
-        jBigPlant2 = new ihmprojet2.IHM.JBigPlant();
-        plante2semaine = new javax.swing.JPanel();
         jSmallPlant8 = new ihmprojet2.IHM.JSmallPlant();
         jSmallPlant9 = new ihmprojet2.IHM.JSmallPlant();
         jSmallPlant10 = new ihmprojet2.IHM.JSmallPlant();
@@ -90,7 +86,6 @@ public class MainWindow extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ihmProjet2"); // NOI18N
 
-        splitter.setDividerLocation(200);
         splitter.setName("splitter"); // NOI18N
 
         gauche.setName("gauche"); // NOI18N
@@ -468,7 +463,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(bottomLayout.createSequentialGroup()
                         .addComponent(qcroisslabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(qcroissval, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)))
+                        .addComponent(qcroissval, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         bottomLayout.setVerticalGroup(
@@ -476,7 +471,7 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(bottomLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(bottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(qcroissval, javax.swing.GroupLayout.DEFAULT_SIZE, 13, Short.MAX_VALUE)
+                    .addComponent(qcroissval, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(qcroisslabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(aboutButton)
@@ -489,81 +484,63 @@ public class MainWindow extends javax.swing.JFrame {
 
         vuePanels.setName("vuePanels"); // NOI18N
 
-        plante1scroller.setName("plante1scroller"); // NOI18N
-
-        plante1panel.setName("plante1panel"); // NOI18N
-        plante1panel.setLayout(new java.awt.BorderLayout(0, 8));
+        finalPanel.setName("finalPanel"); // NOI18N
+        finalPanel.setLayout(new java.awt.GridLayout(2, 0));
 
         jBigPlant1.setName("jBigPlant1"); // NOI18N
-        plante1panel.add(jBigPlant1, java.awt.BorderLayout.CENTER);
-
-        plante1semaine.setName("plante1semaine"); // NOI18N
-        plante1semaine.setLayout(new java.awt.GridLayout(1, 0));
-
-        jSmallPlant1.setName("jSmallPlant1"); // NOI18N
-        plante1semaine.add(jSmallPlant1);
-
-        jSmallPlant2.setName("jSmallPlant2"); // NOI18N
-        plante1semaine.add(jSmallPlant2);
-
-        jSmallPlant3.setName("jSmallPlant3"); // NOI18N
-        plante1semaine.add(jSmallPlant3);
-
-        jSmallPlant4.setName("jSmallPlant4"); // NOI18N
-        plante1semaine.add(jSmallPlant4);
-
-        jSmallPlant5.setName("jSmallPlant5"); // NOI18N
-        plante1semaine.add(jSmallPlant5);
-
-        jSmallPlant6.setName("jSmallPlant6"); // NOI18N
-        plante1semaine.add(jSmallPlant6);
-
-        jSmallPlant7.setName("jSmallPlant7"); // NOI18N
-        plante1semaine.add(jSmallPlant7);
-
-        plante1panel.add(plante1semaine, java.awt.BorderLayout.SOUTH);
-
-        plante1scroller.setViewportView(plante1panel);
-
-        vuePanels.addTab("Plante 1", plante1scroller);
-
-        plante2scroller.setName("plante2scroller"); // NOI18N
-
-        plante2panel.setName("plante2panel"); // NOI18N
-        plante2panel.setLayout(new java.awt.BorderLayout(0, 8));
+        finalPanel.add(jBigPlant1);
 
         jBigPlant2.setName("jBigPlant2"); // NOI18N
-        plante2panel.add(jBigPlant2, java.awt.BorderLayout.CENTER);
+        finalPanel.add(jBigPlant2);
 
-        plante2semaine.setName("plante2semaine"); // NOI18N
-        plante2semaine.setLayout(new java.awt.GridLayout(1, 0));
+        vuePanels.addTab("Plantes après 7 jours", finalPanel);
+
+        semainePanel.setName("semainePanel"); // NOI18N
+        semainePanel.setLayout(new java.awt.GridLayout(2, 0));
+
+        jSmallPlant1.setName("jSmallPlant1"); // NOI18N
+        semainePanel.add(jSmallPlant1);
+
+        jSmallPlant2.setName("jSmallPlant2"); // NOI18N
+        semainePanel.add(jSmallPlant2);
+
+        jSmallPlant3.setName("jSmallPlant3"); // NOI18N
+        semainePanel.add(jSmallPlant3);
+
+        jSmallPlant4.setName("jSmallPlant4"); // NOI18N
+        semainePanel.add(jSmallPlant4);
+
+        jSmallPlant5.setName("jSmallPlant5"); // NOI18N
+        semainePanel.add(jSmallPlant5);
+
+        jSmallPlant6.setName("jSmallPlant6"); // NOI18N
+        semainePanel.add(jSmallPlant6);
+
+        jSmallPlant7.setName("jSmallPlant7"); // NOI18N
+        semainePanel.add(jSmallPlant7);
 
         jSmallPlant8.setName("jSmallPlant8"); // NOI18N
-        plante2semaine.add(jSmallPlant8);
+        semainePanel.add(jSmallPlant8);
 
         jSmallPlant9.setName("jSmallPlant9"); // NOI18N
-        plante2semaine.add(jSmallPlant9);
+        semainePanel.add(jSmallPlant9);
 
         jSmallPlant10.setName("jSmallPlant10"); // NOI18N
-        plante2semaine.add(jSmallPlant10);
+        semainePanel.add(jSmallPlant10);
 
         jSmallPlant11.setName("jSmallPlant11"); // NOI18N
-        plante2semaine.add(jSmallPlant11);
+        semainePanel.add(jSmallPlant11);
 
         jSmallPlant12.setName("jSmallPlant12"); // NOI18N
-        plante2semaine.add(jSmallPlant12);
+        semainePanel.add(jSmallPlant12);
 
         jSmallPlant13.setName("jSmallPlant13"); // NOI18N
-        plante2semaine.add(jSmallPlant13);
+        semainePanel.add(jSmallPlant13);
 
         jSmallPlant14.setName("jSmallPlant14"); // NOI18N
-        plante2semaine.add(jSmallPlant14);
+        semainePanel.add(jSmallPlant14);
 
-        plante2panel.add(plante2semaine, java.awt.BorderLayout.SOUTH);
-
-        plante2scroller.setViewportView(plante2panel);
-
-        vuePanels.addTab("Plante 2", plante2scroller);
+        vuePanels.addTab("Détails de la semaine", semainePanel);
 
         splitter.setRightComponent(vuePanels);
 
@@ -656,10 +633,12 @@ public class MainWindow extends javax.swing.JFrame {
             for (int i = 0; i < jplants1.length; i++) {
                 jplants1[i].setFruitIcon(SimulIcon.SANS_FRUIT);
                 jplants1[i].setPlanteIcon(SimulIcon.SANS_PLANTE);
+                jplants1[i].setPlanteText("-");
+                jplants1[i].setFruitText("-");
             }
         } else {
             Plante[] plantes1 = simulation1.getEtatsPlante1();
-            for (int i = 0; i < plantes1.length - 1; i++) {
+            for (int i = 0; i < plantes1.length; i++) {
                 try {
                     jplants1[i].setPlanteText(plantes1[i].getDescription());
                     jplants1[i].setPlanteIcon(selectPlanteIcon(simulation1.getPlante1(),
@@ -687,11 +666,13 @@ public class MainWindow extends javax.swing.JFrame {
             for (int i = 0; i < jplants2.length; i++) {
                 jplants2[i].setFruitIcon(SimulIcon.SANS_FRUIT);
                 jplants2[i].setPlanteIcon(SimulIcon.SANS_PLANTE);
+                jplants2[i].setPlanteText("-");
+                jplants2[i].setFruitText("-");
             }
         } else {
             Plante[] plantes2 = simulation1.getEtatsPlante2();
             System.out.println(plantes2);
-            for (int i = 0; i < plantes2.length - 1; i++) {
+            for (int i = 0; i < plantes2.length; i++) {
                 try {
                     jplants2[i].setPlanteText(plantes2[i].getDescription());
                     jplants2[i].setPlanteIcon(selectPlanteIcon(simulation1.getPlante2(),
@@ -705,10 +686,10 @@ public class MainWindow extends javax.swing.JFrame {
             }
             try {
                 jBigPlant2.setPlanteText(plantes2[6].getDescription());
-                jBigPlant2.setPlanteIcon(selectPlanteIcon(simulation1.getPlante1(),
+                jBigPlant2.setPlanteIcon(selectPlanteIcon(simulation1.getPlante2(),
                         plantes2[6].isVivante(), plantes2[6].isGermee(), plantes2[6].getTaille()));
                 jBigPlant2.setFruitText(plantes2[6].getFruit().getDescription());
-                jBigPlant2.setFruitIcon(selectFruitIcon(simulation1.getPlante1(),
+                jBigPlant2.setFruitIcon(selectFruitIcon(simulation1.getPlante2(),
                         plantes2[6].getFruit().getGout(), plantes2[6].getFruit().getCouleur()));
             } catch (Exception ex) {
                 Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "roooh bis", ex);
@@ -874,6 +855,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JSlider dureteSlider;
     private javax.swing.JPanel eauPanel;
     private javax.swing.JCheckBox engraisCB;
+    private javax.swing.JPanel finalPanel;
     private javax.swing.JPanel gauche;
     private javax.swing.JRadioButton indirectRB;
     private ihmprojet2.IHM.JBigPlant jBigPlant1;
@@ -902,14 +884,8 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JRadioButton p2tomatitoRB;
     private javax.swing.JCheckBox plante1CB;
     private javax.swing.ButtonGroup plante1group;
-    private javax.swing.JPanel plante1panel;
-    private javax.swing.JScrollPane plante1scroller;
-    private javax.swing.JPanel plante1semaine;
     private javax.swing.JCheckBox plante2CB;
     private javax.swing.ButtonGroup plante2group;
-    private javax.swing.JPanel plante2panel;
-    private javax.swing.JScrollPane plante2scroller;
-    private javax.swing.JPanel plante2semaine;
     private javax.swing.JPanel plantesPanel;
     private javax.swing.JTabbedPane prefsPanels;
     private javax.swing.JLabel qcroisslabel;
@@ -917,6 +893,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel quantiteEauLabel;
     private javax.swing.JSlider quantiteEauSlider;
     private javax.swing.JSlider quantiteTerreSlider;
+    private javax.swing.JPanel semainePanel;
     private ihmprojet2.Simulation.Simulation simulation1;
     private javax.swing.JSplitPane splitter;
     private javax.swing.JLabel temperatureLabel;

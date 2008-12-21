@@ -90,11 +90,11 @@ public class Simulation implements PropertyChangeListener, Serializable {
         switch (plante1) {
             case TOMATITO:
                 Tomatito.setEnvironnement(environnement);
-                resultat = Tomatito.getEtats();
+                resultat = Tomatito.getEtats().clone();
                 break;
             case CACAI:
                 Cacai.setEnvironnement(environnement);
-                resultat = Cacai.getEtats();
+                resultat = Cacai.getEtats().clone();
                 break;
         }
         setEtatsPlante1(resultat);
@@ -107,11 +107,11 @@ public class Simulation implements PropertyChangeListener, Serializable {
         switch (plante2) {
             case TOMATITO:
                 Tomatito.setEnvironnement(environnement);
-                resultat = Tomatito.getEtats();
+                resultat = Tomatito.getEtats().clone();
                 break;
             case CACAI:
                 Cacai.setEnvironnement(environnement);
-                resultat = Cacai.getEtats();
+                resultat = Cacai.getEtats().clone();
                 break;
         }
         setEtatsPlante2(resultat);
