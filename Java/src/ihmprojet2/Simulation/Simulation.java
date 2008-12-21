@@ -71,7 +71,8 @@ public class Simulation implements PropertyChangeListener, Serializable {
     }
 
     public void setPlante2(TypePlante plante) throws Exception {
-        plante2 = plante;
+        plante2 =plante;
+        
         if (plante == TypePlante.SANS) {
             propertyChangeSupport.firePropertyChange("EtatsPlante2", 0, -2);
         } else {
@@ -91,6 +92,7 @@ public class Simulation implements PropertyChangeListener, Serializable {
                 environnement.setAutrePlante(plante2);
                 Tomatito.setEnvironnement(environnement);
                 resultat = Tomatito.getEtats();
+
                 break;
             case CACAI:
                 environnement.setAutrePlante(plante2);
