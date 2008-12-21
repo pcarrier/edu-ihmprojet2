@@ -85,7 +85,7 @@ L'eau quand à elle est déterminée par deux éléments :
 	\end{enumerate}
 De plus, l'utilisateur doit pouvoir configurer le nombre de jours d'arrosage (de 1 à 7).
 
- \item \textbf{terre}.
+ \item \textbf{Terre}.
 	\begin{enumerate}
 	\item Sa quantité, exprimée en grammes,
 	\item la présence d'engrais (oui ou non).
@@ -94,7 +94,44 @@ De plus, l'utilisateur doit pouvoir configurer le nombre de jours d'arrosage (de
 
 
 \section{Conception}
-Nous avons établi 
-\subsection{Diagramme de classe}
+\section{Modèle}
+\subsection{Classes}
+Nous avons choisi de créer une classe Simulation qui seras utilisés par la vue pour tous les appels au modèle.
+\subsubsection{Classe Simulation}
+Cette classe est la seule avec laquelle notre interface graphique va dialoguer.
+C'est elle qui connait les deux types de plantes présentes, et fait la liaison avec avec l'environnement.
+
+Elle à la particularité d'être un beans écoutable par l'interface graphique, mais aussi d'être un \textit{listener} 
+sur les propriété de l'environnement.
+
+Le diagramme UML de cette classe est donné ci-dessous :
+% TODO inseérer diac SIMULATION.
+
+Ses propriétées liées sont \textit{etatsPlante1} et \textit{etatsPlante2}, qui correspondent états des deux plantes
+sur sept jours.
+
+
+\subsubsection{Classe Environnement}
+Toute la gestion des paramètres de l'environnement des plantes se fait dans la classse Environnement.
+Cette classe contient en classe interne (\textit{inner-class}) les classes suivantes~:
+\begin{itemize}
+	\item Climat : gestion de la lumière et de la chaleur.
+	\item Eau : Gestion de la quantité et de la dureté de l'eau,
+	\item Terre : gestion de la quantité de terre et de l'engrais.
+\end{itemize}
+
+\subsection{Enumérations}
+
+Pour faciliter notre développement, nous avons définis des enumérations pour les éléments suivants :
+\begin{itemize}
+ \item Couleur,
+ \item Duretes,
+ \item Goût,
+ \item Type de plante.
+\end{itemize}
+
+
+\section{Vue}
+\subsection{Diagramme de classe Général}
 \section{Rendu}
 \end{document}          

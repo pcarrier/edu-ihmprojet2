@@ -37,6 +37,7 @@ public class Tomatito extends Plante {
             p.setGermee(true);
         }
         if (qtCroiss > 50) {
+             p.setGermee(true);
             p.setTaille(1.0);
         }
         return p;
@@ -49,6 +50,7 @@ public class Tomatito extends Plante {
             p.setGermee(true);
         }
         if ((qtCroiss > 30) && (qtCroiss <= 50)) {
+             p.setGermee(true);
             p.setTaille(1);
         }
         if (qtCroiss > 50) {

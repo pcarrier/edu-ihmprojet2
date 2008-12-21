@@ -71,7 +71,8 @@ public class Simulation implements PropertyChangeListener, Serializable {
     }
 
     public void setPlante2(TypePlante plante) throws Exception {
-        plante2 = plante;
+        plante2 =plante;
+        
         if (plante == TypePlante.SANS) {
             propertyChangeSupport.firePropertyChange(PROP_ETATSPLANTE2, 0, -2);
         } else {
