@@ -3,6 +3,8 @@ package ihmprojet2.IHM;
 import ihmprojet2.IHM.JPlant.SimulIcon;
 import ihmprojet2.Simulation.DegresLumiere;
 import ihmprojet2.Simulation.Durete;
+import ihmprojet2.Simulation.Plante.Couleur;
+import ihmprojet2.Simulation.Plante.Gout;
 import ihmprojet2.Simulation.Plante.Plante;
 import ihmprojet2.Simulation.Simulation.TypePlante;
 import java.util.logging.Level;
@@ -438,8 +440,10 @@ public class MainWindow extends javax.swing.JFrame {
         qcroisslabel.setText("Qualité de croissance :");
         qcroisslabel.setName("qcroisslabel"); // NOI18N
 
-        qcroissval.setText("0");
         qcroissval.setName("qcroissval"); // NOI18N
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, simulation1, org.jdesktop.beansbinding.ELProperty.create("${environnment.qualiteCroissance}"), qcroissval, org.jdesktop.beansbinding.BeanProperty.create("text"));
+        bindingGroup.addBinding(binding);
 
         aboutButton.setText("À propos");
         aboutButton.setName("aboutButton"); // NOI18N
@@ -459,7 +463,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(aboutButton, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
                     .addGroup(bottomLayout.createSequentialGroup()
                         .addComponent(qcroisslabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                         .addComponent(qcroissval)))
                 .addContainerGap())
         );
@@ -594,15 +598,40 @@ public class MainWindow extends javax.swing.JFrame {
                 return SimulIcon.CACAI_MORTE;
             } else if (germee) {
                 return SimulIcon.CACAI_VIVANTE;
+            } else {
+                return SimulIcon.GRAINE;
             }
         } else { // Tomatito
             if (!vivante) {
                 return SimulIcon.TOMATITO_MORTE;
             } else if (germee) {
                 return SimulIcon.TOMATITO_VIVANTE;
+            } else {
+                return SimulIcon.GRAINE;
             }
         }
-        return SimulIcon.GRAINE;
+    }
+
+    private SimulIcon selectFruitIcon(TypePlante type, Gout gout, Couleur couleur) {
+        if (type == TypePlante.CACAI) {
+            if (gout == Gout.SUCRE) {
+                return SimulIcon.CACAI_SUCRE;
+            } else if (gout == Gout.AMER) {
+                return SimulIcon.CACAI_AMER;
+            } else { // Pas de fruit
+                return SimulIcon.SANS_FRUIT;
+            }
+        } else { // Tomatito
+            if (couleur == Couleur.VERT) {
+                return SimulIcon.TOMATITO_VERT;
+            } else if (couleur == Couleur.ROUGE) {
+                return SimulIcon.TOMATITO_ROUGE;
+            } else if (couleur == Couleur.MARRON) {
+                return SimulIcon.TOMATITO_MARRON;
+            } else { // Pas de fruit
+                return SimulIcon.SANS_FRUIT;
+            }
+        }
     }
 
     private void simulation1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_simulation1PropertyChange
@@ -630,6 +659,8 @@ public class MainWindow extends javax.swing.JFrame {
                         plantes[i].isVivante(), plantes[i].isGermee()));
                 try {
                     jplants1[i].setFruitText(plantes[i].getFruit().getDescription());
+                    jplants1[i].setFruitIcon(selectFruitIcon(simulation1.getPlante1(),
+                            plantes[i].getFruit().getGout(), plantes[i].getFruit().getCouleur()));
                 } catch (Exception ex) {
                     Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
                 }

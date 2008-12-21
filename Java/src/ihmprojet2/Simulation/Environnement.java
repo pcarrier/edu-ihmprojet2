@@ -145,7 +145,7 @@ public class Environnement {
         public void reduitLumiere() throws Exception {
             switch (this.lumiere) {
                 case DIRECTE:
-                    this.setLumiere(DegresLumiere.DIRECTE);
+                    this.setLumiere(DegresLumiere.INDIRECTE);
                     break;
                 case INDIRECTE:
                     this.setLumiere(DegresLumiere.OBSCURITE);
