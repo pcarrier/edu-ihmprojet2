@@ -43,6 +43,9 @@ public class Plante extends Object {
 
     public void setTaille(double val) {
         taille = val;
+        if (val >0){
+            this.germee=true;
+        }
     }
 
     public boolean isVivante() {
