@@ -31,6 +31,7 @@ public class Cacai extends Plante {
     private static Cacai jour2() {
         Cacai p = new Cacai();
         double qtCroiss = Tomatito.environnement.getQualiteCroissance();
+       
         if (qtCroiss > 20) {
             p.setGermee(true);
         }
@@ -61,9 +62,10 @@ public class Cacai extends Plante {
         }
         if (qtCroiss > 35) {
             p.setTaille(1);
+             p.getFruit().setGout(Gout.AMER);
+            p.getFruit().setDiametre(0.5);
         }
         if (qtCroiss > 60) {
-            p.getFruit().setGout(Gout.AMER);
             p.getFruit().setDiametre(0.3);
         }
         return p;
@@ -119,7 +121,7 @@ public class Cacai extends Plante {
             p.getFruit().setGout(Gout.SUCRE);
             p.getFruit().setDiametre(1);
         }
-        if ((qtCroiss > 35) && (qtCroiss > 60)) {
+        if ((qtCroiss > 35) && (qtCroiss <= 60)) {
             p.setTaille(3);
             p.getFruit().setGout(Gout.SUCRE);
             p.getFruit().setDiametre(1.5);
