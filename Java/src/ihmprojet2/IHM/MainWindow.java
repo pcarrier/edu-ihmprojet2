@@ -637,30 +637,41 @@ public class MainWindow extends javax.swing.JFrame {
     private void simulation1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_simulation1PropertyChange
         System.out.println("Changement recu de la simulation !");
 
-        JPlant[] jplants1 = {
+        JPlant[] jplants = {
             jSmallPlant1,
             jSmallPlant2,
             jSmallPlant3,
             jSmallPlant4,
             jSmallPlant5,
             jSmallPlant6,
-            jSmallPlant7
+            jSmallPlant7,
+            jBigPlant1
         };
         if (simulation1.getPlante1() == TypePlante.SANS) {
-            for (int i = 0; i < jplants1.length; i++) {
-                jplants1[i].setFruitIcon(SimulIcon.SANS_FRUIT);
-                jplants1[i].setPlanteIcon(SimulIcon.SANS_PLANTE);
+            for (int i = 0; i < jplants.length; i++) {
+                jplants[i].setFruitIcon(SimulIcon.SANS_FRUIT);
+                jplants[i].setPlanteIcon(SimulIcon.SANS_PLANTE);
             }
         } else {
             Plante[] plantes = simulation1.getEtatsPlante1();
             for (int i = 0; i < plantes.length; i++) {
-                jplants1[i].setPlanteText(plantes[i].getDescription());
-                jplants1[i].setPlanteIcon(selectPlanteIcon(simulation1.getPlante1(),
-                        plantes[i].isVivante(), plantes[i].isGermee()));
                 try {
-                    jplants1[i].setFruitText(plantes[i].getFruit().getDescription());
-                    jplants1[i].setFruitIcon(selectFruitIcon(simulation1.getPlante1(),
+                    jplants[i].setPlanteText(plantes[i].getDescription());
+                    jplants[i].setPlanteIcon(selectPlanteIcon(simulation1.getPlante1(),
+                            plantes[i].isVivante(), plantes[i].isGermee()));
+                    jplants[i].setFruitText(plantes[i].getFruit().getDescription());
+                    jplants[i].setFruitIcon(selectFruitIcon(simulation1.getPlante1(),
                             plantes[i].getFruit().getGout(), plantes[i].getFruit().getCouleur()));
+                } catch (Exception ex) {
+                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "hi han hi han", ex);
+                }
+                try {
+                    jBigPlant1.setPlanteText(plantes[6].getDescription());
+                    jBigPlant1.setPlanteIcon(selectPlanteIcon(simulation1.getPlante1(),
+                            plantes[6].isVivante(), plantes[6].isGermee()));
+                    jBigPlant1.setFruitText(plantes[6].getFruit().getDescription());
+                    jBigPlant1.setFruitIcon(selectFruitIcon(simulation1.getPlante1(),
+                            plantes[6].getFruit().getGout(), plantes[6].getFruit().getCouleur()));
                 } catch (Exception ex) {
                     Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -676,24 +687,6 @@ public class MainWindow extends javax.swing.JFrame {
             jSmallPlant13,
             jSmallPlant14
         };
-        if (simulation1.getPlante2() == TypePlante.SANS) {
-            for (int i = 0; i < jplants2.length; i++) {
-                jplants2[i].setFruitIcon(SimulIcon.SANS_FRUIT);
-                jplants2[i].setPlanteIcon(SimulIcon.SANS_PLANTE);
-            }
-        } else {
-            Plante[] plantes = simulation1.getEtatsPlante2();
-            for (int i = 0; i < plantes.length; i++) {
-                jplants2[i].setPlanteText(plantes[i].getDescription());
-                jplants2[i].setPlanteIcon(selectPlanteIcon(simulation1.getPlante2(),
-                        plantes[i].isVivante(), plantes[i].isGermee()));
-                try {
-                    jplants2[i].setFruitText(plantes[i].getFruit().getDescription());
-                } catch (Exception ex) {
-                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        }
     }//GEN-LAST:event_simulation1PropertyChange
 
     private void plante1Changed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plante1Changed
