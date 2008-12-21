@@ -7,7 +7,7 @@ public class Plante extends Object {
     protected boolean germee = false;
     protected boolean vivante = true;
     public static Plante etats[] = new Plante[7];
-    protected static Environnement environnement = new Environnement();
+    protected static Environnement environnement;
     protected double taille = 0;
 
     public static Plante[] getEtats() throws Exception {

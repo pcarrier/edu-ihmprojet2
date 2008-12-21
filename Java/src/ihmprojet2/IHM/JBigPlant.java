@@ -59,7 +59,6 @@ public class JBigPlant extends javax.swing.JPanel implements JPlant {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         add(fruitLabel, gridBagConstraints);
 
-        etatFruit.setFont(etatFruit.getFont().deriveFont(etatFruit.getFont().getStyle() | java.awt.Font.BOLD, etatFruit.getFont().getSize()+15));
         etatFruit.setText("fruit");
         etatFruit.setName("etatFruit"); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -68,7 +67,6 @@ public class JBigPlant extends javax.swing.JPanel implements JPlant {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         add(etatFruit, gridBagConstraints);
 
-        etatPlante.setFont(etatPlante.getFont().deriveFont(etatPlante.getFont().getStyle() | java.awt.Font.BOLD, etatPlante.getFont().getSize()+15));
         etatPlante.setText("plante");
         etatPlante.setName("etatPlante"); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -86,7 +84,6 @@ public class JBigPlant extends javax.swing.JPanel implements JPlant {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         add(lumiereLabel, gridBagConstraints);
 
-        etatLumiere.setFont(etatLumiere.getFont().deriveFont(etatLumiere.getFont().getStyle() | java.awt.Font.BOLD, etatLumiere.getFont().getSize()+15));
         etatLumiere.setText("lumière");
         etatLumiere.setName("etatLumiere"); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
