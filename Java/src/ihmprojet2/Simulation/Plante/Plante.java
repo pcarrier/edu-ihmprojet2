@@ -64,7 +64,6 @@ public class Plante extends Object {
         environnement = evt;
     }
 
-    
     public Environnement getEnvironnement() {
         return environnement;
     }

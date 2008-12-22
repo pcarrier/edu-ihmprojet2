@@ -16,7 +16,7 @@ public class MainWindow extends javax.swing.JFrame {
         initComponents();
         simulation1.getEnvironnment().updateQualiteCroissance();
     }
-    
+    ;
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -123,6 +123,7 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         plante2group.add(p2cacaiRB);
+        p2cacaiRB.setSelected(true);
         p2cacaiRB.setText("Cacaï");
         p2cacaiRB.setName("p2cacaiRB"); // NOI18N
 
@@ -136,7 +137,6 @@ public class MainWindow extends javax.swing.JFrame {
         });
 
         plante2group.add(p2tomatitoRB);
-        p2tomatitoRB.setSelected(true);
         p2tomatitoRB.setText("Tomatito");
         p2tomatitoRB.setName("p2tomatitoRB"); // NOI18N
 
@@ -186,7 +186,7 @@ public class MainWindow extends javax.swing.JFrame {
                         .addGroup(plantesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(p2tomatitoRB)
                             .addComponent(p2cacaiRB))))
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
         plantesPanelLayout.setVerticalGroup(
             plantesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,7 +203,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(p2cacaiRB)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(p2tomatitoRB)
-                .addContainerGap(289, Short.MAX_VALUE))
+                .addContainerGap(285, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Plantes", plantesPanel);
@@ -262,7 +262,7 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(climatPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(climatPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(temperatureSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
+                    .addComponent(temperatureSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
                     .addComponent(obscuriteRB)
                     .addComponent(indirectRB)
                     .addComponent(directRB)
@@ -282,7 +282,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(temperatureLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(temperatureSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(278, Short.MAX_VALUE))
+                .addContainerGap(281, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Climat", climatPanel);
@@ -323,7 +323,7 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(terrePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(terrePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(quantiteTerreSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
+                    .addComponent(quantiteTerreSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
                     .addComponent(engraisCB)
                     .addComponent(jLabel2))
                 .addContainerGap())
@@ -337,7 +337,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(quantiteTerreSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(332, Short.MAX_VALUE))
+                .addContainerGap(333, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Terre", terrePanel);
@@ -402,11 +402,11 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(eauPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(eauPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dureteSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
-                    .addComponent(joursArrosageSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
+                    .addComponent(dureteSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                    .addComponent(joursArrosageSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
                     .addComponent(joursArrosageLabel)
                     .addComponent(quantiteEauLabel)
-                    .addComponent(quantiteEauSlider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
+                    .addComponent(quantiteEauSlider, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
                     .addComponent(dureteLabel))
                 .addContainerGap())
         );
@@ -425,7 +425,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(dureteLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dureteSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(186, Short.MAX_VALUE))
+                .addContainerGap(195, Short.MAX_VALUE))
         );
 
         prefsPanels.addTab("Eau", eauPanel);
@@ -459,7 +459,7 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(bottomLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(bottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(aboutButton, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                    .addComponent(aboutButton, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
                     .addGroup(bottomLayout.createSequentialGroup()
                         .addComponent(qcroisslabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -657,7 +657,6 @@ public class MainWindow extends javax.swing.JFrame {
                 jBigPlant1.setFruitText(plantes1[6].getFruit().getDescription());
                 jBigPlant1.setFruitIcon(selectFruitIcon(simulation1.getPlante1(),
                         plantes1[6].getFruit().getGout(), plantes1[6].getFruit().getCouleur()));
-                jBigPlant1.setLumiereText(simulation1.getplante1LumiereDescription());
             } catch (Exception ex) {
                 Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "roooh", ex);
             }
@@ -672,20 +671,18 @@ public class MainWindow extends javax.swing.JFrame {
             }
         } else {
             Plante[] plantes2 = simulation1.getEtatsPlante2();
-            
+            System.out.println(plantes2);
             for (int i = 0; i < plantes2.length; i++) {
                 try {
-                   jplants2[i].setPlanteText(plantes2[i].getDescription());
+                    jplants2[i].setPlanteText(plantes2[i].getDescription());
                     jplants2[i].setPlanteIcon(selectPlanteIcon(simulation1.getPlante2(),
-
                             plantes2[i].isVivante(), plantes2[i].isGermee(), plantes2[i].getTaille()));
                     jplants2[i].setFruitText(plantes2[i].getFruit().getDescription());
                     jplants2[i].setFruitIcon(selectFruitIcon(simulation1.getPlante2(),
                             plantes2[i].getFruit().getGout(), plantes2[i].getFruit().getCouleur()));
                 } catch (Exception ex) {
-                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "hi han hi han bis "+i, ex);
+                    Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "hi han hi han bis", ex);
                 }
-                
             }
             try {
                 jBigPlant2.setPlanteText(plantes2[6].getDescription());
@@ -694,7 +691,6 @@ public class MainWindow extends javax.swing.JFrame {
                 jBigPlant2.setFruitText(plantes2[6].getFruit().getDescription());
                 jBigPlant2.setFruitIcon(selectFruitIcon(simulation1.getPlante2(),
                         plantes2[6].getFruit().getGout(), plantes2[6].getFruit().getCouleur()));
-                jBigPlant2.setLumiereText(simulation1.getplante2LumiereDescription());
             } catch (Exception ex) {
                 Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, "roooh bis", ex);
             }

@@ -107,7 +107,7 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="124" max="32767" attributes="0"/>
+                              <EmptySpace pref="107" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -126,7 +126,7 @@
                               <Component id="p2cacaiRB" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="p2tomatitoRB" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="289" max="32767" attributes="0"/>
+                              <EmptySpace pref="285" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -168,6 +168,7 @@
                         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                           <ComponentRef name="plante2group"/>
                         </Property>
+                        <Property name="selected" type="boolean" value="true"/>
                         <Property name="text" type="java.lang.String" value="Caca&#xef;"/>
                         <Property name="name" type="java.lang.String" value="p2cacaiRB" noResource="true"/>
                       </Properties>
@@ -183,7 +184,6 @@
                         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                           <ComponentRef name="plante2group"/>
                         </Property>
-                        <Property name="selected" type="boolean" value="true"/>
                         <Property name="text" type="java.lang.String" value="Tomatito"/>
                         <Property name="name" type="java.lang.String" value="p2tomatitoRB" noResource="true"/>
                       </Properties>
@@ -242,7 +242,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="temperatureSlider" alignment="0" pref="196" max="32767" attributes="0"/>
+                                  <Component id="temperatureSlider" alignment="0" pref="172" max="32767" attributes="0"/>
                                   <Component id="obscuriteRB" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="indirectRB" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="directRB" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -265,7 +265,7 @@
                               <Component id="temperatureLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="temperatureSlider" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="278" max="32767" attributes="0"/>
+                              <EmptySpace pref="281" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -353,7 +353,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="quantiteTerreSlider" alignment="0" pref="196" max="32767" attributes="0"/>
+                                  <Component id="quantiteTerreSlider" alignment="0" pref="172" max="32767" attributes="0"/>
                                   <Component id="engraisCB" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -370,7 +370,7 @@
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="quantiteTerreSlider" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="332" max="32767" attributes="0"/>
+                              <EmptySpace pref="333" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -432,11 +432,11 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="dureteSlider" alignment="0" pref="196" max="32767" attributes="0"/>
-                                  <Component id="joursArrosageSlider" alignment="0" pref="196" max="32767" attributes="0"/>
+                                  <Component id="dureteSlider" alignment="0" pref="172" max="32767" attributes="0"/>
+                                  <Component id="joursArrosageSlider" alignment="0" pref="172" max="32767" attributes="0"/>
                                   <Component id="joursArrosageLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="quantiteEauLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="quantiteEauSlider" alignment="1" pref="196" max="32767" attributes="0"/>
+                                  <Component id="quantiteEauSlider" alignment="1" pref="172" max="32767" attributes="0"/>
                                   <Component id="dureteLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -458,7 +458,7 @@
                               <Component id="dureteLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="dureteSlider" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="186" max="32767" attributes="0"/>
+                              <EmptySpace pref="195" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -559,7 +559,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="aboutButton" alignment="0" pref="200" max="32767" attributes="0"/>
+                              <Component id="aboutButton" alignment="0" pref="176" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="qcroisslabel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
