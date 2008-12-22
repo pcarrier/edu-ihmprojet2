@@ -104,7 +104,7 @@ public class Cacai extends Plante {
             p.getFruit().setGout(Gout.AMER);
             p.getFruit().setDiametre(1);
         }
-        if ((qtCroiss > 35) && (qtCroiss <= 60)) {
+        if ((qtCroiss > 35) && (qtCroiss <= 60
             p.setTaille(2.5);
             p.getFruit().setGout(Gout.SUCRE);
             p.getFruit().setDiametre(1);
