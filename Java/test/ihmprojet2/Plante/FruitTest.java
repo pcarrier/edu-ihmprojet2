@@ -5,6 +5,11 @@
 
 package ihmprojet2.Plante;
 
+import ihmprojet2.Simulation.Plante.Cacai;
+import ihmprojet2.Simulation.Plante.Couleur;
+import ihmprojet2.Simulation.Plante.Fruit;
+import ihmprojet2.Simulation.Plante.Gout;
+import ihmprojet2.Simulation.Plante.Tomatito;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;

@@ -5,6 +5,7 @@
 
 package ihmprojet2.Plante;
 
+import ihmprojet2.Simulation.Plante.Plante;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
